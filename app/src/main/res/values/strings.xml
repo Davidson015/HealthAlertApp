@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Health Alert</string>
+    <string name="age">Age</string>
+    <string name="email">Email</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="already_have_an_account">Already have an Account ?</string>
+    <string name="create_account">Create Account</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="gender">Gender :</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="phone_number">Phone Number</string>
 </resources>
