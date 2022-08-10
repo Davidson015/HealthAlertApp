@@ -22,9 +22,9 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins"
-        android:text="Health Alert App"
+        android:text="@string/health_alert_app"
         android:textAllCaps="false"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/blue"
         android:textSize="22sp"
         android:textStyle="italic" />
 

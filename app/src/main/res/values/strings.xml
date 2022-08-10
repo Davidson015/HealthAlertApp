@@ -13,4 +13,8 @@
     <string name="female">Female</string>
     <string name="sign_up">Sign Up</string>
     <string name="phone_number">Phone Number</string>
+    <string name="don_t_have_an_account">Don\'t have_an_account</string>
+    <string name="sign_in">Sign in</string>
+    <string name="log_in">Log In</string>
+    <string name="health_alert_app">Health Alert App</string>
 </resources>
