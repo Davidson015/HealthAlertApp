@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "297856376166",
+    "project_id": "health-alert-52481",
+    "storage_bucket": "health-alert-52481.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297856376166:android:0662a822373ea4074e7ca7",
+        "android_client_info": {
+          "package_name": "com.eproject.healthalert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297856376166-dn9lj4dcp007loqaa1iibk0pqvu734uu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEsxmGmRyrkK_3Orkx5vYaWYX1gei_sw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297856376166-dn9lj4dcp007loqaa1iibk0pqvu734uu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
