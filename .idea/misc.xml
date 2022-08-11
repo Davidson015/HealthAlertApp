@@ -3,9 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_intro.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_appointment.xml" value="0.1025" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_doctor.xml" value="0.1025" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_drugs.xml" value="0.1025" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1115" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_logo.xml" value="0.1025" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_vitals.xml" value="0.1025" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_intro.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_img.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_slide.xml" value="0.1" />
       </map>
     </option>
   </component>
