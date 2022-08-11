@@ -1,17 +1,15 @@
 package com.eproject.healthalert.model;
 
 public class User {
-    private int userId;
     private String firstName;
     private String lastName;
     private String email;
-    private int age;
-    private char gender;
+    private String age;
+    private String gender;
     private String password;
     private String phoneNumber;
 
-    public User(int userId, String firstName, String lastName, String email, int age, char gender, String password, String phoneNumber) {
-        this.userId = userId;
+    public User(String firstName, String lastName, String email, String age, String gender, String password, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -19,14 +17,6 @@ public class User {
         this.gender = gender;
         this.password = password;
         this.phoneNumber = phoneNumber;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getFirstName() {
@@ -53,19 +43,19 @@ public class User {
         this.email = email;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
