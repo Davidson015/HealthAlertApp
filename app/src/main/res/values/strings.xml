@@ -39,4 +39,6 @@
     <string name="profile_pic">Profile Picture</string>
     <string name="greetings">How are you doing today?</string>
     <string name="hello_message">Hello Timmy</string>
+    <string name="register">Register</string>
+    <string name="services_of_health_alert">key services of Health Alert</string>
 </resources>
