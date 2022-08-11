@@ -89,16 +89,22 @@ public class SignUpActivity extends AppCompatActivity {
             String userId = firstName.getText().toString() + lastName.getText().toString();
 
             // Setting up User
-            user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), age.getText().toString(), genderVal, phoneNo.getText().toString(), password.getText().toString());
+            user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString());
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
                 Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
-                firstName.setError("Please fill this field");
-                lastName.setError("Please fill this field");
-                email.setError("Please fill this field");
-                age.setError("Please fill this field");
-                phoneNo.setError("Please fill this field");
+                if (firstName.getText().toString().isEmpty()) {
+                    firstName.setError("Field cannot be empty!");
+                } else if (lastName.getText().toString().isEmpty()) {
+                    lastName.setError("Field cannot be empty!");
+                } else if (email.getText().toString().isEmpty()) {
+                    email.setError("Field cannot be empty!");
+                } else if (age.getText().toString().isEmpty()) {
+                    age.setError("Field cannot be empty!");
+                } else if (phoneNo.getText().toString().isEmpty()) {
+                    phoneNo.setError("Field cannot be empty!");
+                }
             }
 
             // Validating email regex
@@ -123,6 +129,11 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
+                            Log.e("firebase", "User Already Exists", task.getException());
+
+                            // Creating Toast to show error
+                            Toast.makeText(SignUpActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
+                        } else {
                             Log.d("firebase", "User not found", task.getException());
 
                             // Adding user to database
@@ -130,11 +141,6 @@ public class SignUpActivity extends AppCompatActivity {
                             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
-                        } else {
-                            Log.e("firebase", "User Already Exists", task.getException());
-
-                            // Creating Toast to show error
-                            Toast.makeText(SignUpActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
