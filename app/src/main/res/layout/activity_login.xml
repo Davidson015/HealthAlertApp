@@ -64,8 +64,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bordered_shape" />
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,12 +80,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bordered_shape" />
+            android:layout_height="wrap_content"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/sign_up_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

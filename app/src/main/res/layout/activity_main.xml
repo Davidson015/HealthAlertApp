@@ -27,12 +27,12 @@
         />
 
     <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="25dp"
         android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/header_title"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"/>
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/dots_indicator"
@@ -45,6 +45,7 @@
         app:dotsSpacing="4dp"
         app:dotsStrokeWidth="2dp"
         app:dotsClickable="true"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/register_btn"
         android:layout_marginBottom="15dp"
@@ -55,25 +56,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/login_btn"
-        android:text="Register"
-        android:textSize="18sp"
-        android:paddingVertical="15dp"
-        android:layout_marginHorizontal="20dp"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginHorizontal="20dp"
+        android:paddingVertical="15dp"
+        android:text="@string/register"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Log In"
+        android:text="@string/log_in"
         android:textSize="18sp"
         android:backgroundTint="@color/blue_grey"
         android:paddingVertical="15dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="25dp"
         android:layout_marginHorizontal="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
