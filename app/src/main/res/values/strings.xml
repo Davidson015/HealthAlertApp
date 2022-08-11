@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Health Alert</string>
+    <string name="dd1">Your Better Health Assistant</string>
+    <string name="dd2">Health Vitals</string>
+    <string name="dd3">Medical Dosage Monitor</string>
+    <string name="dd4">Appointments</string>
+    <string name="df1">Managing your health should be the easiest task on your to-do list, so we created Health Alert just for you.</string>
+    <string name="df2">Keep your health in constant check by monitoring your health vitals.</string>
+    <string name="df3">Monitor your medical dosage and take the right medication.</string>
+    <string name="df4">Keep track of your scheduled medical appointments and never miss an upcoming one. Thanks to instant notifications.</string>
     <string name="age">Age</string>
     <string name="email">Email</string>
     <string name="last_name">Last Name</string>
