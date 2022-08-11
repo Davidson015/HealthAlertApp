@@ -19,9 +19,10 @@
         android:padding="10dp"/>
 
 
-   <RelativeLayout
+   <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
        <TextView
            android:id="@+id/not_signed_in_txt"
            android:layout_width="wrap_content"
@@ -38,18 +39,15 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="10dp"
-           android:layout_toEndOf="@id/not_signed_in_txt"
+           android:layout_marginStart="-5dp"
            android:clickable="true"
            android:focusable="true"
            android:fontFamily="@font/poppins"
-           android:gravity="center_vertical"
-           android:minWidth="48dp"
-           android:minHeight="48dp"
            android:text="@string/sign_up"
            android:textColor="@color/blue"
            android:textSize="16sp"
            android:textStyle="bold" />
-   </RelativeLayout>
+   </LinearLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -57,12 +55,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
-        android:inputType="textEmailAddress"
         android:padding="15dp"
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
+            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -73,12 +71,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_password"
-        android:inputType="textPassword"
         android:padding="15dp"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password1"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

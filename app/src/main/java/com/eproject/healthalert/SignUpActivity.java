@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     // Creating Form fields
     TextInputEditText firstName, lastName, email, age, phoneNo, password, confirmPassword;
     RadioGroup gender;
-    MaterialButton signUp;
+    Button signUp;
     String genderVal;
 
     // Creating User Object
@@ -46,10 +47,6 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.con_password);
         signUp = findViewById(R.id.sign_up_btn);
-
-        // Setting the show password feature to off by default
-        password.setTransformationMethod(new PasswordTransformationMethod());
-        confirmPassword.setTransformationMethod(new PasswordTransformationMethod());
 
         // Initializing gender RadioGroup
         gender = findViewById(R.id.gender);

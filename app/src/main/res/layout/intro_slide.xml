@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
     <ImageView
         android:id="@+id/img_view"
@@ -10,8 +11,7 @@
         android:layout_height="150dp"
         android:adjustViewBounds="true"
         android:layout_marginBottom="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:contentDescription="@string/services_of_health_alert" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:id="@+id/desc"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/title"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:textAlignment="center"
         android:layout_marginHorizontal="30dp"
         />
