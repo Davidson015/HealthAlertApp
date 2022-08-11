@@ -139,7 +139,6 @@
             android:layout_marginStart="14dp"
             android:padding="1dp"
             android:text="@string/gender"
-            android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold" />
 
