@@ -37,4 +37,6 @@
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="profile_pic">Profile Picture</string>
+    <string name="greetings">How are you doing today?</string>
+    <string name="hello_message">Hello Timmy</string>
 </resources>

@@ -66,7 +66,7 @@
                 android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +81,7 @@
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -98,7 +98,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +115,7 @@
                 android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +132,7 @@
                 android:id="@+id/phone_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,7 +180,7 @@
                 android:id="@+id/password1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape" />
+                android:background="@drawable/bordered_shape" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,13 +190,14 @@
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
-            android:padding="15dp">
+            android:padding="15dp"
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_shape"
+                android:background="@drawable/bordered_shape"
                 android:textColorHint="#757575" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -207,7 +208,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
-            android:background="@drawable/login_shape"
+            android:background="@drawable/bordered_shape"
             android:clickable="true"
             android:focusable="true"
             android:text="@string/sign_up" />
