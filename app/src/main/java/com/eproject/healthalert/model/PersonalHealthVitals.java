@@ -10,6 +10,8 @@ public class PersonalHealthVitals {
     private String respiratoryRate;
     private String pulseRate;
 
+    public PersonalHealthVitals() {}
+
     public PersonalHealthVitals(String userId, String height, String weight, String bloodPressure, String bloodGlucose, String bodyTemperature, String respiratoryRate, String pulseRate) {
         this.userId = userId;
         this.height = height;

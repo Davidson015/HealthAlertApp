@@ -10,6 +10,8 @@ public class MedicineDosage {
     private String medicineDosageEndDate;
     private String medicineDosageFrequency;
 
+    public  MedicineDosage() {}
+
     public MedicineDosage(String userId, String medicineId, String medicineName, String medicineDosage, String medicineDosageTime, String medicineDosageStartDate, String medicineDosageEndDate, String medicineDosageFrequency) {
         this.userId = userId;
         this.medicineId = medicineId;

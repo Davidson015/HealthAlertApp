@@ -9,6 +9,8 @@ public class Appointment {
     private String appointmentLocation;
     private Boolean appointmentStatus;
 
+    public Appointment() {}
+
     public Appointment(String userId, String appointmentId, String appointmentDescription, String appointmentDate, String appointmentTime, String appointmentLocation, Boolean appointmentStatus) {
         this.userId = userId;
         this.appointmentId = appointmentId;
