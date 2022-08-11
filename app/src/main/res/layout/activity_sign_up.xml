@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,43 +16,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
+            android:gravity="center"
             android:padding="10dp"
             android:text="@string/create_account"
-            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/already_registered_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp"
                 android:text="@string/already_have_an_account"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/sign_up_txt"
+                android:id="@+id/log_in_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/already_registered_txt"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/poppins"
-                android:gravity="center_vertical"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
                 android:text="@string/log_in"
                 android:textColor="@color/blue"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -66,7 +65,8 @@
                 android:id="@+id/first_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="textPersonName" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -81,7 +81,7 @@
                 android:id="@+id/last_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -90,7 +90,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:inputType="textEmailAddress"
             android:padding="15dp"
             app:endIconMode="clear_text">
 
@@ -98,7 +97,7 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +106,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/age"
-            android:inputType="number"
             android:padding="15dp"
             app:endIconMode="clear_text">
 
@@ -115,7 +113,7 @@
                 android:id="@+id/age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -124,7 +122,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_number"
-            android:inputType="number"
             android:padding="15dp"
             app:endIconMode="clear_text">
 
@@ -132,7 +129,7 @@
                 android:id="@+id/phone_no"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,11 +139,11 @@
             android:layout_marginStart="14dp"
             android:padding="1dp"
             android:text="@string/gender"
-            android:textColor="@color/black"
             android:textSize="17sp"
             android:textStyle="bold" />
 
         <RadioGroup
+            android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -155,12 +152,14 @@
             android:orientation="horizontal">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:text="@string/male" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female" />
@@ -172,15 +171,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_password"
-            android:inputType="textPassword"
             android:padding="15dp"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password1"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                   />
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -189,24 +187,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"
-            android:inputType="textPassword"
             android:padding="15dp"
             app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password2"
+                android:id="@+id/con_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="textPassword"
                 android:textColorHint="#757575" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/sign_up_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bordered_shape"
             android:clickable="true"
             android:focusable="true"
