@@ -10,22 +10,11 @@
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="match_parent"
         android:layout_gravity="center_vertical"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/heart_animation" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/poppins"
-        android:text="Health Alert App"
-        android:textAllCaps="false"
-        android:textColor="@color/purple_500"
-        android:textSize="22sp"
-        android:textStyle="italic" />
 
 </LinearLayout>
