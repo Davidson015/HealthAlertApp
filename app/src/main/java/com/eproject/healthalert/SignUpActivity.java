@@ -10,6 +10,7 @@ import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eproject.healthalert.model.User;
@@ -27,6 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     Button signUp;
     String genderVal;
 
+    TextView login;
+
     // Creating User Object
     User user;
 
@@ -38,7 +41,13 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        // Hiding the Action Bar
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         // Initializing Registration Form Fields
+        login = findViewById(R.id.log_in_txt);
         firstName = findViewById(R.id.first_name);
         lastName = findViewById(R.id.last_name);
         email = findViewById(R.id.email);
@@ -47,6 +56,13 @@ public class SignUpActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         confirmPassword = findViewById(R.id.con_password);
         signUp = findViewById(R.id.sign_up_btn);
+
+        // Setting onClickListener for Login TextView
+        login.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
         // Initializing gender RadioGroup
         gender = findViewById(R.id.gender);

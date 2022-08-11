@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,9 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins"
+            android:gravity="center"
             android:padding="10dp"
             android:text="@string/create_account"
-            android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -31,18 +32,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="5dp"
                 android:text="@string/already_have_an_account"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/sign_up_txt"
+                android:id="@+id/log_in_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
-                android:layout_marginStart="-5dp"
                 android:fontFamily="@font/poppins"
                 android:text="@string/log_in"
                 android:textColor="@color/blue"
@@ -65,7 +66,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName" />
-                
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

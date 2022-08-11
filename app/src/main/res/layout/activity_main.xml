@@ -1,53 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:fitsSystemWindows="true"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/app_name"
-        android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:textSize="24sp"
-        android:id="@+id/header_title"
-        android:textStyle="bold"
-        app:drawableStartCompat="@drawable/ic_logo"
+        android:layout_marginTop="25dp"
         android:drawablePadding="5dp"
-        />
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_logo" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"/>
+        android:layout_centerVertical="true" />
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/dots_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/register_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        app:dotsClickable="true"
         app:dotsColor="@color/blue"
-        app:dotsStrokeColor="@color/blue_grey"
         app:dotsCornerRadius="8dp"
         app:dotsSize="12dp"
         app:dotsSpacing="4dp"
-        app:dotsStrokeWidth="2dp"
-        app:dotsClickable="true"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/register_btn"
-        android:layout_marginBottom="15dp"
-        />
+        app:dotsStrokeColor="@color/blue_grey"
+        app:dotsStrokeWidth="2dp" />
 
     <Button
         android:id="@+id/register_btn"
@@ -64,13 +61,13 @@
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/log_in"
-        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/blue_grey"
         android:paddingVertical="15dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:text="@string/log_in"
+        android:textSize="18sp" />
 
 </RelativeLayout>
