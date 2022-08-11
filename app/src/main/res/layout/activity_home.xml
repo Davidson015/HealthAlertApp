@@ -12,7 +12,7 @@
         android:id="@+id/profile_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        android:background="@color/sky_blue">
 
         <ImageView
             android:id="@+id/user_profile_pic"
@@ -78,9 +78,9 @@
                     android:clickable="true"
                     android:elevation="5dp"
                     android:focusable="true"
-                    app:cardBackgroundColor="@color/greyish"
                     android:foreground="?selectableItemBackground"
                     android:padding="20dp"
+                    app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="10dp"
                     app:contentPadding="10dp">
 
@@ -92,7 +92,8 @@
                         android:padding="5dp"
                         android:text="@string/appointments"
                         android:textAlignment="center"
-                        android:textSize="21sp" />
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="150dp"
@@ -116,9 +117,9 @@
                     android:clickable="true"
                     android:elevation="5dp"
                     android:focusable="true"
-                    app:cardBackgroundColor="@color/greyish"
                     android:foreground="?selectableItemBackground"
                     android:padding="20dp"
+                    app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="10dp"
                     app:contentPadding="10dp">
 
@@ -130,7 +131,8 @@
                         android:padding="5dp"
                         android:text="@string/health_vitals"
                         android:textAlignment="center"
-                        android:textSize="21sp" />
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="150dp"
@@ -154,9 +156,9 @@
                     android:clickable="true"
                     android:elevation="5dp"
                     android:focusable="true"
-                    app:cardBackgroundColor="@color/greyish"
                     android:foreground="?selectableItemBackground"
                     android:padding="20dp"
+                    app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="10dp"
                     app:contentPadding="10dp">
 
@@ -168,7 +170,8 @@
                         android:padding="5dp"
                         android:text="@string/medicine_dosages"
                         android:textAlignment="center"
-                        android:textSize="21sp" />
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -189,9 +192,10 @@
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
-                    app:cardBackgroundColor="@color/greyish"                    android:elevation="5dp"
+                    android:elevation="5dp"
                     android:foreground="?selectableItemBackground"
                     android:padding="20dp"
+                    app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="10dp"
                     app:contentPadding="10dp">
 
@@ -208,7 +212,8 @@
                             android:padding="5dp"
                             android:text="@string/appointments"
                             android:textAlignment="center"
-                            android:textSize="21sp" />
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
 
                         <ListView
                             android:id="@+id/appointment_list_view"
@@ -216,9 +221,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
                             android:minHeight="48dp"
+                            android:padding="10dp"
                             android:paddingHorizontal="5dp"
-                            tools:listitem="@layout/support_simple_spinner_dropdown_item"
-                            android:padding="10dp" />
+                            tools:listitem="@layout/support_simple_spinner_dropdown_item" />
 
                         <Button
                             android:id="@+id/view_all"
