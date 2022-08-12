@@ -9,9 +9,9 @@
     <ImageView
         android:id="@+id/img_view"
         android:layout_width="wrap_content"
-        android:layout_height="130sp"
+        android:layout_height="150sp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="30sp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/services_of_health_alert"
         tools:showIn="navigation_view" />
