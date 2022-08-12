@@ -234,6 +234,20 @@
                             android:paddingHorizontal="5dp"
                             tools:listitem="@layout/support_simple_spinner_dropdown_item" />
 
+                        <Button
+                            android:id="@+id/view_all"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/poppins"
+                            android:text="@string/view_all"
+                            android:textAlignment="textEnd"
+                            android:textSize="20sp"
+                            app:icon="@drawable/ic_arrow_forward"
+                            app:iconGravity="end"
+                            app:rippleColor="@color/blue_grey" />
+
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
