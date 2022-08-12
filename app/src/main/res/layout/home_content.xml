@@ -239,7 +239,7 @@
                             android:textSize="20sp"
                             app:icon="@drawable/ic_arrow_forward"
                             app:iconGravity="end"
-                            app:rippleColor="@color/pink" />
+                            app:rippleColor="@color/blue_grey" />
 
                     </LinearLayout>
 
