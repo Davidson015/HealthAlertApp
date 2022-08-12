@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/appointments"
-        android:icon="@android:drawable/ic_lock_idle_alarm"
-        android:title="@string/appointments" />
-    <item
-        android:id="@+id/health_vitals"
-        android:title="@string/health_vitals" />
-    <item
-        android:id="@+id/medecine"
-        android:title="@string/medicine_dosages" />
-    <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search"
-        android:title="@string/search" />
-    <item
-        android:id="@+id/sort"
-        android:title="@string/sort" />
-    <item
-        android:id="@+id/feedback"
-        android:icon="@drawable/ic_feedback"
-        android:title="@string/feedback" />
-    <item
-        android:id="@+id/contact"
-        android:enabled="true"
-        android:icon="@drawable/ic_contact"
-        android:title="@string/contact_us" />
-    <item
-        android:id="@+id/help"
-        android:icon="@drawable/ic_help"
-        android:title="@string/help" />
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/settings" />
-    <item
-        android:id="@+id/exit"
-        android:icon="@drawable/ic_exit"
-        android:title="@string/log_out" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/appointments"
+                    android:icon="@android:drawable/ic_lock_idle_alarm"
+                    android:title="@string/appointments" />
+                <item
+                    android:id="@+id/health_vitals"
+                    android:icon="@drawable/ic_health"
+                    android:title="@string/health_vitals" />
+                <item
+                    android:id="@+id/medicine"
+                    android:icon="@drawable/ic_medicine"
+                    android:title="@string/medicine_dosages" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/search"
+                    android:icon="@drawable/ic_search"
+                    android:title="@string/search" />
+                <item
+                    android:id="@+id/feedback"
+                    android:icon="@drawable/ic_feedback"
+                    android:title="@string/feedback" />
+                <item
+                    android:id="@+id/contact"
+                    android:enabled="true"
+                    android:icon="@drawable/ic_contact"
+                    android:title="@string/contact_us" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/help"
+                    android:icon="@drawable/ic_help"
+                    android:title="@string/help" />
+                <item
+                    android:id="@+id/settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/settings" />
+                <item
+                    android:id="@+id/exit"
+                    android:icon="@drawable/ic_exit"
+                    android:title="@string/log_out" />
+            </group>
+        </menu>
+    </item>
 
 </menu>
