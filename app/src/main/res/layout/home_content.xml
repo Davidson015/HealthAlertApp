@@ -70,87 +70,97 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10sp">
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/appointments_card_view"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bordered_shape"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?selectableItemBackground"
-                    app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
-                    app:cardPreventCornerOverlap="true"
-                    app:contentPadding="10dp">
+                    android:id="@+id/first_two"
+                    android:weightSum="2"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/appointment_txt"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/appointments_card_view"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:padding="5dp"
-                        android:text="@string/appointments"
-                        android:textAlignment="center"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/bordered_shape"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:layout_weight="1"
+                        android:foreground="?selectableItemBackground"
+                        app:cardBackgroundColor="@color/greyish"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp"
+                        app:cardPreventCornerOverlap="true"
+                        app:contentPadding="10dp">
 
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="30dp"
-                        android:contentDescription="@string/appointments"
-                        android:padding="5dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_medical_appointment" />
-                </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/appointment_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="@string/appointments"
+                            android:textAlignment="center"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/health_vitals_card_view"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bordered_shape"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?selectableItemBackground"
-                    app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
-                    app:contentPadding="10dp">
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:contentDescription="@string/appointments"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_medical_appointment" />
+                    </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/health_vitals_txt"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/health_vitals_card_view"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:padding="5dp"
-                        android:text="@string/health_vitals"
-                        android:textAlignment="center"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
+                        android:layout_alignParentEnd="true"
+                        android:layout_weight="1"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/bordered_shape"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?selectableItemBackground"
+                        app:cardBackgroundColor="@color/greyish"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="10dp"
+                        app:contentPadding="10dp">
 
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="100dp"
-                        android:layout_marginTop="30dp"
-                        android:contentDescription="@string/health_vitals"
-                        android:padding="5dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/ic_vital_signs" />
-                </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/health_vitals_txt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:padding="5dp"
+                            android:text="@string/health_vitals"
+                            android:textAlignment="center"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="30dp"
+                            android:contentDescription="@string/health_vitals"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_vital_signs" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/medecin_dosage_card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/appointments_card_view"
+                    android:layout_below="@+id/first_two"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
