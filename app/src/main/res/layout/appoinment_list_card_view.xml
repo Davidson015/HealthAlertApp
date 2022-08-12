@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clickable="true"
+    android:focusable="true"
+    android:checkable="true"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:contentPadding="12dp"
+    app:cardForegroundColor="?selectableItemBackground"
+    app:cardBackgroundColor="@color/greyish">
+
+    <RelativeLayout
+        android:id="@+id/appointment_type_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/greyish"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/appointment_type_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appointment_type"
+            android:textStyle="bold"
+            android:textSize="21sp"
+            />
+
+        <TextView
+            android:id="@+id/appointment_type_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_type_txt"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:padding="8dp"
+            android:text="Dentist , Dr Adam Smith" />
+
+        <TextView
+            android:id="@+id/time_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_type_txt"
+            android:layout_marginTop="35dp"
+            android:text="Time"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/location_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_type_txt"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="35dp"
+            android:text="Location"
+            android:textSize="21sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_txt"
+            android:fontFamily="@font/poppins"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:text="10:00 pm"
+            />
+
+        <TextView
+            android:id="@+id/loc_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_txt"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:padding="8dp"
+            android:text="New City Clinic" />
+
+        <TextView
+            android:id="@+id/date_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time_txt"
+            android:layout_marginTop="35dp"
+            android:textSize="21sp"
+            android:padding="8dp"
+            android:textStyle="bold"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/date_val"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date_txt"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins"
+            android:padding="8dp"
+            android:text="21st Aug 2022"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loc_val"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toStartOf="@+id/cancel_btn"
+            android:padding="5dp"
+            android:text="Edit" />
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loc_val"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:padding="5dp"
+            android:text="Cancel" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
