@@ -79,9 +79,13 @@ public class LoginActivity extends AppCompatActivity {
                                     // Showing success message through Toast
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
-//                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//                                    startActivity(intent);
-//                                    finish();
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    // Passing user details to HomeActivity
+                                    intent.putExtra("username", user.getFirstName());
+                                    intent.putExtra("email", user.getEmail());
+
+                                    startActivity(intent);
+                                    finish();
                                     System.out.println(user.getFirstName());
                                 } else {
                                     Toast.makeText(LoginActivity.this, "Invalid Password!", Toast.LENGTH_SHORT).show();
