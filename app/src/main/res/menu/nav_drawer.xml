@@ -8,15 +8,15 @@
             <group>
                 <item
                     android:id="@+id/appointments"
-                    android:icon="@android:drawable/ic_lock_idle_alarm"
+                    android:icon="@drawable/ic_medical_appointment"
                     android:title="@string/appointments" />
                 <item
                     android:id="@+id/health_vitals"
-                    android:icon="@drawable/ic_health"
+                    android:icon="@drawable/ic_vital_signs"
                     android:title="@string/health_vitals" />
                 <item
                     android:id="@+id/medicine"
-                    android:icon="@drawable/ic_medicine"
+                    android:icon="@drawable/ic_medicine_dosage"
                     android:title="@string/medicine_dosages" />
             </group>
         </menu>
