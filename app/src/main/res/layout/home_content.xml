@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/ic_login_bk">
+    android:layout_height="wrap_content">
 
     <include
         android:id="@+id/bar"
@@ -16,6 +15,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:layout_below="@+id/bar">
 
         <ImageView
@@ -24,24 +24,22 @@
             android:layout_height="70dp"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/bordered_shape"
+            android:layout_marginEnd="15dp"
             android:contentDescription="@string/profile_pic"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/ic_profile" />
 
         <TextView
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@string/hello_message"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10sp"
             android:layout_toStartOf="@+id/user_profile_pic"
             android:fontFamily="@font/poppins"
             android:gravity="center_vertical"
+            android:text="@string/hello_message"
             android:textSize="18sp" />
 
         <TextView
@@ -52,7 +50,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="20dp"
             android:layout_marginTop="2dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="10sp"
             android:layout_toStartOf="@+id/user_profile_pic"
             android:fontFamily="@font/poppins"
             android:gravity="center_vertical"
@@ -69,26 +67,25 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/appointments_card_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@drawable/bordered_shape"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
                     app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="7dp"
+                    app:cardElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:contentPadding="10dp"
-                    app:strokeColor="@color/blue"
-                    app:strokeWidth="4dp">
+                    app:contentPadding="10dp">
 
                     <TextView
                         android:id="@+id/appointment_txt"
@@ -116,19 +113,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="15dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="15dp"
                     android:background="@drawable/bordered_shape"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
                     app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="7dp"
-                    app:contentPadding="10dp"
-                    app:strokeColor="@color/blue"
-                    app:strokeWidth="4dp">
+                    app:cardElevation="10dp"
+                    app:contentPadding="10dp">
 
                     <TextView
                         android:id="@+id/health_vitals_txt"
@@ -157,18 +152,16 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/appointments_card_view"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="15dp"
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
                     app:cardBackgroundColor="@color/greyish"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="10dp"
-                    app:contentPadding="10dp"
-                    app:strokeColor="@color/blue"
-                    app:strokeWidth="4dp">
+                    app:contentPadding="10dp">
 
                     <TextView
                         android:id="@+id/medecine_txt"
@@ -194,63 +187,44 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/appointments_list_card_view"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="300sp"
                     android:layout_below="@+id/medecin_dosage_card_view"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:foreground="?selectableItemBackground"
-                    app:cardBackgroundColor="@color/greyish"
+                    app:cardBackgroundColor="?attr/colorPrimary"
                     app:cardCornerRadius="15dp"
                     app:cardElevation="10dp"
                     app:cardPreventCornerOverlap="true"
-                    app:contentPadding="10dp"
-                    app:strokeColor="@color/blue"
-                    app:strokeWidth="4dp">
+                    app:contentPadding="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/greyish"
+                        android:layout_height="match_parent"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/appointment_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
-                            android:text="@string/appointments"
+                            android:text="Upcoming Appointments"
                             android:textAlignment="center"
                             android:textSize="21sp"
                             android:textStyle="bold" />
 
                         <ListView
-                            android:id="@+id/appointment_list_view"
+                            android:id="@+id/upcoming_appts_list"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginTop="5dp"
-                            android:minHeight="48dp"
+                            android:minHeight="200dp"
                             android:padding="10dp"
                             android:paddingHorizontal="5dp"
                             tools:listitem="@layout/support_simple_spinner_dropdown_item" />
 
-                        <Button
-                            android:id="@+id/view_all"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:fontFamily="@font/poppins"
-                            android:text="@string/view_all"
-                            android:textAlignment="textEnd"
-                            android:textSize="20sp"
-                            app:icon="@drawable/ic_arrow_forward"
-                            app:iconGravity="end"
-                            app:rippleColor="@color/blue_grey" />
-
                     </LinearLayout>
-
 
                 </com.google.android.material.card.MaterialCardView>
 
