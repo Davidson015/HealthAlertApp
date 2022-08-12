@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
+
+    // Creating shared preferences
+    SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +84,14 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    // Passing user details to HomeActivity
-                                    intent.putExtra("username", user.getFirstName());
-                                    intent.putExtra("email", user.getEmail());
+                                    // Passing user details to SharedPreferences
+                                    pref = getSharedPreferences("user", MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = pref.edit();
+                                    editor.putString("email", user.getEmail());
+                                    editor.putString("username", user.getFirstName());
+
+                                    // Applying editor changes to SharedPreferences
+                                    editor.apply();
 
                                     startActivity(intent);
                                     finish();

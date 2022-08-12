@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     private long pressedTime;
+    SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +56,11 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
 
-        usernameVal = getIntent().getStringExtra("username");
+        // Getting the username from the SharedPreferences
+        pref = getSharedPreferences("user", MODE_PRIVATE);
+        usernameVal = pref.getString("username", "");
         username = findViewById(R.id.username);
+        // Setting the username to the TextView
         username.setText(String.format("Hello %s", usernameVal));
 
         l = findViewById(R.id.upcoming_appts_list);
