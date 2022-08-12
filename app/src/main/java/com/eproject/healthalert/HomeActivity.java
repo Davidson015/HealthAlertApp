@@ -21,9 +21,9 @@ import com.google.android.material.navigation.NavigationView;
 public class HomeActivity extends AppCompatActivity {
     ListView l;
     String[] appointment_description
-            = { "Appointments 1 , 22 quarry Rd , Ibaara , Abeokuta",
-                "Appointments 2 , Cultural Center , Kuto , Abeokuta",
-                "Appointments 3 , Obansanjo Library , Abeokuta"};
+            = { "22 quarry Rd , Ibaara , Abeokuta",
+                "Cultural Center , Kuto , Abeokuta",
+                "Obansanjo Library , Abeokuta"};
 
     String usernameVal;
     TextView username;
