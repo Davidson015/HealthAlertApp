@@ -3,22 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_appointment.xml" value="0.1025" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_doctor.xml" value="0.1025" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_drugs.xml" value="0.1025" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1115" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_logo.xml" value="0.1025" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_vitals.xml" value="0.1025" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_intro.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_sign_up.xml" value="0.2344139650872818" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/home_content.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_img.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_slide.xml" value="0.1" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/bordered_shape.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_appointment.xml" value="0.1045" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_blood_pressure.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_doctor.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_heart.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_login_bk.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_login_blob.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_medical_appointment.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_settings.xml" value="0.1045" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_vitals.xml" value="0.1045" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/login_shape.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_appointment.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_home.xml" value="0.18" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_intro.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_sign_up.xml" value="0.19382022471910113" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/intro_slide.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/menu/nav_drawer.xml" value="0.2234375" />
       </map>
     </option>
   </component>
@@ -27,5 +32,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.18" />
+      </ProjectState>
+    </option>
   </component>
 </project>

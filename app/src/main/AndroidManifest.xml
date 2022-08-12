@@ -17,6 +17,9 @@
         android:theme="@style/Theme.HealthAlert"
         tools:targetApi="31">
         <activity
+            android:name=".AppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
