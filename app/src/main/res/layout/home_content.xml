@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/profile_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_login_bk">
 
     <include
         android:id="@+id/bar"
@@ -34,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:text="@string/hello_message"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
@@ -62,14 +64,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/greetings"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/appointments_card_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -78,13 +80,15 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/bordered_shape"
                     android:clickable="true"
-                    android:elevation="5dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
-                    android:padding="20dp"
                     app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="10dp"
-                    app:contentPadding="10dp">
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="7dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:contentPadding="10dp"
+                    app:strokeColor="@color/blue"
+                    app:strokeWidth="4dp">
 
                     <TextView
                         android:id="@+id/appointment_txt"
@@ -105,9 +109,9 @@
                         android:padding="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_medical_appointment" />
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/health_vitals_card_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -117,13 +121,14 @@
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/bordered_shape"
                     android:clickable="true"
-                    android:elevation="5dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
-                    android:padding="20dp"
                     app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="10dp"
-                    app:contentPadding="10dp">
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="7dp"
+                    app:contentPadding="10dp"
+                    app:strokeColor="@color/blue"
+                    app:strokeWidth="4dp">
 
                     <TextView
                         android:id="@+id/health_vitals_txt"
@@ -144,9 +149,9 @@
                         android:padding="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_vital_signs" />
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/medecin_dosage_card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -156,13 +161,14 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:clickable="true"
-                    android:elevation="5dp"
                     android:focusable="true"
                     android:foreground="?selectableItemBackground"
-                    android:padding="20dp"
                     app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="10dp"
-                    app:contentPadding="10dp">
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="10dp"
+                    app:contentPadding="10dp"
+                    app:strokeColor="@color/blue"
+                    app:strokeWidth="4dp">
 
                     <TextView
                         android:id="@+id/medecine_txt"
@@ -183,9 +189,9 @@
                         android:padding="5dp"
                         android:scaleType="fitCenter"
                         android:src="@drawable/ic_medicine_dosage" />
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/appointments_list_card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -194,12 +200,14 @@
                     android:layout_marginTop="50dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
-                    android:elevation="5dp"
                     android:foreground="?selectableItemBackground"
-                    android:padding="20dp"
                     app:cardBackgroundColor="@color/greyish"
-                    app:cardCornerRadius="10dp"
-                    app:contentPadding="10dp">
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="10dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:contentPadding="10dp"
+                    app:strokeColor="@color/blue"
+                    app:strokeWidth="4dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -220,7 +228,7 @@
                         <ListView
                             android:id="@+id/appointment_list_view"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginTop="5dp"
                             android:minHeight="48dp"
                             android:padding="10dp"
@@ -239,12 +247,12 @@
                             android:textSize="20sp"
                             app:icon="@drawable/ic_arrow_forward"
                             app:iconGravity="end"
-                            app:rippleColor="@color/pink" />
+                            app:rippleColor="@color/blue_grey" />
 
                     </LinearLayout>
 
 
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </RelativeLayout>
         </ScrollView>
