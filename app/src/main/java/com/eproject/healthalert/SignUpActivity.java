@@ -86,10 +86,10 @@ public class SignUpActivity extends AppCompatActivity {
         // Signing up the user
         signUp.setOnClickListener(v -> {
 
-            String userId = firstName.getText().toString() + lastName.getText().toString();
+            String userId = firstName.getText().toString().replace(" ", "") + lastName.getText().toString();
 
             // Setting up User
-            user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString());
+            user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
