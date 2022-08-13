@@ -111,35 +111,64 @@ public class HomeActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
-//        switch (menuItem.getItemId()) {
-//            case R.id.home:
-//                intent = new Intent(ScheduleActivity.this, HomeActivity.class);
+        switch (menuItem.getItemId()) {
+            case R.id.appointments:
+                intent = new Intent(HomeActivity.this, AppointmentActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+//            case R.id.health_vitals:
+//                intent = new Intent(HomeActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.schedules:
-//                drawer.closeDrawers();
+//            case R.id.medicine:
+//                intent = new Intent(HomeActivity.this, MedicineActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.feedback:
+//                intent = new Intent(HomeActivity.this, FeedbackActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.contact:
+//                intent = new Intent(HomeActivity.this, ContactActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.help:
+//                intent = new Intent(HomeActivity.this, HelpActivity.class);
+//                startActivity(intent);
+//                finish();
 //                break;
 //            case R.id.settings:
-//                intent = new Intent(ScheduleActivity.this, SettingsActivity.class);
+//                intent = new Intent(HomeActivity.this, SettingsActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.about:
-//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            case R.id.exit_app:
-//                // Confirming if the user wants to exit the app
-//                confirmExit();
-//                break;
-//            default:
-//                break;
-//        }
+            case R.id.logout:
+                // Redirecting User to MainActivity
+                intent = new Intent(HomeActivity.this, MainActivity.class);
 
-//        menuItem.setChecked(true);
-//        setTitle(menuItem.getTitle());
+                // Displaying a Toast message
+                Toast.makeText(HomeActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+
+                startActivity(intent);
+                finishAffinity();
+
+                // Clearing the SharedPreferences
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
+
+                break;
+            default:
+                break;
+        }
+
+        menuItem.setChecked(true);
+        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 
