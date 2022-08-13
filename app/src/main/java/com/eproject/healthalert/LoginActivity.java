@@ -3,9 +3,12 @@ package com.eproject.healthalert;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,11 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        // Hiding the Action Bar
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
         // Initializing form fields
         email = findViewById(R.id.email);
@@ -111,5 +109,18 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    // Creating the setWindowFlag method
+    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
+
+        Window win = activity.getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
     }
 }

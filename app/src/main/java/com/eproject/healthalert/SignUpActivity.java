@@ -4,10 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -40,11 +46,6 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-
-        // Hiding the Action Bar
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
         // Initializing Registration Form Fields
         login = findViewById(R.id.log_in_txt);
@@ -86,10 +87,11 @@ public class SignUpActivity extends AppCompatActivity {
         // Signing up the user
         signUp.setOnClickListener(v -> {
 
-            String userId = firstName.getText().toString().replace(" ", "") + lastName.getText().toString();
-
             // Setting up User
             user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
+
+            // creating a user reference(UserId)
+            String userId = user.getFirstName() + user.getLastName();
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
@@ -134,7 +136,11 @@ public class SignUpActivity extends AppCompatActivity {
                             // Creating Toast to show error
                             Toast.makeText(SignUpActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Log.d("firebase", "User not found", task.getException());
+                            Log.d("firebase", "Safe to create user", task.getException());
+
+                            // Capitalizing the first letter of the first name and last name
+                            user.setFirstName(user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1));
+                            user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
 
                             // Adding user to database
                             database.getReference("users").child(userId).setValue(user);
@@ -147,5 +153,18 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    // Creating the setWindowFlag method
+    public static void setWindowFlag(Activity activity, final int bits, boolean on) {
+
+        Window win = activity.getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
     }
 }
