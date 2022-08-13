@@ -108,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
             user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
 
             // creating a user reference(UserId)
-            String userId = firstName.getText().toString().replace(" ", "") + lastName.getText().toString();
+            String userId = user.getFirstName() + user.getLastName();
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
