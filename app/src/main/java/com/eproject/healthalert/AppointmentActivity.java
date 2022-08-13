@@ -27,6 +27,7 @@ public class AppointmentActivity extends AppCompatActivity {
     CardView card;
     Intent intent;
     DrawerLayout drawer;
+    Button addbtn, editbtn;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -39,7 +40,9 @@ public class AppointmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment);
-        Button addbtn = findViewById(R.id.add_appointment_btn);
+
+        addbtn = findViewById(R.id.add_appointment_btn);
+        editbtn = findViewById(R.id.edit_btn);
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
@@ -63,25 +66,26 @@ public class AppointmentActivity extends AppCompatActivity {
 
         appointmentArrayList = new ArrayList<>();
 
-        appointmentArrayList.add(new Appointment("","","Dr Adam Smith ,Dentist Meeting","21st Aug 2022","10:00 am","New City Clinic",true));
-        appointmentArrayList.add(new Appointment("","","Dr Adam Smith ,Dentist Meeting","21st Aug 2022","10:00 am","New City Clinic",true));
-        appointmentArrayList.add(new Appointment("","","Dr Adam Smith ,Dentist Meeting","21st Aug 2022","10:00 am","New City Clinic",true));
-        appointmentArrayList.add(new Appointment("",""," Dr Angel Smith,Gynecologist","23rd Sep 2022","08:00 am","Lagoon Hospital",true));
-        appointmentArrayList.add(new Appointment("",""," Dr Angel Smith,Gynecologist Checkup","23rd Sep 2022","08:00 am","Lagoon Hospital",false));
-        appointmentArrayList.add(new Appointment("","","Dr Beau Hightower , Chiropractic Adjustment ","21st Aug 2022","10:00 am","New City Clinic",true));
+        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
+        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
+        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
+        appointmentArrayList.add(new Appointment("", "", " Dr Angel Smith,Gynecologist", "23rd Sep 2022", "08:00 am", "Lagoon Hospital", true));
+        appointmentArrayList.add(new Appointment("", "", " Dr Angel Smith,Gynecologist Checkup", "23rd Sep 2022", "08:00 am", "Lagoon Hospital", false));
+        appointmentArrayList.add(new Appointment("", "", "Dr Beau Hightower , Chiropractic Adjustment ", "21st Aug 2022", "10:00 am", "New City Clinic", true));
 
 
-        AppointmentAdapter appointmentAdapter = new AppointmentAdapter(this,appointmentArrayList);
+        AppointmentAdapter appointmentAdapter = new AppointmentAdapter(this, appointmentArrayList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         appointment_recyclerView.setLayoutManager(linearLayoutManager);
         appointment_recyclerView.setAdapter(appointmentAdapter);
 
-        // make card checkable
+
         addbtn.setOnClickListener(v -> {
-            Intent intent = new Intent(AppointmentActivity.this, AddAppointmentActivity.class);
+            intent = new Intent(AppointmentActivity.this, AddAppointmentActivity.class);
             startActivity(intent);
         });
+
 
     }
 
