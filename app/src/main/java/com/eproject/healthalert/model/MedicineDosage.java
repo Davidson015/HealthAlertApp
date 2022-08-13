@@ -2,7 +2,6 @@ package com.eproject.healthalert.model;
 
 public class MedicineDosage {
     private String userEmail;
-    private String medicineId;
     private String medicineName;
     private String medicineDosage;
     private String medicineDosageTime;
@@ -12,9 +11,8 @@ public class MedicineDosage {
 
     public  MedicineDosage() {}
 
-    public MedicineDosage(String userEmail, String medicineId, String medicineName, String medicineDosage, String medicineDosageTime, String medicineDosageStartDate, String medicineDosageEndDate, String medicineDosageFrequency) {
+    public MedicineDosage(String userEmail, String medicineName, String medicineDosage, String medicineDosageTime, String medicineDosageStartDate, String medicineDosageEndDate, String medicineDosageFrequency) {
         this.userEmail = userEmail;
-        this.medicineId = medicineId;
         this.medicineName = medicineName;
         this.medicineDosage = medicineDosage;
         this.medicineDosageTime = medicineDosageTime;
@@ -29,14 +27,6 @@ public class MedicineDosage {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
-    }
-
-    public String getMedicineId() {
-        return medicineId;
-    }
-
-    public void setMedicineId(String medicineId) {
-        this.medicineId = medicineId;
     }
 
     public String getMedicineName() {
