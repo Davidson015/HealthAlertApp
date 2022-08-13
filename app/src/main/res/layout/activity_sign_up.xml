@@ -156,12 +156,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
+                android:buttonTint="@color/greyish"
                 android:text="@string/male" />
 
             <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/greyish"
                 android:text="@string/female" />
 
         </RadioGroup>

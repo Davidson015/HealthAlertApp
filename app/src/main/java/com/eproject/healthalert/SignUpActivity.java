@@ -100,14 +100,15 @@ public class SignUpActivity extends AppCompatActivity {
         // Signing up the user
         signUp.setOnClickListener(v -> {
 
-            String userId = firstName.getText().toString().replace(" ", "") + lastName.getText().toString();
-
             // Setting up User
             user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
 
             // Capitalizing the first letter of the first name and last name
             user.setFirstName(user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1));
             user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
+
+            // creating a user reference(UserId)
+            String userId = firstName.getText().toString().replace(" ", "") + lastName.getText().toString();
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
