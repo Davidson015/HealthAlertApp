@@ -1,108 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
     app:cardBackgroundColor="?android:attr/colorPrimary"
+    app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
     app:contentPadding="5dp">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/medicine_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="6"
-        android:padding="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <ImageView
+            android:id="@+id/medicine_img"
             android:layout_width="90sp"
-            android:layout_weight="1"
             android:layout_height="90sp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_medicine_dosage"/>
+            android:src="@drawable/ic_medicine_dosage" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_centerHorizontal="true">
+
             <TextView
                 android:id="@+id/medicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fluoride"
-                android:textAlignment="textStart"
                 android:layout_marginStart="15sp"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="monospace"
                 android:paddingStart="15sp"
                 android:paddingEnd="5sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="5sp"
-                android:textSize="20sp" />
+                android:text="Fluoride"
+                android:textAlignment="textStart"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/interval"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8 hours Interval"
                 android:layout_below="@id/medicine"
-                android:textAlignment="textStart"
                 android:layout_marginStart="15sp"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="monospace"
                 android:paddingStart="15sp"
                 android:paddingEnd="5sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="5sp"
-                android:textSize="20sp"
+                android:text="8 hours Interval"
+                android:textAlignment="textStart"
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
-                />
             <TextView
                 android:id="@+id/dosage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2 times daily"
                 android:layout_below="@id/interval"
-                android:textAlignment="textStart"
                 android:layout_marginStart="15sp"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="monospace"
                 android:paddingStart="15sp"
                 android:paddingEnd="5sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="5sp"
-                android:textSize="20sp"
-
-                />
+                android:text="2 times daily"
+                android:textAlignment="textStart"
+                android:textSize="17sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-        android:layout_width="80sp"
-        android:layout_height="100sp"
-        android:padding="10dp"
-        android:background="@color/greyish"
-        android:gravity="end"
-        android:layout_gravity="end"
-        android:layout_weight="1">
+            android:layout_width="80sp"
+            android:layout_height="100sp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:background="@drawable/colored_border_shape"
+            android:gravity="end"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/tablet_no"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="33sp"
-            android:textStyle="bold"
-            android:text="2">
-        </TextView>
+            <TextView
+                android:id="@+id/tablet_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textAlignment="center"
+                android:textSize="33sp"
+                android:textStyle="bold"></TextView>
 
-        <TextView
-            android:layout_below="@+id/tablet_no"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:text="Tablets">
-        </TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tablet_no"
+                android:fontFamily="@font/poppins"
+                android:text="Tablets"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"></TextView>
 
         </RelativeLayout>
 
+    </RelativeLayout>
 
-    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>
 

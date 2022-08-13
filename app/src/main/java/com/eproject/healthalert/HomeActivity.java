@@ -111,20 +111,20 @@ public class HomeActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
-//        switch (menuItem.getItemId()) {
-//            case R.id.home:
-//                intent = new Intent(ScheduleActivity.this, HomeActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            case R.id.schedules:
+        switch (menuItem.getItemId()) {
+            case R.id.appointments:
+                intent = new Intent(HomeActivity.this, AppointmentActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+//            case R.id.medicine:
 //                drawer.closeDrawers();
 //                break;
-//            case R.id.settings:
-//                intent = new Intent(ScheduleActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.medicine:
+                intent = new Intent(HomeActivity.this, MedicalDosageActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.about:
 //                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
 //                startActivity(intent);
@@ -134,12 +134,12 @@ public class HomeActivity extends AppCompatActivity {
 //                // Confirming if the user wants to exit the app
 //                confirmExit();
 //                break;
-//            default:
-//                break;
-//        }
+            default:
+                break;
+        }
 
-//        menuItem.setChecked(true);
-//        setTitle(menuItem.getTitle());
+        menuItem.setChecked(true);
+        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 
