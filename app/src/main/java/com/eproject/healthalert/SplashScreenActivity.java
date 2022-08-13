@@ -3,7 +3,9 @@ package com.eproject.healthalert;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -35,6 +37,15 @@ public class SplashScreenActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
 
+        // Checking if the device is running on a version of Android that supports dark mode
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Checking if the device is in dark mode
+            if (!isNightMode(this)) {
+                // Setting the status bar color to dark
+                getWindow().getDecorView().setSystemUiVisibility( View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+        }
+
         new Handler().postDelayed(() -> {
             Intent i = new Intent(SplashScreenActivity.this,
                     MainActivity.class);
@@ -59,5 +70,11 @@ public class SplashScreenActivity extends AppCompatActivity {
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+    // Creating the isNightMode method
+    public boolean isNightMode(Context context) {
+        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 }

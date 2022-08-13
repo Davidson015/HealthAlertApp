@@ -47,23 +47,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Making the Status Transparent
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
-        }
-        if (Build.VERSION.SDK_INT >= 19) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-        //make fully Android Transparent Status bar
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
-            if (!isNightMode(this)) {
-                getWindow().setStatusBarColor(Color.WHITE);
-            } else {
-                getWindow().setStatusBarColor(Color.DKGRAY);
-            }
-        }
-
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
@@ -202,8 +185,8 @@ public class HomeActivity extends AppCompatActivity {
         win.setAttributes(winParams);
     }
 
-    public boolean isNightMode(Context context) {
-        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
-    }
+//    public boolean isNightMode(Context context) {
+//        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+//        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
+//    }
 }
