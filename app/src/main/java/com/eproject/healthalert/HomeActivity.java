@@ -73,8 +73,8 @@ public class HomeActivity extends AppCompatActivity {
 
         l = findViewById(R.id.upcoming_appts_list);
 
-        ArrayAdapter<String> arr = new ArrayAdapter<String>(
-                this , com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
+        ArrayAdapter<String> arr = new ArrayAdapter<>(
+                this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
                 appointment_description
         );
         l.setAdapter(arr);
@@ -149,7 +149,6 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 break;
         }
-
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawer.closeDrawers();

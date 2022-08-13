@@ -8,8 +8,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:openDrawer="start"
-    tools:context=".MainActivity"
-    android:background="@drawable/ic_home_bkd">
+    tools:context=".MainActivity">
 
     <include
         layout="@layout/home_content"
