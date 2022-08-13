@@ -98,37 +98,30 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.appointments:
                 intent = new Intent(HomeActivity.this, AppointmentActivity.class);
                 startActivity(intent);
-                finish();
                 break;
 //            case R.id.health_vitals:
 //                intent = new Intent(HomeActivity.this, HealthVitals.class);
 //                startActivity(intent);
-//                finish();
 //                break;
 //            case R.id.medicine:
 //                intent = new Intent(HomeActivity.this, MedicineActivity.class);
 //                startActivity(intent);
-//                finish();
 //                break;
 //            case R.id.feedback:
 //                intent = new Intent(HomeActivity.this, FeedbackActivity.class);
 //                startActivity(intent);
-//                finish();
 //                break;
 //            case R.id.contact:
 //                intent = new Intent(HomeActivity.this, ContactActivity.class);
 //                startActivity(intent);
-//                finish();
 //                break;
 //            case R.id.help:
 //                intent = new Intent(HomeActivity.this, HelpActivity.class);
 //                startActivity(intent);
-//                finish();
 //                break;
 //            case R.id.settings:
 //                intent = new Intent(HomeActivity.this, SettingsActivity.class);
 //                startActivity(intent);
-//                finish();
 //                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
@@ -137,8 +130,8 @@ public class HomeActivity extends AppCompatActivity {
                 // Displaying a Toast message
                 Toast.makeText(HomeActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
 
-                startActivity(intent);
                 finishAffinity();
+                startActivity(intent);
 
                 // Clearing the SharedPreferences
                 SharedPreferences.Editor editor = pref.edit();

@@ -163,20 +163,15 @@ public class AppointmentActivity extends AppCompatActivity {
         drawer.closeDrawers();
     }
 
-    // Creating the onBackPressed method to handle the back button press
+    // Overriding the onBackPressed method
     @SuppressLint("RtlHardcoded")
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(Gravity.LEFT)) {
             drawer.closeDrawer(Gravity.LEFT);
         } else {
-            if (pressedTime + 2000 > System.currentTimeMillis()) {
-                super.onBackPressed();
-                finishAffinity();
-            } else {
-                Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
-            }
-            pressedTime = System.currentTimeMillis();
+            super.onBackPressed();
+            finish();
         }
     }
 }
