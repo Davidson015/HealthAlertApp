@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.eproject.healthalert.adapter.IntroViewAdapter;
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator;
 
 import java.util.Timer;
