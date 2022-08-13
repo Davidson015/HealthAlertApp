@@ -68,12 +68,12 @@ public class AppointmentActivity extends AppCompatActivity {
 
         appointmentArrayList = new ArrayList<>();
 
-        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
-        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
-        appointmentArrayList.add(new Appointment("", "", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic", true));
-        appointmentArrayList.add(new Appointment("", "", " Dr Angel Smith,Gynecologist", "23rd Sep 2022", "08:00 am", "Lagoon Hospital", true));
-        appointmentArrayList.add(new Appointment("", "", " Dr Angel Smith,Gynecologist Checkup", "23rd Sep 2022", "08:00 am", "Lagoon Hospital", false));
-        appointmentArrayList.add(new Appointment("", "", "Dr Beau Hightower , Chiropractic Adjustment ", "21st Aug 2022", "10:00 am", "New City Clinic", true));
+        appointmentArrayList.add(new Appointment("", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic"));
+        appointmentArrayList.add(new Appointment("", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic"));
+        appointmentArrayList.add(new Appointment("", "Dr Adam Smith ,Dentist Meeting", "21st Aug 2022", "10:00 am", "New City Clinic"));
+        appointmentArrayList.add(new Appointment("", "Dr Angel Smith,Gynecologist", "23rd Sep 2022", "08:00 am", "Lagoon Hospital"));
+        appointmentArrayList.add(new Appointment("", "Dr Angel Smith,Gynecologist Checkup", "23rd Sep 2022", "08:00 am", "Lagoon Hospital"));
+        appointmentArrayList.add(new Appointment("", "Dr Beau Hightower , Chiropractic Adjustment ", "21st Aug 2022", "10:00 am", "New City Clinic"));
 
 
         AppointmentAdapter appointmentAdapter = new AppointmentAdapter(this, appointmentArrayList);

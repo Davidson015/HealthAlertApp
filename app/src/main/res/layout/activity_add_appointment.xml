@@ -25,14 +25,13 @@
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/appointment_type_edit_val"
+            android:id="@+id/appointment_desc_edit_val"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/greyish"
             android:inputType="textLongMessage" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -42,10 +41,9 @@
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loc_val"
+            android:id="@+id/loc_edit_val"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:background="@color/greyish"
             android:inputType="textCapWords" />
 
@@ -83,8 +81,8 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
