@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="?android:attr/colorPrimary"
+    app:cardElevation="10dp"
+    app:contentPadding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="6"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="90sp"
+            android:layout_weight="1"
+            android:layout_height="90sp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_medicine_dosage"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fluoride"
+                android:textAlignment="textStart"
+                android:layout_marginStart="15sp"
+                android:paddingStart="15sp"
+                android:paddingEnd="5sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5sp"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8 hours Interval"
+                android:layout_below="@id/medicine"
+                android:textAlignment="textStart"
+                android:layout_marginStart="15sp"
+                android:paddingStart="15sp"
+                android:paddingEnd="5sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5sp"
+                android:textSize="20sp"
+
+                />
+            <TextView
+                android:id="@+id/dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 times daily"
+                android:layout_below="@id/interval"
+                android:textAlignment="textStart"
+                android:layout_marginStart="15sp"
+                android:paddingStart="15sp"
+                android:paddingEnd="5sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="5sp"
+                android:textSize="20sp"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+        android:layout_width="80sp"
+        android:layout_height="100sp"
+        android:padding="10dp"
+        android:background="@color/greyish"
+        android:gravity="end"
+        android:layout_gravity="end"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tablet_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="33sp"
+            android:textStyle="bold"
+            android:text="2">
+        </TextView>
+
+        <TextView
+            android:layout_below="@+id/tablet_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Tablets">
+        </TextView>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
+
+
+
