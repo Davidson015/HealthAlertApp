@@ -1,10 +1,13 @@
 package com.eproject.healthalert;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.eproject.healthalert.adapter.AppointmentAdapter;
 import com.eproject.healthalert.model.Appointment;
@@ -14,7 +17,10 @@ import java.util.ArrayList;
 
 public class AppointmentActivity extends AppCompatActivity {
 
-    private MaterialCardView card;
+    CardView card;
+    Button addbtn;
+    Intent intent;
+
     private RecyclerView appointment_recyclerView;
 
     private ArrayList<Appointment> appointmentArrayList;
@@ -24,6 +30,7 @@ public class AppointmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment);
 
+//        Setting Recycler View for Appointment cards
         appointment_recyclerView = findViewById(R.id.recyclerview);
 
         appointmentArrayList = new ArrayList<>();
@@ -41,6 +48,8 @@ public class AppointmentActivity extends AppCompatActivity {
 
         appointment_recyclerView.setLayoutManager(linearLayoutManager);
         appointment_recyclerView.setAdapter(appointmentAdapter);
+
+        // make card checkable
 
     }
 }
