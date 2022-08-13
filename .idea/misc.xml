@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_appointment.xml" value="0.1045" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_blood_pressure.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_doctor.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_exit.xml" value="0.1045" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_heart.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_home_bkd.xml" value="0.1045" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_home_dsn.xml" value="0.1045" />
@@ -28,7 +29,9 @@
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/appoinment_list_card_view.xml" value="0.1" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/home_content.xml" value="0.18" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/intro_slide.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/medicine_dosage_list_card_view.xml" value="0.1" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/menu/nav_drawer.xml" value="0.2234375" />
       </map>
     </option>

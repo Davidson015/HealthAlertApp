@@ -9,6 +9,7 @@
     android:checkable="true"
     app:cardCornerRadius="9dp"
     app:cardElevation="10dp"
+    android:layout_margin="10sp"
     android:layout_marginBottom="10dp"
     app:cardForegroundColor="?selectableItemBackground">
 
@@ -24,13 +25,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/appointment_type"
-            android:textStyle="bold"
             android:textSize="21sp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/appointment_type_val"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/appointment_type_txt"
             android:layout_marginBottom="10dp"
@@ -64,11 +64,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/time_txt"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins"
             android:padding="8dp"
-            android:layout_marginBottom="10dp"
-            android:text="10:00 pm"
-            />
+            android:text="10:00 pm" />
 
         <TextView
             android:id="@+id/loc_val"
@@ -87,8 +86,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/time_txt"
             android:layout_marginTop="35dp"
+            android:layout_alignParentStart="true"
             android:textSize="21sp"
-            android:padding="8dp"
+            android:padding="6dp"
             android:textStyle="bold"
             android:text="@string/date" />
 
@@ -133,7 +133,7 @@
                     android:padding="5sp"
                     app:strokeWidth="2dp"
                     app:strokeColor="?android:attr/colorPrimary"
-                    android:text="@string/cancel"
+                    android:text="@string/delete"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon" />
             </LinearLayout>
 
