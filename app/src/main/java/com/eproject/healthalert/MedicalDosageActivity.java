@@ -24,10 +24,8 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 
 public class MedicalDosageActivity extends AppCompatActivity {
-    CardView card;
     Intent intent;
     DrawerLayout drawer;
-    Button addbtn, editbtn;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -40,6 +38,7 @@ public class MedicalDosageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_dosage);
+
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
@@ -63,12 +62,12 @@ public class MedicalDosageActivity extends AppCompatActivity {
 
         dosageArrayList = new ArrayList<>();
 
-        dosageArrayList.add(new MedicineDosage("001", "Fl1022", "Fluoride", "2 times a day", "10:00pm", "10/08/2022", "20/08/2022", "2 Tablets"));
-        dosageArrayList.add(new MedicineDosage("002", "cit0056", "Vitamins", "3 times a day", "Any time", "anytime", "anytime", "1 Tablets"));
-        dosageArrayList.add(new MedicineDosage("003", "Ib003", "Ibruprofen", "2 times a day", "Morning and evening", "14/08/2022", "16/08/2022", "2 Tablets"));
-        dosageArrayList.add(new MedicineDosage("014", "Chlr009", "Chloroquine", "2 times a day", "8 hours Interval", "15/09/2022", "17/09/2022", "1 Tablet every day"));
-        dosageArrayList.add(new MedicineDosage("008", "aplne009", "Amplodipine", "Once  a day", "Morning and evening", "5/09/2022", "17/09/2022", "1 Tablet every day"));
-        dosageArrayList.add(new MedicineDosage("039", "emz0098", "Emzor Paracetamol", "2 times a day", "Morning and evening", "anytime", "anytime", "2 Tablet every day"));
+        dosageArrayList.add(new MedicineDosage("001", "Fl1022", "Fluoride", "2 times daily", "10 hours interval", "10/08/2022", "20/08/2022", "2"));
+        dosageArrayList.add(new MedicineDosage("002", "cit0056", "Vitamins", "3 times daily", "Any time", "anytime", "anytime", "1"));
+        dosageArrayList.add(new MedicineDosage("003", "Ib003", "Ibruprofen", "2 times daily", "Morning and evening", "14/08/2022", "16/08/2022", "2"));
+        dosageArrayList.add(new MedicineDosage("014", "Chlr009", "Chloroquine", "2 times daily", "8 hours Interval", "15/09/2022", "17/09/2022", "1"));
+        dosageArrayList.add(new MedicineDosage("008", "aplne009", "Amplodipine", "Once  daily", "Morning and evening", "5/09/2022", "17/09/2022", "1"));
+        dosageArrayList.add(new MedicineDosage("039", "emz0098", "Emzor Paracetamol", "2 times daily", "Morning and evening", "anytime", "anytime", "2 "));
 
 
         MedicalDosageAdapter dosageAdapter = new MedicalDosageAdapter(this, dosageArrayList);
@@ -77,11 +76,12 @@ public class MedicalDosageActivity extends AppCompatActivity {
         dosage_recyclerView.setLayoutManager(linearLayoutManager);
         dosage_recyclerView.setAdapter(dosageAdapter);
 
-        addbtn.findViewById(R.id.add_dosage_btn);
-//        addbtn.setOnClickListener(v -> {
-//            intent = new Intent(MedicalDosageActivity.this, AdddosageActivity.class);
-//            startActivity(intent);
-//        });
+        Button addbtn = findViewById(R.id.add_dosage_btn);
+
+        addbtn.setOnClickListener(v -> {
+            intent = new Intent(MedicalDosageActivity.this, AddDosageActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -103,11 +103,11 @@ public class MedicalDosageActivity extends AppCompatActivity {
             case R.id.medicine:
                 drawer.closeDrawers();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(ScheduleActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.appointments:
+                intent = new Intent(MedicalDosageActivity.this, AppointmentActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.health_vitals:
 //                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
 //                startActivity(intent);

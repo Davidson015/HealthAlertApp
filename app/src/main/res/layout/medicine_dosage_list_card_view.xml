@@ -16,14 +16,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10sp">
 
         <ImageView
             android:id="@+id/medicine_img"
-            android:layout_width="90sp"
-            android:layout_height="90sp"
+            android:layout_width="80sp"
+            android:layout_height="60sp"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_medicine_dosage" />
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_medicine_tablets" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -31,17 +32,17 @@
             android:layout_centerHorizontal="true">
 
             <TextView
-                android:id="@+id/medicine"
+                android:id="@id/medicine"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15sp"
+                android:layout_marginStart="4sp"
                 android:layout_marginBottom="5sp"
                 android:fontFamily="monospace"
-                android:paddingStart="15sp"
+                android:paddingStart="5sp"
                 android:paddingEnd="5sp"
-                android:text="Fluoride"
+                android:text=""
                 android:textAlignment="textStart"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -49,12 +50,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/medicine"
-                android:layout_marginStart="15sp"
-                android:layout_marginBottom="5sp"
+                android:layout_marginStart="4sp"
                 android:fontFamily="monospace"
-                android:paddingStart="15sp"
+                android:paddingStart="5sp"
                 android:paddingEnd="5sp"
-                android:text="8 hours Interval"
+                android:text=""
                 android:textAlignment="textStart"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -64,12 +64,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/interval"
-                android:layout_marginStart="15sp"
+                android:layout_marginStart="4sp"
                 android:layout_marginBottom="5sp"
                 android:fontFamily="monospace"
-                android:paddingStart="15sp"
+                android:paddingStart="5sp"
                 android:paddingEnd="5sp"
-                android:text="2 times daily"
+                android:text=""
                 android:textAlignment="textStart"
                 android:textSize="17sp"
                 android:textStyle="bold" />
@@ -77,31 +77,34 @@
 
         <RelativeLayout
             android:layout_width="80sp"
-            android:layout_height="100sp"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_gravity="end"
             android:background="@drawable/colored_border_shape"
             android:gravity="end"
-            android:padding="10dp">
+            android:padding="7dp">
 
             <TextView
                 android:id="@+id/tablet_no"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text=""
                 android:textAlignment="center"
-                android:textSize="33sp"
-                android:textStyle="bold"></TextView>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tablet_no"
                 android:fontFamily="@font/poppins"
                 android:text="Tablets"
                 android:textAlignment="center"
                 android:textSize="16sp"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

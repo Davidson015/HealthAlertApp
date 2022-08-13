@@ -41,9 +41,9 @@ public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdap
         MedicineDosage model = dosageArrayList.get(position);
         holder.medicineName.setText(model.getMedicineName());
         holder.medicineDosage.setText(model.getMedicineDosage());
+//        holder.medicineDosageStartDate.setText(model.getMedicineDosageStartDate());
+//        holder.medicineDosageEndDate.setText(model.getMedicineDosageEndDate());
         holder.medicineDosageTime.setText(model.getMedicineDosageTime());
-        holder.medicineDosageStartDate.setText(model.getMedicineDosageStartDate());
-        holder.medicineDosageEndDate.setText(model.getMedicineDosageEndDate());
         holder.medicineDosageFrequency.setText(model.getMedicineDosageFrequency());
 
     }
@@ -59,7 +59,7 @@ public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdap
         private final TextView medicineName;
         private final TextView medicineDosage;
         private final TextView medicineDosageTime;
-        private TextView medicineDosageStartDate;
+        //        private TextView medicineDosageStartDate;
         private TextView medicineDosageEndDate;
         private final TextView medicineDosageFrequency;
 
@@ -67,11 +67,12 @@ public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdap
         public Viewholder(@NonNull View itemView) {
             super(itemView);
             medicineName = itemView.findViewById(R.id.medicine);
-            medicineDosage = itemView.findViewById(R.id.tablet_no);
-            medicineDosageStartDate = itemView.findViewById(R.id.date_val);
+            medicineDosage = itemView.findViewById(R.id.dosage);
+//            medicineDosageStartDate = itemView.findViewById(R.id.interval);
+            medicineDosageTime = itemView.findViewById(R.id.interval);
+
             //medicineDosageEndDate =
-            medicineDosageTime = itemView.findViewById(R.id.time_val);
-            medicineDosageFrequency = itemView.findViewById(R.id.dosage);
+            medicineDosageFrequency = itemView.findViewById(R.id.tablet_no);
 
         }
     }
