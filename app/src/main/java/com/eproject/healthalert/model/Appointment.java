@@ -1,7 +1,7 @@
 package com.eproject.healthalert.model;
 
 public class Appointment {
-    private String userId;
+    private String userEmail;
     private String appointmentId;
     private String appointmentDescription;
     private String appointmentDate;
@@ -11,8 +11,8 @@ public class Appointment {
 
     public Appointment() {}
 
-    public Appointment(String userId, String appointmentId, String appointmentDescription, String appointmentDate,String appointmentTime , String appointmentLocation,boolean appointmentStatus ) {
-        this.userId = userId;
+    public Appointment(String userEmail, String appointmentId, String appointmentDescription, String appointmentDate,String appointmentTime , String appointmentLocation,boolean appointmentStatus ) {
+        this.userEmail = userEmail;
         this.appointmentId = appointmentId;
         this.appointmentDescription = appointmentDescription;
         this.appointmentDate = appointmentDate;
@@ -21,12 +21,12 @@ public class Appointment {
         this.appointmentStatus = appointmentStatus;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getAppointmentId() {
