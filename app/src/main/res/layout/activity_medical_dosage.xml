@@ -24,7 +24,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/add_appointment_btn"
+            android:id="@+id/add_dosage_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"

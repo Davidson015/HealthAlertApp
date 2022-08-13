@@ -16,12 +16,12 @@ import java.util.ArrayList;
 
 
 public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdapter.Viewholder> {
-    
+
     private Context context;
     private ArrayList<MedicineDosage> dosageArrayList;
 
     //    Constructor
-    public MedicalDosageAdapter(Context context , ArrayList<MedicineDosage> dosageArrayList){
+    public MedicalDosageAdapter(Context context, ArrayList<MedicineDosage> dosageArrayList) {
         this.context = context;
         this.dosageArrayList = dosageArrayList;
     }
@@ -53,8 +53,8 @@ public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdap
         return dosageArrayList.size();
     }
 
-    public class Viewholder extends RecyclerView.ViewHolder{
-        private  TextView userId;
+    public class Viewholder extends RecyclerView.ViewHolder {
+        private TextView userId;
         private TextView medicineId;
         private final TextView medicineName;
         private final TextView medicineDosage;
@@ -62,7 +62,6 @@ public class MedicalDosageAdapter extends RecyclerView.Adapter<MedicalDosageAdap
         private TextView medicineDosageStartDate;
         private TextView medicineDosageEndDate;
         private final TextView medicineDosageFrequency;
-
 
 
         public Viewholder(@NonNull View itemView) {
