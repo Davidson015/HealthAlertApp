@@ -49,4 +49,5 @@
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="date">Date</string>
+    <string name="save">Save</string>
 </resources>
