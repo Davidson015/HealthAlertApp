@@ -65,8 +65,8 @@ public class HomeActivity extends AppCompatActivity {
 
         l = findViewById(R.id.upcoming_appts_list);
 
-        ArrayAdapter<String> arr = new ArrayAdapter<String>(
-                this , com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
+        ArrayAdapter<String> arr = new ArrayAdapter<>(
+                this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
                 appointment_description
         );
         l.setAdapter(arr);
@@ -86,12 +86,12 @@ public class HomeActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
-//        switch (menuItem.getItemId()) {
-//            case R.id.home:
-//                intent = new Intent(ScheduleActivity.this, HomeActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+        switch (menuItem.getItemId()) {
+            case R.id.appointments:
+                intent = new Intent(HomeActivity.this, AppointmentActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.schedules:
 //                drawer.closeDrawers();
 //                break;
@@ -100,7 +100,12 @@ public class HomeActivity extends AppCompatActivity {
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.about:
+//            case R.id.health_vitals:
+//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.medicine:
 //                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
 //                startActivity(intent);
 //                finish();
@@ -109,12 +114,12 @@ public class HomeActivity extends AppCompatActivity {
 //                // Confirming if the user wants to exit the app
 //                confirmExit();
 //                break;
-//            default:
-//                break;
-//        }
+            default:
+                break;
+        }
 
-//        menuItem.setChecked(true);
-//        setTitle(menuItem.getTitle());
+        menuItem.setChecked(true);
+        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 
