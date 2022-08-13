@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -32,6 +33,7 @@ public class AppointmentActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     private long pressedTime;
+    SharedPreferences pref;
 
     private RecyclerView appointment_recyclerView;
     private ArrayList<Appointment> appointmentArrayList;
@@ -48,8 +50,8 @@ public class AppointmentActivity extends AppCompatActivity {
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
-        getSupportActionBar().setTitle("");
+        toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
+        getSupportActionBar().setTitle("Appointments");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
@@ -103,33 +105,59 @@ public class AppointmentActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
-
             case R.id.appointments:
+                intent = new Intent(AppointmentActivity.this, AppointmentActivity.class);
                 drawer.closeDrawers();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(ScheduleActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
 //            case R.id.health_vitals:
-//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
+//                intent = new Intent(AppointmentActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                finish();
 //                break;
 //            case R.id.medicine:
-//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
+//                intent = new Intent(AppointmentActivity.this, MedicineActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.exit_app:
-//                // Confirming if the user wants to exit the app
-//                confirmExit();
+//            case R.id.feedback:
+//                intent = new Intent(AppointmentActivity.this, FeedbackActivity.class);
+//                startActivity(intent);
+//                finish();
 //                break;
+//            case R.id.contact:
+//                intent = new Intent(AppointmentActivity.this, ContactActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.help:
+//                intent = new Intent(AppointmentActivity.this, HelpActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+//            case R.id.settings:
+//                intent = new Intent(AppointmentActivity.this, SettingsActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+            case R.id.logout:
+                // Redirecting User to MainActivity
+                intent = new Intent(AppointmentActivity.this, MainActivity.class);
+
+                // Displaying a Toast message
+                Toast.makeText(AppointmentActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+
+                startActivity(intent);
+                finishAffinity();
+
+                // Clearing the SharedPreferences
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.commit();
+
+                break;
             default:
                 break;
         }
-
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawer.closeDrawers();
