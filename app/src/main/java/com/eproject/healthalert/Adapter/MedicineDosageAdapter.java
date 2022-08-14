@@ -59,7 +59,7 @@ public class MedicineDosageAdapter extends RecyclerView.Adapter<MedicineDosageAd
         private final TextView medicineName;
         private final TextView medicineDosage;
         private final TextView medicineDosageTime;
-        //        private TextView medicineDosageStartDate;
+        private TextView medicineDosageStartDate;
         private TextView medicineDosageEndDate;
         private final TextView medicineDosageFrequency;
 
@@ -69,10 +69,9 @@ public class MedicineDosageAdapter extends RecyclerView.Adapter<MedicineDosageAd
             medicineName = itemView.findViewById(R.id.medicine);
             medicineDosage = itemView.findViewById(R.id.dosage);
 //            medicineDosageStartDate = itemView.findViewById(R.id.interval);
+//            medicineDosageEndDate = itemView.findViewById(R.id.interval);
             medicineDosageTime = itemView.findViewById(R.id.interval);
-
-            //medicineDosageEndDate =
-            medicineDosageFrequency = itemView.findViewById(R.id.tablet_no);
+            medicineDosageFrequency = itemView.findViewById(R.id.frequency);
 
         }
     }

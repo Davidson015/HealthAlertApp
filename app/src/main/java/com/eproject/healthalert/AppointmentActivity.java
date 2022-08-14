@@ -39,7 +39,7 @@ public class AppointmentActivity extends AppCompatActivity {
     CardView card;
     Intent intent;
     DrawerLayout drawer;
-    Button addbtn, editbtn;
+    Button addbtn, editbtn, deletebtn;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -60,6 +60,7 @@ public class AppointmentActivity extends AppCompatActivity {
 
         addbtn = findViewById(R.id.add_appointment_btn);
         editbtn = findViewById(R.id.edit_btn);
+        deletebtn = findViewById(R.id.delete_btn);
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
@@ -98,12 +99,13 @@ public class AppointmentActivity extends AppCompatActivity {
                         Appointment appointment = childSnapshot.getValue(Appointment.class);
                         appointmentList.add(appointment);
                     }
+                    // Setting the adapter for the recycler view
+                    AppointmentAdapter appointmentAdapter = new AppointmentAdapter(AppointmentActivity.this, appointmentList);
+                    appointmentRecyclerView.setAdapter(appointmentAdapter);
+                    appointmentRecyclerView.setLayoutManager(new LinearLayoutManager(AppointmentActivity.this));
+                } else {
+                    Toast.makeText(AppointmentActivity.this, "No appointments to show.", Toast.LENGTH_LONG).show();
                 }
-                // Setting the adapter for the recycler view
-                AppointmentAdapter appointmentAdapter = new AppointmentAdapter(AppointmentActivity.this, appointmentList);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(AppointmentActivity.this, LinearLayoutManager.VERTICAL, false);
-                appointmentRecyclerView.setAdapter(appointmentAdapter);
-                appointmentRecyclerView.setLayoutManager(new LinearLayoutManager(AppointmentActivity.this));
             }
 
             @Override
@@ -113,9 +115,34 @@ public class AppointmentActivity extends AppCompatActivity {
             }
         });
 
+        // Adding click listener to Delete button
+//        if (deletebtn != null) {
+//            deletebtn.setOnClickListener(v -> {
+//                // Getting appointment Id of the clicked appointment
+//                int clickedapptId = appointmentList.get(appointmentRecyclerView.getChildAdapterPosition(v)).getAppointmentId();
+//                // Getting the appointment id
+//                database.getReference("appointments").orderByChild("appointmentId").equalTo(clickedapptId).addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                        Appointment appointment = snapshot.getValue(Appointment.class);
+//                        System.out.println(appointment.getAppointmentDescription());
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError error) {
+//                        // Getting Post failed, log a message
+//                        Log.w(TAG, "loadPost:onCancelled", error.toException());
+//                    }
+//                });
+//                startActivity(intent);
+//            });
+//        }
+
+        // Adding click listener to add appointment button
         addbtn.setOnClickListener(v -> {
             intent = new Intent(AppointmentActivity.this, AddAppointmentActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }

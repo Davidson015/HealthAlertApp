@@ -1,14 +1,18 @@
 package com.eproject.healthalert;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,11 +20,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.eproject.healthalert.adapter.AppointmentAdapter;
 import com.eproject.healthalert.adapter.MedicineDosageAdapter;
 import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.MedicineDosage;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -30,17 +39,19 @@ public class MedicineDosageActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
-    private long pressedTime;
+
+    // Creating an instance of firebase db
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
+
     SharedPreferences pref;
 
-    private RecyclerView dosage_recyclerView;
-    private ArrayList<MedicineDosage> dosageArrayList;
+    private RecyclerView dosageRecyclerView;
+    private ArrayList<MedicineDosage> dosageList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_dosage);
-
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
@@ -60,29 +71,46 @@ public class MedicineDosageActivity extends AppCompatActivity {
         setupDrawerContent(navigationView);
 
 //        Setting Recycler View for dosage cards
-        dosage_recyclerView = findViewById(R.id.recyclerview);
+        dosageRecyclerView = findViewById(R.id.recyclerview);
 
-        dosageArrayList = new ArrayList<>();
+        dosageList = new ArrayList<>();
 
-        dosageArrayList.add(new MedicineDosage("Fl1022", "Fluoride", "2 times daily", "10 hours interval", "10/08/2022", "20/08/2022", "2"));
-        dosageArrayList.add(new MedicineDosage("cit0056", "Vitamins", "3 times daily", "Any time", "anytime", "anytime", "1"));
-        dosageArrayList.add(new MedicineDosage("Ib003", "Ibruprofen", "2 times daily", "Morning and evening", "14/08/2022", "16/08/2022", "2"));
-        dosageArrayList.add(new MedicineDosage("Chlr009", "Chloroquine", "2 times daily", "8 hours Interval", "15/09/2022", "17/09/2022", "1"));
-        dosageArrayList.add(new MedicineDosage("aplne009", "Amplodipine", "Once  daily", "Morning and evening", "5/09/2022", "17/09/2022", "1"));
-        dosageArrayList.add(new MedicineDosage("emz0098", "Emzor Paracetamol", "2 times daily", "Morning and evening", "anytime", "anytime", "2 "));
+        // Getting user email from shared preferences
+        pref = getSharedPreferences("user", MODE_PRIVATE);
+        String userEmail = pref.getString("email", "");
 
+        // Getting dosages from firebase db
+        database.getReference("dosages").orderByChild("userEmail").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.getValue() != null) {
+                    // Getting the appointment values
+                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                        MedicineDosage appointment = childSnapshot.getValue(MedicineDosage.class);
+                        dosageList.add(appointment);
+                    }
+                    // Setting the adapter for the recycler view
+                    MedicineDosageAdapter appointmentAdapter = new MedicineDosageAdapter(MedicineDosageActivity.this, dosageList);
+                    dosageRecyclerView.setAdapter(appointmentAdapter);
+                    dosageRecyclerView.setLayoutManager(new LinearLayoutManager(MedicineDosageActivity.this));
+                } else {
+                    Toast.makeText(MedicineDosageActivity.this, "No Dosages to show.", Toast.LENGTH_LONG).show();
+                }
+            }
 
-        MedicineDosageAdapter dosageAdapter = new MedicineDosageAdapter(this, dosageArrayList);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-
-        dosage_recyclerView.setLayoutManager(linearLayoutManager);
-        dosage_recyclerView.setAdapter(dosageAdapter);
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
 
         Button addbtn = findViewById(R.id.add_dosage_btn);
 
         addbtn.setOnClickListener(v -> {
             intent = new Intent(MedicineDosageActivity.this, AddDosageActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }
