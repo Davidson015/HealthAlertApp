@@ -136,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
                 // Clearing the SharedPreferences
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
 
                 break;
             default:
@@ -156,6 +156,11 @@ public class HomeActivity extends AppCompatActivity {
         } else {
             if (pressedTime + 2000 > System.currentTimeMillis()) {
                 super.onBackPressed();
+
+                // Clearing the SharedPreferences
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.apply();
                 finishAffinity();
             } else {
                 Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
