@@ -2,10 +2,12 @@ package com.eproject.healthalert;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.eproject.healthalert.adapter.MedicineDosageAdapter;
+import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.MedicineDosage;
 
 import com.google.android.material.navigation.NavigationView;
@@ -28,6 +31,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     private long pressedTime;
+    SharedPreferences pref;
 
     private RecyclerView dosage_recyclerView;
     private ArrayList<MedicineDosage> dosageArrayList;
@@ -97,35 +101,58 @@ public class MedicineDosageActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
-
-            case R.id.medicine:
-                drawer.closeDrawers();
-                break;
             case R.id.appointments:
                 intent = new Intent(MedicineDosageActivity.this, AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
 //            case R.id.health_vitals:
-//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
+//                intent = new Intent(MedicineDosageActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.medicine:
-//                intent = new Intent(ScheduleActivity.this, AboutActivity.class);
+            case R.id.medicine:
+                drawer.closeDrawers();
+                break;
+            case R.id.feedback:
+                intent = new Intent(MedicineDosageActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+//            case R.id.contact:
+//                intent = new Intent(MedicineDosageActivity.this, ContactActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.exit_app:
-//                // Confirming if the user wants to exit the app
-//                confirmExit();
+//            case R.id.help:
+//                intent = new Intent(MedicineDosageActivity.this, HelpActivity.class);
+//                startActivity(intent);
+//                finish();
 //                break;
+//            case R.id.settings:
+//                intent = new Intent(MedicineDosageActivity.this, SettingsActivity.class);
+//                startActivity(intent);
+//                finish();
+//                break;
+            case R.id.logout:
+                // Redirecting User to MainActivity
+                intent = new Intent(MedicineDosageActivity.this, MainActivity.class);
+
+                // Displaying a Toast message
+                Toast.makeText(MedicineDosageActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+
+                startActivity(intent);
+                finishAffinity();
+
+                // Clearing the SharedPreferences
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.apply();
+
+                break;
             default:
                 break;
         }
-
-        menuItem.setChecked(true);
-        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 

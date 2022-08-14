@@ -142,9 +142,6 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 break;
         }
-        
-        menuItem.setChecked(true);
-        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 

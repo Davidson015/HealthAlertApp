@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.eproject.healthalert.model.MedicineDosage;
 import com.google.android.material.navigation.NavigationView;
 
 public class FeedbackActivity extends AppCompatActivity {
@@ -76,11 +77,11 @@ public class FeedbackActivity extends AppCompatActivity {
 //                startActivity(intent);
 //                finish();
 //                break;
-//            case R.id.medicine:
-//                intent = new Intent(FeedbackActivity.this, MedicineActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.medicine:
+                intent = new Intent(FeedbackActivity.this, MedicineDosageActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.feedback:
                 drawer.closeDrawers();
                 finish();
@@ -119,8 +120,6 @@ public class FeedbackActivity extends AppCompatActivity {
             default:
                 break;
         }
-        menuItem.setChecked(true);
-        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 

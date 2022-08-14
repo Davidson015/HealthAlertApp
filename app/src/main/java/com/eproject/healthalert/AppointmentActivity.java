@@ -161,8 +161,6 @@ public class AppointmentActivity extends AppCompatActivity {
             default:
                 break;
         }
-        menuItem.setChecked(true);
-        setTitle(menuItem.getTitle());
         drawer.closeDrawers();
     }
 
