@@ -134,11 +134,11 @@ public class AppointmentActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.help:
-//                intent = new Intent(AppointmentActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.help:
+                intent = new Intent(AppointmentActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.settings:
 //                intent = new Intent(AppointmentActivity.this, SettingsActivity.class);
 //                startActivity(intent);

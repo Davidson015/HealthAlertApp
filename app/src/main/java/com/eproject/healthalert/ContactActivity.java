@@ -71,7 +71,7 @@ public class ContactActivity extends AppCompatActivity {
                 finish();
                 break;
 //            case R.id.health_vitals:
-//                intent = new Intent(FeedbackActivity.this, HealthVitals.class);
+//                intent = new Intent(ContactActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                finish();
 //                break;
@@ -88,13 +88,13 @@ public class ContactActivity extends AppCompatActivity {
             case R.id.contact:
                 drawer.closeDrawers();
                 break;
-//            case R.id.help:
-//                intent = new Intent(FeedbackActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.help:
+                intent = new Intent(ContactActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.settings:
-//                intent = new Intent(FeedbackActivity.this, SettingsActivity.class);
+//                intent = new Intent(ContactActivity.this, SettingsActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;

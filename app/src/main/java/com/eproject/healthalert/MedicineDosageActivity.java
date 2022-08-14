@@ -127,11 +127,11 @@ public class MedicineDosageActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.help:
-//                intent = new Intent(MedicineDosageActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.help:
+                intent = new Intent(MedicineDosageActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.settings:
 //                intent = new Intent(MedicineDosageActivity.this, SettingsActivity.class);
 //                startActivity(intent);
