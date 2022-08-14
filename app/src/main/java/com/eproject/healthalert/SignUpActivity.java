@@ -94,7 +94,7 @@ public class SignUpActivity extends AppCompatActivity {
             user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
 
             // creating a user reference(UserId)
-            String userId = user.getEmail().replace("@", "_").replace(".", "_") + "-" + user.getFirstName() + new Random().nextInt(100);
+            String userId = user.getEmail().replace("@", "_").replace(".", "_") + "-000";
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
@@ -130,31 +130,33 @@ public class SignUpActivity extends AppCompatActivity {
                 password.setError("Password must be at least 6 characters long!");
             } else {
                 // Checking if the user is already registered
-                database.getReference("users").orderByChild("email").equalTo(user.getEmail()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                database.getReference("users").child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
-                            Log.e("firebase", "Account Already Exists", task.getException());
+                            Log.e("firebase", "Error getting data", task.getException());
 
                             // Creating Toast to show error
-                            Toast.makeText(SignUpActivity.this, "Account Already Exists!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "There's an error on our end, Please try again later.", Toast.LENGTH_SHORT).show();
                         } else {
-                            Log.d("firebase", "Safe to create user", task.getException());
+                            // Checking if the user is already registered
+                            if (task.getResult().getValue() != null && task.getResult().child("email").getValue().equals(user.getEmail())) {
+                                // Creating Toast to show that the email is already registered to another account
+                                Toast.makeText(SignUpActivity.this, "Email already registered to another account!", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Log.d("firebase", "Safe to create user", task.getException());
 
-                            // Capitalizing the first letter of the first name and last name
-                            user.setFirstName(user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1));
-                            user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
+                                // Adding user to database
+                                database.getReference("users").child(userId).setValue(user);
 
-                            // Adding user to database
-                            database.getReference("users").child(userId).setValue(user);
-                            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                                // Ending this activity and starting LoginActivity
+                                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
 
                             // Sending Welcome Email to the user
-                            sendWelcomeEmail(user);
-
-                            // Ending this activity and starting LoginActivity
-                            startActivity(intent);
-                            finish();
+//                            sendWelcomeEmail(user);
                         }
                     }
                 });
