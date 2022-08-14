@@ -110,6 +110,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
         addbtn.setOnClickListener(v -> {
             intent = new Intent(MedicineDosageActivity.this, AddDosageActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }
