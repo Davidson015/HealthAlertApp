@@ -53,7 +53,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
         // Adding the appointment to the database
         addBtn.setOnClickListener(v -> {
             // Creating new appointment object
-            Appointment appointment = new Appointment(userEmail, desc.getText().toString().trim(), loc.getText().toString().trim(), time.getText().toString().trim(), date.getText().toString().trim());
+            Appointment appointment = new Appointment(userEmail, desc.getText().toString().trim(), date.getText().toString().trim(), time.getText().toString().trim(), loc.getText().toString().trim());
 
             // Creating an appointment reference(appointmentId)
             appointmentId = userEmail.replace("@", "_").replace(".", "_") + appointment.getAppointmentDescription().replace(" ", "").substring(0, 5) + new Random().nextInt(100);
@@ -72,17 +72,17 @@ public class AddAppointmentActivity extends AppCompatActivity {
                 }
             } else {
                 // Checking if the appointment already exists
-                database.getReference("appointments").child(appointmentId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                database.getReference("appointments").child("appointmentDescription").equalTo(appointment.getAppointmentDescription()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
 
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if(!task.isSuccessful()) {
-                            Log.e("firebase", "User Already Exists", task.getException());
+                            Log.e("firebase", "Appointment already exists!", task.getException());
 
                             // Creating Toast to show error
-                            Toast.makeText(AddAppointmentActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddAppointmentActivity.this, "Appointment already exists!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Log.d("firebase", "Safe to create user", task.getException());
+                            Log.d("firebase", "Safe to create appointment", task.getException());
 
                             // Capitalizing the first letter of the appointment description
                             String appointmentDesc = appointment.getAppointmentDescription().substring(0, 1).toUpperCase() + appointment.getAppointmentDescription().substring(1);
