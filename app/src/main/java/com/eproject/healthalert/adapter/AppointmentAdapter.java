@@ -37,7 +37,16 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull AppointmentAdapter.Viewholder holder, int position) {
+        Appointment model = appointmentArrayList.get(position);
+        holder.appointmentDescription.setText(model.getAppointmentDescription());
+        holder.appointmentLocation.setText(model.getAppointmentLocation());
+        holder.appointmentDate.setText(model.getAppointmentDate());
+        holder.appointmentTime.setText(model.getAppointmentTime());
+    }
 
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 
     @Override
@@ -47,11 +56,10 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     public class Viewholder extends RecyclerView.ViewHolder{
         private TextView appointmentDescription , appointmentDate , appointmentTime , appointmentLocation;
-        private Boolean appointmentStatus;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            appointmentDescription = itemView.findViewById(R.id.appointment_txt);
+            appointmentDescription = itemView.findViewById(R.id.appointment_type_val);
             appointmentLocation = itemView.findViewById(R.id.loc_val);
             appointmentDate = itemView.findViewById(R.id.date_val);
             appointmentTime = itemView.findViewById(R.id.time_val);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,82 +12,84 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:padding="10dp"
+        android:id="@+id/txt_head"
+        android:layout_alignParentTop="true"
         android:text="Add Appointments"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/appointment_type"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/appointment_desc_edit_val"
+        android:layout_below="@+id/txt_head"
+        android:paddingBottom="120sp">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="textCapWords" />
+            android:orientation="vertical">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/appointment_type"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/appointment_desc_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="textCapWords" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Location"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loc_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="textCapWords" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
 
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loc_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="textCapWords" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Time"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+            </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/time_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="time" />
+            <TimePicker
+                android:id="@+id/time_edit_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/greyish"
+                android:layout_margin="15sp"
+                android:timePickerMode="spinner"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <DatePicker
+                android:id="@+id/date_edit_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/greyish"
+                android:layout_gravity="center"
+                android:layout_margin="15sp"
+                android:padding="10sp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"/>
+        </LinearLayout>
+    </ScrollView>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Date"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/date_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="date" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:drawablePadding="5dp"
-        android:padding="13dp"
+        android:layout_marginHorizontal="15sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25sp"
+        android:paddingVertical="15sp"
+        android:textSize="16sp"
         android:text="@string/save" />
 
-</LinearLayout>
+</RelativeLayout>

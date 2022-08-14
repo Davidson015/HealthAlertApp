@@ -59,4 +59,8 @@
     </string>
     <string name="easy_way_to_use_healthalert_app">Easy way to use HealthAlert app.</string>
     <string name="Help_image">help</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="body_temperature">Body Temperature</string>
+    <string name="blood_sugar">Blood Sugar</string>
 </resources>
