@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
-        android:padding="15dp"
+        android:padding="15sp"
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -72,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/enter_password"
-        android:padding="15dp"
+        android:padding="15sp"
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -87,12 +87,12 @@
         android:id="@+id/login_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
-        android:background="@drawable/bordered_shape"
         android:clickable="true"
         android:focusable="true"
-        android:text="@string/log_in" />
+        android:paddingVertical="15sp"
+        android:text="@string/log_in"
+        android:textSize="16sp" />
 
 </LinearLayout>

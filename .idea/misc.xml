@@ -27,6 +27,7 @@
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/ic_vitals.xml" value="0.1025" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/drawable/toolbar_bg.xml" value="0.1025" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_add_appointment.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_add_dosage.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_appointment.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_intro.xml" value="0.1" />
@@ -34,7 +35,7 @@
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_medical_dosage.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_medicine_dosage.xml" value="0.2" />
-        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_sign_up.xml" value="0.2344139650872818" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_sign_up.xml" value="0.128" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/appoinment_list_card_view.xml" value="0.264" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/home_content.xml" value="0.2" />
