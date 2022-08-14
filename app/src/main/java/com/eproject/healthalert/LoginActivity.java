@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -40,19 +37,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        // Making the Status Transparent
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
-        }
-        if (Build.VERSION.SDK_INT >= 19) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-        //make fully Android Transparent Status bar
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
 
         // Initializing form fields
         email = findViewById(R.id.email);
@@ -90,10 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                 database.getReference("users").orderByChild("email").equalTo(emailVal).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // Checking if the data snapshot is null or not and performing specific actions
                         if (snapshot.getValue() != null) {
                             for (DataSnapshot childSnapShot : snapshot.getChildren()) {
                                 User user = childSnapShot.getValue(User.class);
-                                if (user.getPassword().equals(passwordVal)) {
+                                if (user != null && user.getPassword().equals(passwordVal)) {
                                     // Showing success message through Toast
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
@@ -114,6 +99,9 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Invalid Password!", Toast.LENGTH_SHORT).show();
                                 }
                             }
+                        } else {
+                            // Displaying Toast message to user that the account doesn't exist
+                            Toast.makeText(LoginActivity.this, "Account doesn't exist!", Toast.LENGTH_SHORT).show();
                         }
                     }
 

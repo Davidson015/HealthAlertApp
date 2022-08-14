@@ -1,7 +1,7 @@
 package com.eproject.healthalert.model;
 
 public class PersonalHealthVitals {
-    private String userId;
+    private String userEmail;
     private String height;
     private String weight;
     private String bloodPressure;
@@ -12,8 +12,8 @@ public class PersonalHealthVitals {
 
     public PersonalHealthVitals() {}
 
-    public PersonalHealthVitals(String userId, String height, String weight, String bloodPressure, String bloodGlucose, String bodyTemperature, String respiratoryRate, String pulseRate) {
-        this.userId = userId;
+    public PersonalHealthVitals(String userEmail, String height, String weight, String bloodPressure, String bloodGlucose, String bodyTemperature, String respiratoryRate, String pulseRate) {
+        this.userEmail = userEmail;
         this.height = height;
         this.weight = weight;
         this.bloodPressure = bloodPressure;
@@ -24,11 +24,11 @@ public class PersonalHealthVitals {
     }
 
     public String getUserId() {
-        return userId;
+        return userEmail;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserId(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getHeight() {

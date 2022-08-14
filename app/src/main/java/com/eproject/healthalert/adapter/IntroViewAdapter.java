@@ -1,4 +1,4 @@
-package com.eproject.healthalert;
+package com.eproject.healthalert.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
+
+import com.eproject.healthalert.R;
 
 public class IntroViewAdapter extends androidx.viewpager.widget.PagerAdapter {
 

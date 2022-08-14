@@ -26,6 +26,9 @@
             android:name=".EditAppointmentActivity"
             android:exported="false" />
         <activity
+            android:name=".AddAppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".AppointmentActivity"
             android:exported="false" />
         <activity
@@ -36,7 +39,8 @@
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden|adjustPan"/>
         <activity
             android:name=".MainActivity"
             android:exported="false" />

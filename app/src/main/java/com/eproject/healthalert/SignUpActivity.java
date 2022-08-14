@@ -47,19 +47,6 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // Making the Status Transparent
-        if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, true);
-        }
-        if (Build.VERSION.SDK_INT >= 19) {
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        }
-        //make fully Android Transparent Status bar
-        if (Build.VERSION.SDK_INT >= 21) {
-            setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-
         // Initializing Registration Form Fields
         login = findViewById(R.id.log_in_txt);
         firstName = findViewById(R.id.first_name);
@@ -102,10 +89,6 @@ public class SignUpActivity extends AppCompatActivity {
 
             // Setting up User
             user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
-
-            // Capitalizing the first letter of the first name and last name
-            user.setFirstName(user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1));
-            user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
 
             // creating a user reference(UserId)
             String userId = user.getFirstName() + user.getLastName();
@@ -153,7 +136,11 @@ public class SignUpActivity extends AppCompatActivity {
                             // Creating Toast to show error
                             Toast.makeText(SignUpActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
                         } else {
-                            Log.d("firebase", "User not found", task.getException());
+                            Log.d("firebase", "Safe to create user", task.getException());
+
+                            // Capitalizing the first letter of the first name and last name
+                            user.setFirstName(user.getFirstName().substring(0, 1).toUpperCase() + user.getFirstName().substring(1));
+                            user.setLastName(user.getLastName().substring(0, 1).toUpperCase() + user.getLastName().substring(1));
 
                             // Adding user to database
                             database.getReference("users").child(userId).setValue(user);
