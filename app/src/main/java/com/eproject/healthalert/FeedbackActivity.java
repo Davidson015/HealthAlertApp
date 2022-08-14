@@ -75,11 +75,11 @@ public class FeedbackActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(FeedbackActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(FeedbackActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 intent = new Intent(FeedbackActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);

@@ -21,7 +21,7 @@ public class HealthActivity extends AppCompatActivity {
     DrawerLayout drawer;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
-    Button addbtn;
+    Button addvitalsbtn;
     NavigationView navigationView;
     SharedPreferences pref;
 
@@ -31,9 +31,9 @@ public class HealthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_health);
 
 
-        addbtn = findViewById(R.id.add_vitals_btn);
+        addvitalsbtn = findViewById(R.id.add_vitals_btn);
 
-        addbtn.setOnClickListener(v -> {
+        addvitalsbtn.setOnClickListener(v -> {
             intent = new Intent(HealthActivity.this, AddHealthVitalsActivity.class);
             startActivity(intent);
         });

@@ -134,10 +134,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, AppointmentActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(HomeActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(HomeActivity.this, HealthActivity.class);
+                startActivity(intent);
+                break;
             case R.id.medicine:
                 intent = new Intent(HomeActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
