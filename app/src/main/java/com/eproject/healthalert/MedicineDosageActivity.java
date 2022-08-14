@@ -122,11 +122,11 @@ public class MedicineDosageActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.contact:
-//                intent = new Intent(MedicineDosageActivity.this, ContactActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.contact:
+                intent = new Intent(MedicineDosageActivity.this, ContactActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.help:
 //                intent = new Intent(MedicineDosageActivity.this, HelpActivity.class);
 //                startActivity(intent);

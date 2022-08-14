@@ -88,11 +88,11 @@ public class FeedbackActivity extends AppCompatActivity {
             case R.id.feedback:
                 drawer.closeDrawers();
                 break;
-//            case R.id.contact:
-//                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.contact:
+                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.help:
 //                intent = new Intent(FeedbackActivity.this, HelpActivity.class);
 //                startActivity(intent);
