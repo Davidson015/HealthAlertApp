@@ -19,6 +19,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail;
 import com.eproject.healthalert.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -129,7 +130,7 @@ public class SignUpActivity extends AppCompatActivity {
                 password.setError("Password must be at least 6 characters long!");
             } else {
                 // Checking if the user is already registered
-                database.getReference("users").orderByChild("email").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                database.getReference("users").orderByChild("email").equalTo(user.getEmail()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
@@ -147,6 +148,11 @@ public class SignUpActivity extends AppCompatActivity {
                             // Adding user to database
                             database.getReference("users").child(userId).setValue(user);
                             Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+
+                            // Sending Welcome Email to the user
+                            sendWelcomeEmail(user);
+
+                            // Ending this activity and starting LoginActivity
                             startActivity(intent);
                             finish();
                         }
@@ -168,5 +174,31 @@ public class SignUpActivity extends AppCompatActivity {
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
+    }
+
+    // Creating the sendWelcomeEmail method
+    public void sendWelcomeEmail(User user){
+        BackgroundMail.newBuilder(this)
+                .withUsername("team.healthalert@gmail.com")
+                .withPassword("healthalert3")
+                .withMailto(user.getEmail())
+                .withType(BackgroundMail.TYPE_PLAIN)
+                .withSubject("Welcome to Health Alert")
+                .withBody("Dear" + user.getFirstName() + ",\n\nWelcome to Health Alert!\n\nWe are glad to have you on board.\n\nRegards,\nHealth Alert Team.")
+                .withOnSuccessCallback(new BackgroundMail.OnSuccessCallback() {
+                    @Override
+                    public void onSuccess() {
+                        // Logging Success
+                        Log.d("backgroundMail", "Welcome Email sent to user successfully");
+                    }
+                })
+                .withOnFailCallback(new BackgroundMail.OnFailCallback() {
+                    @Override
+                    public void onFail() {
+                        // Logging Failure
+                        Log.e("backgroundMail", "Welcome Email sent to user failed");
+                    }
+                })
+                .send();
     }
 }
