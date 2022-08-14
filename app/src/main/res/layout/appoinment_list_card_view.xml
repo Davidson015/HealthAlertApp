@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/appointment_card"
     android:clickable="true"
     android:focusable="true"
@@ -35,9 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/appointment_type_txt"
             android:layout_marginBottom="10dp"
-            android:textSize="20sp"
             android:fontFamily="@font/poppins"
-            android:text="Dentist , Dr Adam Smith" />
+            tools:text="Dentist , Dr Adam Smith"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/time_txt"
@@ -66,9 +67,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/time_txt"
             android:layout_marginBottom="10dp"
-            android:textSize="20sp"
             android:fontFamily="@font/poppins"
-            android:text="10:00 pm" />
+            tools:text="10:00 pm"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/loc_val"
@@ -77,9 +78,9 @@
             android:layout_below="@id/time_txt"
             android:layout_alignParentEnd="true"
             android:layout_marginBottom="10dp"
-            android:textSize="20sp"
             android:fontFamily="@font/poppins"
-            android:text="New City Clinic" />
+            tools:text="New City Clinic"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/date_txt"
@@ -96,10 +97,10 @@
             android:id="@+id/date_val"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/date_txt"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins"
-            android:text="21st Aug 2022"
-            android:layout_below="@id/date_txt"
+            tools:text="21st Aug 2022"
             android:textSize="16sp" />
 
         <LinearLayout
