@@ -17,6 +17,9 @@
         android:theme="@style/Theme.HealthAlert"
         tools:targetApi="31">
         <activity
+            android:name=".FeedbackActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddDosageActivity"
             android:exported="false" />
         <activity
@@ -40,7 +43,7 @@
         <activity
             android:name=".SignUpActivity"
             android:exported="false"
-            android:windowSoftInputMode="stateHidden|adjustPan"/>
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

@@ -107,10 +107,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, MedicineActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.feedback:
-//                intent = new Intent(HomeActivity.this, FeedbackActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.feedback:
+                intent = new Intent(HomeActivity.this, FeedbackActivity.class);
+                startActivity(intent);
+                break;
 //            case R.id.contact:
 //                intent = new Intent(HomeActivity.this, ContactActivity.class);
 //                startActivity(intent);
