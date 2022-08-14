@@ -3,6 +3,7 @@ package com.eproject.healthalert;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -87,6 +88,8 @@ public class AddAppointmentActivity extends AppCompatActivity {
                             // Adding the appointment to the database
                             database.getReference("appointments").child(appointmentId).setValue(appointment);
                             Toast.makeText(AddAppointmentActivity.this, "Appointment added", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AddAppointmentActivity.this, AppointmentActivity.class);
+                            startActivity(intent);
                             finish();
                         }
                     }
