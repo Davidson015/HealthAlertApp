@@ -14,13 +14,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Random;
 
 public class AddAppointmentActivity extends AppCompatActivity {
+
+    // Appointment Id
+    private int apptId = 1;
 
     // Creating form fields
     TextInputEditText desc, loc, time, date;
@@ -53,10 +52,10 @@ public class AddAppointmentActivity extends AppCompatActivity {
         // Adding the appointment to the database
         addBtn.setOnClickListener(v -> {
             // Creating new appointment object
-            Appointment appointment = new Appointment(userEmail, desc.getText().toString().trim(), date.getText().toString().trim(), time.getText().toString().trim(), loc.getText().toString().trim());
+            Appointment appointment = new Appointment(userEmail, apptId++, desc.getText().toString().trim(), date.getText().toString().trim(), time.getText().toString().trim(), loc.getText().toString().trim());
 
             // Creating an appointment reference(appointmentId)
-            appointmentId = userEmail.replace("@", "_").replace(".", "_") + appointment.getAppointmentDescription().replace(" ", "").substring(0, 5) + new Random().nextInt(100);
+            appointmentId = (userEmail.replace("@", "_").replace(".", "_") + appointment.getAppointmentDescription().replace(" ", "").substring(0, 5).toUpperCase() + 000);
 
             // Checking if fields are empty
             if (desc.getText().toString().isEmpty() || loc.getText().toString().isEmpty() || time.getText().toString().isEmpty() || date.getText().toString().isEmpty()) {
@@ -72,20 +71,17 @@ public class AddAppointmentActivity extends AppCompatActivity {
                 }
             } else {
                 // Checking if the appointment already exists
-                database.getReference("appointments").child("appointmentDescription").equalTo(appointment.getAppointmentDescription()).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                database.getReference("appointments").child(appointmentId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
 
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if(!task.isSuccessful()) {
-                            Log.e("firebase", "Appointment already exists!", task.getException());
+                            Log.e("firebase", "Error getting data", task.getException());
 
                             // Creating Toast to show error
-                            Toast.makeText(AddAppointmentActivity.this, "Appointment already exists!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AddAppointmentActivity.this, "There's an error on our end, Please try again later.", Toast.LENGTH_SHORT).show();
                         } else {
                             Log.d("firebase", "Safe to create appointment", task.getException());
-
-                            // Capitalizing the first letter of the appointment description
-                            String appointmentDesc = appointment.getAppointmentDescription().substring(0, 1).toUpperCase() + appointment.getAppointmentDescription().substring(1);
 
                             // Adding the appointment to the database
                             database.getReference("appointments").child(appointmentId).setValue(appointment);
