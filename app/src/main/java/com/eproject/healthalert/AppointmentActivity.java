@@ -109,8 +109,7 @@ public class AppointmentActivity extends AppCompatActivity {
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.home:
-                intent = new Intent(AppointmentActivity.this, HomeActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.appointments:
                 intent = new Intent(AppointmentActivity.this, AppointmentActivity.class);

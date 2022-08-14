@@ -68,8 +68,7 @@ public class FeedbackActivity extends AppCompatActivity {
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.home:
-                intent = new Intent(this, HomeActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.appointments:
                 intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.AppointmentActivity.class);
@@ -88,7 +87,6 @@ public class FeedbackActivity extends AppCompatActivity {
                 break;
             case R.id.feedback:
                 drawer.closeDrawers();
-                finish();
                 break;
 //            case R.id.contact:
 //                intent = new Intent(FeedbackActivity.this, ContactActivity.class);

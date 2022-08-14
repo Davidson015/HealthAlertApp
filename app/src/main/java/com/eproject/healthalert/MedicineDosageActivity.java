@@ -102,8 +102,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.home:
-                intent = new Intent(this, HomeActivity.class);
-                startActivity(intent);
+                finish();
                 break;
             case R.id.appointments:
                 intent = new Intent(MedicineDosageActivity.this, AppointmentActivity.class);
