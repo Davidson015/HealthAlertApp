@@ -90,12 +90,6 @@ public class SignUpActivity extends AppCompatActivity {
         // Signing up the user
         signUp.setOnClickListener(v -> {
 
-            // Setting up User
-            user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
-
-            // creating a user reference(UserId)
-            String userId = user.getEmail().replace("@", "_").replace(".", "_") + "-000";
-
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
                 Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
@@ -129,6 +123,12 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(this, "Password must be at least 8 characters long!", Toast.LENGTH_SHORT).show();
                 password.setError("Password must be at least 6 characters long!");
             } else {
+                // Setting up User
+                user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
+
+                // creating a user reference(UserId)
+                String userId = user.getEmail().replace("@", "_").replace(".", "_") + "-000";
+
                 // Checking if the user is already registered
                 database.getReference("users").child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override

@@ -51,11 +51,6 @@ public class AddAppointmentActivity extends AppCompatActivity {
 
         // Adding the appointment to the database
         addBtn.setOnClickListener(v -> {
-            // Creating new appointment object
-            Appointment appointment = new Appointment(userEmail, apptId++, desc.getText().toString().trim(), date.getText().toString().trim(), time.getText().toString().trim(), loc.getText().toString().trim());
-
-            // Creating an appointment reference(appointmentId)
-            appointmentId = (userEmail.replace("@", "_").replace(".", "_") + appointment.getAppointmentDescription().replace(" ", "").substring(0, 5).toUpperCase() + 000);
 
             // Checking if fields are empty
             if (desc.getText().toString().isEmpty() || loc.getText().toString().isEmpty() || time.getText().toString().isEmpty() || date.getText().toString().isEmpty()) {
@@ -70,6 +65,12 @@ public class AddAppointmentActivity extends AppCompatActivity {
                     date.setError("Please fill this field");
                 }
             } else {
+                // Creating new appointment object
+                Appointment appointment = new Appointment(userEmail, apptId++, desc.getText().toString().trim(), date.getText().toString().trim(), time.getText().toString().trim(), loc.getText().toString().trim());
+
+                // Creating an appointment reference(appointmentId)
+                appointmentId = (userEmail.replace("@", "_").replace(".", "_") + appointment.getAppointmentDescription().replace(" ", "").substring(0, 5).toUpperCase() + 000);
+
                 // Checking if the appointment already exists
                 database.getReference("appointments").child(appointmentId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
 
