@@ -157,7 +157,7 @@
                 </LinearLayout>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/medecin_dosage_card_view"
+                    android:id="@+id/medicine_dosage_card_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/first_two"
@@ -198,7 +198,7 @@
                     android:id="@+id/appointments_list_card_view"
                     android:layout_width="match_parent"
                     android:layout_height="300sp"
-                    android:layout_below="@+id/medecin_dosage_card_view"
+                    android:layout_below="@+id/medicine_dosage_card_view"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginEnd="20dp"

@@ -3,6 +3,7 @@ package com.eproject.healthalert;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
     private long pressedTime;
     SharedPreferences pref;
+    CardView appointmentCard, medicalDosage, healthVitals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +66,10 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
 
+        appointmentCard = findViewById(R.id.appointments_card_view);
+        medicalDosage = findViewById(R.id.medicine_dosage_card_view);
+        healthVitals = findViewById(R.id.health_vitals_card_view);
+
         // Getting the username from the SharedPreferences
         pref = getSharedPreferences("user", MODE_PRIVATE);
         usernameVal = pref.getString("username", "");
@@ -78,6 +84,32 @@ public class HomeActivity extends AppCompatActivity {
                 appointment_description
         );
         l.setAdapter(arr);
+
+        // Adding onClickListener to the CardViews
+        // Appointment CardView
+        appointmentCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, AppointmentActivity.class);
+                startActivity(intent);
+            }
+        });
+        // Medical Dosage CardView
+        medicalDosage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, MedicineDosageActivity.class);
+                startActivity(intent);
+            }
+        });
+        // Health Vitals CardView
+//        healthVitals.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(HomeActivity.this, HealthVitalsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
