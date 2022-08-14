@@ -17,6 +17,12 @@
         android:theme="@style/Theme.HealthAlert"
         tools:targetApi="31">
         <activity
+            android:name=".AddHealthVitalsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HealthActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeedbackActivity"
             android:exported="false" />
         <activity
@@ -24,9 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".MedicineDosageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EditAppointmentActivity"
             android:exported="false" />
         <activity
             android:name=".AddAppointmentActivity"

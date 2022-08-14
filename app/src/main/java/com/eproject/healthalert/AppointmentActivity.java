@@ -168,11 +168,11 @@ public class AppointmentActivity extends AppCompatActivity {
                 intent = new Intent(AppointmentActivity.this, AppointmentActivity.class);
                 drawer.closeDrawers();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(AppointmentActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(AppointmentActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 intent = new Intent(AppointmentActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);

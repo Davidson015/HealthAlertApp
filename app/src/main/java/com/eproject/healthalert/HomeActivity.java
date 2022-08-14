@@ -87,29 +87,20 @@ public class HomeActivity extends AppCompatActivity {
 
         // Adding onClickListener to the CardViews
         // Appointment CardView
-        appointmentCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, AppointmentActivity.class);
-                startActivity(intent);
-            }
+        appointmentCard.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, AppointmentActivity.class);
+            startActivity(intent);
         });
         // Medical Dosage CardView
-        medicalDosage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, MedicineDosageActivity.class);
-                startActivity(intent);
-            }
+        medicalDosage.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, MedicineDosageActivity.class);
+            startActivity(intent);
         });
         // Health Vitals CardView
-//        healthVitals.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(HomeActivity.this, HealthVitalsActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        healthVitals.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, HealthActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -134,10 +125,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, AppointmentActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(HomeActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(HomeActivity.this, HealthActivity.class);
+                startActivity(intent);
+                break;
             case R.id.medicine:
                 intent = new Intent(HomeActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);

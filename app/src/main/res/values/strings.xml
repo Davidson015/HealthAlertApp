@@ -50,4 +50,8 @@
     <string name="delete">Delete</string>
     <string name="date">Date</string>
     <string name="save">Save</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="body_temperature">Body Temperature</string>
+    <string name="blood_sugar">Blood Sugar</string>
 </resources>

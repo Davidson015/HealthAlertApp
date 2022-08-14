@@ -137,11 +137,11 @@ public class MedicineDosageActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(MedicineDosageActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(MedicineDosageActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 drawer.closeDrawers();
                 break;

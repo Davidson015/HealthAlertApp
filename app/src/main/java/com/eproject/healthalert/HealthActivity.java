@@ -14,23 +14,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.eproject.healthalert.model.MedicineDosage;
 import com.google.android.material.navigation.NavigationView;
 
-public class FeedbackActivity extends AppCompatActivity {
+public class HealthActivity extends AppCompatActivity {
     Intent intent;
     DrawerLayout drawer;
-    Button savebtn;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
+    Button addvitalsbtn;
     NavigationView navigationView;
     SharedPreferences pref;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
+        setContentView(R.layout.activity_health);
+
+
+        addvitalsbtn = findViewById(R.id.add_vitals_btn);
+
+        addvitalsbtn.setOnClickListener(v -> {
+            intent = new Intent(HealthActivity.this, AddHealthVitalsActivity.class);
+            startActivity(intent);
+        });
+
 
 
         // Navigation Drawer
@@ -38,7 +45,7 @@ public class FeedbackActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
-        getSupportActionBar().setTitle("Feedbacks");
+        getSupportActionBar().setTitle("Personal Health Vitals");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
@@ -51,7 +58,6 @@ public class FeedbackActivity extends AppCompatActivity {
         setupDrawerContent(navigationView);
 
     }
-
 
     // Creating the setUpDrawerContent method
     private void setupDrawerContent(NavigationView navigationView) {
@@ -71,22 +77,21 @@ public class FeedbackActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.appointments:
-                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.AppointmentActivity.class);
+                intent = new Intent(com.eproject.healthalert.HealthActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.health_vitals:
-                intent = new Intent(FeedbackActivity.this, HealthActivity.class);
-                startActivity(intent);
-                finish();
+                drawer.closeDrawers();
                 break;
             case R.id.medicine:
-                intent = new Intent(FeedbackActivity.this, MedicineDosageActivity.class);
+                intent = new Intent(HealthActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.feedback:
-                drawer.closeDrawers();
+                intent = new Intent(HealthActivity.this, FeedbackActivity.class);
+                startActivity(intent);
                 break;
 //            case R.id.contact:
 //                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
@@ -105,10 +110,10 @@ public class FeedbackActivity extends AppCompatActivity {
 //                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
-                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, MainActivity.class);
+                intent = new Intent(com.eproject.healthalert.HealthActivity.this, MainActivity.class);
 
                 // Displaying a Toast message
-                Toast.makeText(com.eproject.healthalert.FeedbackActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.eproject.healthalert.HealthActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
                 finishAffinity();
@@ -136,4 +141,6 @@ public class FeedbackActivity extends AppCompatActivity {
             finish();
         }
     }
+
+
 }
