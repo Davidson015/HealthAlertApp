@@ -5,9 +5,8 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactActivity"
+    tools:context=".MainActivity"
     tools:openDrawer="start">
-    <!--    tools:context=".MainActivity"-->
 
 
     <include
@@ -21,23 +20,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/line"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        tools:context=".ContactActivity">
 
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/team_mail"
+            android:fontFamily="@font/alegreya_sc_bold"
+            android:padding="10dp"
+            android:text="Health Alert Team"
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <RelativeLayout
             android:id="@+id/team_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
                 android:id="@+id/team_mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="6sp"
+                android:textSize="16sp"
                 android:text="team.healthalert@gmail.com"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_mail" />
@@ -49,8 +57,9 @@
                 android:layout_below="@+id/team_mail"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="7sp"
                 android:text="team.healthalert@gmail.com"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_github" />
 
@@ -65,7 +74,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="3dp"
             android:fontFamily="@font/alegreya_sc_bold"
             android:padding="10dp"
             android:text="David-(+234 816 019 1273)"
@@ -83,9 +92,9 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="6sp"
                 android:text="tobilobadiekola@gmail.com"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_mail" />
 
@@ -95,9 +104,9 @@
                 android:layout_below="@+id/developer_info_1"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="7sp"
                 android:text="Davidson015"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_github" />
         </RelativeLayout>
@@ -111,7 +120,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="3dp"
             android:fontFamily="@font/alegreya_sc_bold"
             android:padding="10dp"
             android:text="Timmy-(+234 814 519 6075)"
@@ -129,9 +138,9 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="6dp"
                 android:text="erinletimilehin33@gmail.com"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_mail" />
 
@@ -141,9 +150,9 @@
                 android:layout_below="@+id/developer_info_2"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="7sp"
                 android:text="Timmy Spark"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_github" />
         </RelativeLayout>
@@ -157,17 +166,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="3dp"
             android:fontFamily="@font/alegreya_sc_bold"
             android:padding="10dp"
-            android:text="Yoh Eun -(+234 816 019 1273)"
+            android:text="Yoh Eun -(+234 704 556 0960)"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:id="@+id/developer_3_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                        android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/developer_info_3"
@@ -175,9 +184,9 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="6sp"
                 android:text="yoheunkpai@gmail.com"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_mail" />
 
@@ -187,11 +196,12 @@
                 android:layout_below="@+id/developer_info_3"
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
-                android:padding="10dp"
+                android:padding="6sp"
                 android:text="Yoh Eun"
-                android:textSize="17sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_github" />
+
         </RelativeLayout>
 
     </LinearLayout>

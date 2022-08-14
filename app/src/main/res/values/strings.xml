@@ -50,4 +50,13 @@
     <string name="delete">Delete</string>
     <string name="date">Date</string>
     <string name="save">Save</string>
+    <string name="help_healthalert">
+        Easy way to use HealthAlert app.
+        After registering you login the you would be able to view the home page,
+        Then we have the appointments section, Health vitals section, Medicine Dosages section.
+        In the appointment section you will be able to add appointments, you will be able to edit your appointment and cancel appointments .
+        in the Medicine Dosages section you can be able to add your medicine dosages do some changes and delete the ones you have finished
+    </string>
+    <string name="easy_way_to_use_healthalert_app">Easy way to use HealthAlert app.</string>
+    <string name="Help_image">help</string>
 </resources>
