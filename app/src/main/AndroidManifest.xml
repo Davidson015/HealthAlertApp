@@ -23,7 +23,7 @@
             android:name=".AddDosageActivity"
             android:exported="false" />
         <activity
-            android:name=".MedicalDosageActivity"
+            android:name=".MedicineDosageActivity"
             android:exported="false" />
         <activity
             android:name=".EditAppointmentActivity"
