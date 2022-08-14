@@ -67,6 +67,10 @@ public class FeedbackActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
+            case R.id.home:
+                intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.appointments:
                 intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);

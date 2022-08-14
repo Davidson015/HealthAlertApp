@@ -108,6 +108,10 @@ public class AppointmentActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
+            case R.id.home:
+                intent = new Intent(AppointmentActivity.this, HomeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.appointments:
                 intent = new Intent(AppointmentActivity.this, AppointmentActivity.class);
                 drawer.closeDrawers();

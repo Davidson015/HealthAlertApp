@@ -101,6 +101,10 @@ public class MedicineDosageActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
+            case R.id.home:
+                intent = new Intent(this, HomeActivity.class);
+                startActivity(intent);
+                break;
             case R.id.appointments:
                 intent = new Intent(MedicineDosageActivity.this, AppointmentActivity.class);
                 startActivity(intent);

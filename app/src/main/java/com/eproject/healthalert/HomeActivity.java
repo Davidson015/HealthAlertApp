@@ -127,6 +127,9 @@ public class HomeActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         Intent intent;
         switch (menuItem.getItemId()) {
+            case R.id.home:
+                drawer.closeDrawers();
+                break;
             case R.id.appointments:
                 intent = new Intent(HomeActivity.this, AppointmentActivity.class);
                 startActivity(intent);
