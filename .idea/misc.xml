@@ -33,6 +33,7 @@
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_medical_dosage.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_medicine_dosage.xml" value="0.2" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_sign_up.xml" value="0.2344139650872818" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/appoinment_list_card_view.xml" value="0.264" />
@@ -52,5 +53,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
   </component>
 </project>
