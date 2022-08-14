@@ -42,8 +42,8 @@ public class MedicineDosageActivity extends AppCompatActivity {
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
-        getSupportActionBar().setTitle("");
+        toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
+        getSupportActionBar().setTitle("Medicine Dosage");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
