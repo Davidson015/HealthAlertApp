@@ -103,10 +103,10 @@ public class HomeActivity extends AppCompatActivity {
 //                intent = new Intent(HomeActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                break;
-//            case R.id.medicine:
-//                intent = new Intent(HomeActivity.this, MedicineActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.medicine:
+                intent = new Intent(HomeActivity.this, MedicineActivity.class);
+                startActivity(intent);
+                break;
 //            case R.id.feedback:
 //                intent = new Intent(HomeActivity.this, FeedbackActivity.class);
 //                startActivity(intent);
@@ -142,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 break;
         }
+        
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawer.closeDrawers();

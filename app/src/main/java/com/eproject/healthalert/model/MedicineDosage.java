@@ -9,7 +9,6 @@ public class MedicineDosage {
     private String medicineDosageEndDate;
     private String medicineDosageFrequency;
 
-    public  MedicineDosage() {}
 
     public MedicineDosage(String userEmail, String medicineName, String medicineDosage, String medicineDosageTime, String medicineDosageStartDate, String medicineDosageEndDate, String medicineDosageFrequency) {
         this.userEmail = userEmail;

@@ -17,6 +17,15 @@
         android:theme="@style/Theme.HealthAlert"
         tools:targetApi="31">
         <activity
+            android:name=".AddDosageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MedicalDosageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditAppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddAppointmentActivity"
             android:exported="false" />
         <activity

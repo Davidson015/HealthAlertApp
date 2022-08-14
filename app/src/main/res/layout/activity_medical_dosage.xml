@@ -5,48 +5,46 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".MedicalDosageActivity"
     tools:openDrawer="start">
+
 
     <include
         android:id="@+id/bar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="@string/appointments"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_layout"
-        android:layout_marginTop="10sp"
-        android:orientation="vertical"
-        tools:context=".AppointmentActivity">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/add_appointment_btn"
+            android:id="@+id/add_dosage_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp"
             android:drawableEnd="@drawable/ic_add"
             android:drawablePadding="5dp"
-            android:padding="10sp"
+            android:padding="13dp"
             android:text="@string/add" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            tools:listitem="@layout/appoinment_list_card_view" />
-
+            tools:listitem="@layout/medicine_dosage_list_card_view" />
     </LinearLayout>
+
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
