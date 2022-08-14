@@ -152,7 +152,7 @@ public class AppointmentActivity extends AppCompatActivity {
                 // Clearing the SharedPreferences
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
 
                 break;
             default:

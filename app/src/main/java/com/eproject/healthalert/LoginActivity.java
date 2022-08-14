@@ -74,10 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                 database.getReference("users").orderByChild("email").equalTo(emailVal).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        // Checking if the data snapshot is null or not and performing specific actions
                         if (snapshot.getValue() != null) {
                             for (DataSnapshot childSnapShot : snapshot.getChildren()) {
                                 User user = childSnapShot.getValue(User.class);
-                                if (user.getPassword().equals(passwordVal)) {
+                                if (user != null && user.getPassword().equals(passwordVal)) {
                                     // Showing success message through Toast
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
@@ -98,6 +99,9 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.makeText(LoginActivity.this, "Invalid Password!", Toast.LENGTH_SHORT).show();
                                 }
                             }
+                        } else {
+                            // Displaying Toast message to user that the account doesn't exist
+                            Toast.makeText(LoginActivity.this, "Account doesn't exist!", Toast.LENGTH_SHORT).show();
                         }
                     }
 

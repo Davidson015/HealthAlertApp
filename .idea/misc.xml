@@ -3,40 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/bordered_shape.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/colored_border_shaped.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_appointment.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_blood_pressure.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_doctor.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_exit.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_heart.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_home_bkd.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_home_dsn.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_login_bk.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_login_blob.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_medical_appointment.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_settings.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_vitals.xml" value="0.1045" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/login_shape.xml" value="0.1495" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_add_appointment.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_add_dosage.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_appointment.xml" value="0.18" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_edit_appointment.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_feedback.xml" value="0.2234375" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_home.xml" value="0.18" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_intro.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_medical_dosage.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_sign_up.xml" value="0.19382022471910113" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/appoinment_list_card_view.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/home_content.xml" value="0.18" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/intro_slide.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/medicine_dosage_list_card_view.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/nav_header.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/toolbar.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/menu/nav_drawer.xml" value="0.2234375" />
+        <entry key="..\:/Users/tobil/AppData/Local/Android/Sdk/platforms/android-32/data/res/drawable/ic_lock_idle_alarm.xml" value="0.1115" />
       </map>
     </option>
   </component>

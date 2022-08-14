@@ -103,10 +103,10 @@ public class HomeActivity extends AppCompatActivity {
 //                intent = new Intent(HomeActivity.this, HealthVitals.class);
 //                startActivity(intent);
 //                break;
-//            case R.id.medicine:
-//                intent = new Intent(HomeActivity.this, MedicineActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.medicine:
+                intent = new Intent(HomeActivity.this, MedicineActivity.class);
+                startActivity(intent);
+                break;
             case R.id.feedback:
                 intent = new Intent(HomeActivity.this, FeedbackActivity.class);
                 startActivity(intent);
@@ -136,12 +136,13 @@ public class HomeActivity extends AppCompatActivity {
                 // Clearing the SharedPreferences
                 SharedPreferences.Editor editor = pref.edit();
                 editor.clear();
-                editor.commit();
+                editor.apply();
 
                 break;
             default:
                 break;
         }
+        
         menuItem.setChecked(true);
         setTitle(menuItem.getTitle());
         drawer.closeDrawers();
@@ -156,6 +157,11 @@ public class HomeActivity extends AppCompatActivity {
         } else {
             if (pressedTime + 2000 > System.currentTimeMillis()) {
                 super.onBackPressed();
+
+                // Clearing the SharedPreferences
+                SharedPreferences.Editor editor = pref.edit();
+                editor.clear();
+                editor.apply();
                 finishAffinity();
             } else {
                 Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();

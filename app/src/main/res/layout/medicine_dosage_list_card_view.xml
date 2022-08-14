@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="?android:attr/colorPrimary"
+    app:cardCornerRadius="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardElevation="10dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:id="@+id/medicine_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <ImageView
+            android:id="@+id/medicine_img"
+            android:layout_width="80sp"
+            android:layout_height="60sp"
+            android:scaleType="fitCenter"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_medicine_tablets" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@id/medicine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4sp"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="monospace"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/interval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/medicine"
+                android:layout_marginStart="4sp"
+                android:fontFamily="monospace"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/dosage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/interval"
+                android:layout_marginStart="4sp"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="monospace"
+                android:paddingStart="5sp"
+                android:paddingEnd="5sp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="80sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end"
+            android:background="@drawable/colored_border_shape"
+            android:gravity="end"
+            android:padding="7dp">
+
+            <TextView
+                android:id="@+id/tablet_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tablet_no"
+                android:fontFamily="@font/poppins"
+                android:text="Tablets"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>
+
+
+
