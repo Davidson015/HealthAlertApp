@@ -27,6 +27,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 public class SignUpActivity extends AppCompatActivity {
     // Creating Form fields
     TextInputEditText firstName, lastName, email, age, phoneNo, password, confirmPassword;
@@ -91,7 +93,7 @@ public class SignUpActivity extends AppCompatActivity {
             user = new User(firstName.getText().toString().trim(), lastName.getText().toString().trim(), email.getText().toString().trim(), age.getText().toString(), genderVal, password.getText().toString(), phoneNo.getText().toString().trim());
 
             // creating a user reference(UserId)
-            String userId = user.getFirstName() + user.getLastName();
+            String userId = user.getEmail().replace("@", "_").replace(".", "_") + "-" + user.getFirstName() + new Random().nextInt(100);
 
             // Checking if all fields are Empty
             if (firstName.getText().toString().isEmpty() || lastName.getText().toString().isEmpty() || email.getText().toString().isEmpty() || age.getText().toString().isEmpty() || phoneNo.getText().toString().isEmpty() || password.getText().toString().isEmpty() || confirmPassword.getText().toString().isEmpty()) {
@@ -121,20 +123,20 @@ public class SignUpActivity extends AppCompatActivity {
                 age.setError("Invalid Age!");
             }
 
-            // Checking if passwords match
-            else if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
-                // Creating Toast to show error
-                Toast.makeText(SignUpActivity.this, "Passwords do not match!", Toast.LENGTH_SHORT).show();
+            // Checking password length
+            else if (password.getText().toString().length() < 8) {
+                Toast.makeText(this, "Password must be at least 8 characters long!", Toast.LENGTH_SHORT).show();
+                password.setError("Password must be at least 6 characters long!");
             } else {
                 // Checking if the user is already registered
-                database.getReference("users").child(userId).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                database.getReference("users").orderByChild("email").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
                         if (!task.isSuccessful()) {
-                            Log.e("firebase", "User Already Exists", task.getException());
+                            Log.e("firebase", "Account Already Exists", task.getException());
 
                             // Creating Toast to show error
-                            Toast.makeText(SignUpActivity.this, "User Already Exists!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUpActivity.this, "Account Already Exists!", Toast.LENGTH_SHORT).show();
                         } else {
                             Log.d("firebase", "Safe to create user", task.getException());
 
