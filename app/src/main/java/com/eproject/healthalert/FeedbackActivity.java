@@ -37,7 +37,7 @@ public class FeedbackActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
-        getSupportActionBar().setTitle("Appointments");
+        getSupportActionBar().setTitle("Feedbacks");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
@@ -67,7 +67,7 @@ public class FeedbackActivity extends AppCompatActivity {
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.appointments:
-                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.FeedbackActivity.class);
+                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -83,6 +83,7 @@ public class FeedbackActivity extends AppCompatActivity {
 //                break;
             case R.id.feedback:
                 drawer.closeDrawers();
+                finish();
                 break;
 //            case R.id.contact:
 //                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
