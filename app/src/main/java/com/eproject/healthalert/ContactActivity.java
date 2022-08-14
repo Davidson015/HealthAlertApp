@@ -14,10 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.eproject.healthalert.model.MedicineDosage;
 import com.google.android.material.navigation.NavigationView;
 
-public class FeedbackActivity extends AppCompatActivity {
+public class ContactActivity extends AppCompatActivity {
     Intent intent;
     DrawerLayout drawer;
     Button savebtn;
@@ -26,19 +25,17 @@ public class FeedbackActivity extends AppCompatActivity {
     NavigationView navigationView;
     SharedPreferences pref;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feedback);
-
+        setContentView(R.layout.activity_contact);
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
-        getSupportActionBar().setTitle("Feedbacks");
+        getSupportActionBar().setTitle("Contact Us");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
@@ -49,9 +46,7 @@ public class FeedbackActivity extends AppCompatActivity {
         // Initializing NavigationView
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
-
     }
-
 
     // Creating the setUpDrawerContent method
     private void setupDrawerContent(NavigationView navigationView) {
@@ -71,44 +66,44 @@ public class FeedbackActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.appointments:
-                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, com.eproject.healthalert.AppointmentActivity.class);
+                intent = new Intent(com.eproject.healthalert.ContactActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
-            case R.id.health_vitals:
-                intent = new Intent(FeedbackActivity.this, HealthActivity.class);
-                startActivity(intent);
-                finish();
-                break;
+//            case R.id.health_vitals:
+//                intent = new Intent(ContactActivity.this, HealthVitals.class);
+//                startActivity(intent);
+//                finish();
+//                break;
             case R.id.medicine:
-                intent = new Intent(FeedbackActivity.this, MedicineDosageActivity.class);
+                intent = new Intent(ContactActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.feedback:
-                drawer.closeDrawers();
-                break;
-            case R.id.contact:
-                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
+                intent = new Intent(ContactActivity.this, FeedbackActivity.class);
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.contact:
+                drawer.closeDrawers();
+                break;
             case R.id.help:
-                intent = new Intent(FeedbackActivity.this, HelpActivity.class);
+                intent = new Intent(ContactActivity.this, HelpActivity.class);
                 startActivity(intent);
                 finish();
                 break;
 //            case R.id.settings:
-//                intent = new Intent(FeedbackActivity.this, SettingsActivity.class);
+//                intent = new Intent(ContactActivity.this, SettingsActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
-                intent = new Intent(com.eproject.healthalert.FeedbackActivity.this, MainActivity.class);
+                intent = new Intent(com.eproject.healthalert.ContactActivity.this, MainActivity.class);
 
                 // Displaying a Toast message
-                Toast.makeText(com.eproject.healthalert.FeedbackActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.eproject.healthalert.ContactActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
                 finishAffinity();

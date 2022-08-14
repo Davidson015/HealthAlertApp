@@ -137,14 +137,14 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, FeedbackActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.contact:
-//                intent = new Intent(HomeActivity.this, ContactActivity.class);
-//                startActivity(intent);
-//                break;
-//            case R.id.help:
-//                intent = new Intent(HomeActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.contact:
+                intent = new Intent(HomeActivity.this, ContactActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.help:
+                intent = new Intent(HomeActivity.this, HelpActivity.class);
+                startActivity(intent);
+                break;
 //            case R.id.settings:
 //                intent = new Intent(HomeActivity.this, SettingsActivity.class);
 //                startActivity(intent);

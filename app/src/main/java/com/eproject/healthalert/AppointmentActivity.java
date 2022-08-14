@@ -165,7 +165,6 @@ public class AppointmentActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.appointments:
-                intent = new Intent(AppointmentActivity.this, AppointmentActivity.class);
                 drawer.closeDrawers();
                 break;
             case R.id.health_vitals:
@@ -183,16 +182,16 @@ public class AppointmentActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.contact:
-//                intent = new Intent(AppointmentActivity.this, ContactActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            case R.id.help:
-//                intent = new Intent(AppointmentActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.contact:
+                intent = new Intent(AppointmentActivity.this, ContactActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.help:
+                intent = new Intent(AppointmentActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.settings:
 //                intent = new Intent(AppointmentActivity.this, SettingsActivity.class);
 //                startActivity(intent);
