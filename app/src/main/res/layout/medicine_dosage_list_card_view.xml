@@ -83,8 +83,8 @@
                 android:id="@+id/dosage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
                 android:layout_marginBottom="5sp"
+                android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="3" />
@@ -94,10 +94,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dosage"
                 android:fontFamily="@font/poppins"
+                android:text="Tablets"
                 android:textAlignment="center"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:text="Tablets" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
         <RelativeLayout
@@ -112,7 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:textSize="17sp"
+                android:textSize="19sp"
                 android:textAlignment="center"
                 android:text="15/08/2022"/>
 
@@ -122,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:textSize="17sp"
+                android:textSize="19sp"
                 android:textAlignment="center"
                 android:text="25/08/2022"/>
         </RelativeLayout>
