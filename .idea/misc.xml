@@ -10,6 +10,7 @@
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_blood_sugar.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_bp.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_contact.xml" value="0.1495" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_dark.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_doctor.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_drugs.xml" value="0.1495" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/drawable/ic_exit.xml" value="0.1045" />
@@ -54,7 +55,7 @@
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/home_content.xml" value="0.18" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/intro_slide.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/medicine_dosage_list_card_view.xml" value="0.1" />
-        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/nav_header.xml" value="0.1" />
+        <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/nav_header.xml" value="0.18" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/preloader.xml" value="0.10916919959473151" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/layout/toolbar.xml" value="0.1" />
         <entry key="..\:/Users/Timmy/AndroidStudioProjects/HealthAlertApp/app/src/main/res/menu/nav_drawer.xml" value="0.2234375" />
