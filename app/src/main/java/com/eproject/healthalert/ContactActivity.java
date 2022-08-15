@@ -70,11 +70,11 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(ContactActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(ContactActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 intent = new Intent(ContactActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);

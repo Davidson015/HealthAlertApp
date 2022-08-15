@@ -34,7 +34,7 @@ public class HealthActivity extends AppCompatActivity {
         addvitalsbtn = findViewById(R.id.add_vitals_btn);
 
         addvitalsbtn.setOnClickListener(v -> {
-            intent = new Intent(HealthActivity.this, AddHealthVitalsActivity.class);
+            intent = new Intent(HealthActivity.this, UpdateHealthVitalsActivity.class);
             startActivity(intent);
         });
 
@@ -92,19 +92,20 @@ public class HealthActivity extends AppCompatActivity {
             case R.id.feedback:
                 intent = new Intent(HealthActivity.this, FeedbackActivity.class);
                 startActivity(intent);
+                finish();
                 break;
-//            case R.id.contact:
-//                intent = new Intent(FeedbackActivity.this, ContactActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            case R.id.help:
-//                intent = new Intent(FeedbackActivity.this, HelpActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.contact:
+                intent = new Intent(HealthActivity.this, ContactActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.help:
+                intent = new Intent(HealthActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
 //            case R.id.settings:
-//                intent = new Intent(FeedbackActivity.this, SettingsActivity.class);
+//                intent = new Intent(HealthActivity.this, SettingsActivity.class);
 //                startActivity(intent);
 //                finish();
 //                break;

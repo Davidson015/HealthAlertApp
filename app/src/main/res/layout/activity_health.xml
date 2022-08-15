@@ -28,13 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="40sp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:drawableEnd="@drawable/ic_add"
+            android:layout_margin="10dp"
+            android:drawableEnd="@drawable/ic_update"
             android:drawablePadding="5dp"
             android:padding="10sp"
-            android:text="@string/add" />
+            android:text="@string/update" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -86,7 +84,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:padding="3sp"
-                        android:text="82 bpm"
+                        tools:text="82 bpm"
+                        android:text="N/A"
                         android:textAlignment="textStart"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -146,7 +145,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:padding="3sp"
-                        android:text="141/90 mmHg"
+                        tools:text="141/90 mmHg"
+                        android:text="N/A"
                         android:textAlignment="textStart"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -206,7 +206,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:padding="3sp"
-                        android:text="37 C degrees"
+                        tools:text="37 C degrees"
+                        android:text="N/A"
                         android:textAlignment="textStart"
                         android:textSize="21sp"
                         android:textStyle="bold" />
@@ -266,7 +267,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:padding="3sp"
-                        android:text="90 mg/dl"
+                        tools:text="90 mg/dl"
+                        android:text="N/A"
                         android:textAlignment="textStart"
                         android:textSize="21sp"
                         android:textStyle="bold" />

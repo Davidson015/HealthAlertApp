@@ -23,7 +23,7 @@
             android:name=".ContactActivity"
             android:exported="false" />
         <activity
-            android:name=".AddHealthVitalsActivity"
+            android:name=".UpdateHealthVitalsActivity"
             android:exported="false" />
         <activity
             android:name=".HealthActivity"

@@ -58,7 +58,7 @@
                 android:drawablePadding="10sp"
                 android:fontFamily="@font/poppins"
                 android:padding="7sp"
-                android:text="team.healthalert@gmail.com"
+                android:text="https://github.com/Davidson015/HealthAlertApp"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_github" />
