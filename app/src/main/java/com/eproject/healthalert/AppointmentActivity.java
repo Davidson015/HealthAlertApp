@@ -203,7 +203,7 @@ public class AppointmentActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(AppointmentActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finish();
+                finishAffinity();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity
