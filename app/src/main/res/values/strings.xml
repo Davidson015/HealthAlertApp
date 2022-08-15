@@ -51,11 +51,16 @@
     <string name="date">Date</string>
     <string name="save">Save</string>
     <string name="help_healthalert">
-        Easy way to use HealthAlert app.
-        After registering you login the you would be able to view the home page,
-        Then we have the appointments section, Health vitals section, Medicine Dosages section.
-        In the appointment section you will be able to add appointments, you will be able to edit your appointment and cancel appointments .
-        in the Medicine Dosages section you can be able to add your medicine dosages do some changes and delete the ones you have finished
+        After Successfully fully logging in to Health Alert and being part of our family ,
+        you can have all access to our app .
+            We have the appointments section where you can enter appointments and add them to a list,
+        you "don't" need to keep the date in your head , we will help you store your appointment and also send you a reminder
+        when the date is reached , "isn't" that great ? It sure is you can also edit appointments and delete it if you have no use
+        for it anymore . Guess what ! we do not only keep your appointments we also keep your medicine dosages and health vitals
+        , with us you would never miss the allocated time for you to take your drugs.
+        Our app is pretty simple to use , click on the links and enjoy !
+        For more Information contact us at team.healthalert@gmail.com. Adios!!
+
     </string>
     <string name="easy_way_to_use_healthalert_app">Easy way to use HealthAlert app.</string>
     <string name="Help_image">help</string>
