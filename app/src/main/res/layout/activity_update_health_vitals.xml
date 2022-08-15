@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddHealthVitalsActivity">
+    tools:context=".UpdateHealthVitalsActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
         app:endIconMode="clear_text">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/date_edit_val"
+            android:id="@+id/blood_sugar_edit_val"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/greyish"
@@ -82,14 +82,14 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/add_btn"
+    <Button
+        android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:drawablePadding="5dp"
-        android:padding="13dp"
+        android:layout_marginHorizontal="15sp"
+        android:layout_marginBottom="25sp"
+        android:paddingVertical="15sp"
+        android:textSize="16sp"
         android:text="@string/save" />
-
 
 </LinearLayout>
