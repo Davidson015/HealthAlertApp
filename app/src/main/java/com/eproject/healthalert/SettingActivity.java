@@ -1,10 +1,5 @@
 package com.eproject.healthalert;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,26 +9,34 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 
-public class HelpActivity extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
     Intent intent;
     DrawerLayout drawer;
+    Button saveprofilebtn;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
     SharedPreferences pref;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.activity_settings);
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
-        getSupportActionBar().setTitle("Help");
+        getSupportActionBar().setTitle("Settings");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);
@@ -44,7 +47,9 @@ public class HelpActivity extends AppCompatActivity {
         // Initializing NavigationView
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
+
     }
+
     // Creating the setUpDrawerContent method
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
@@ -63,45 +68,45 @@ public class HelpActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.appointments:
-                intent = new Intent(com.eproject.healthalert.HelpActivity.this, com.eproject.healthalert.AppointmentActivity.class);
+                intent = new Intent(com.eproject.healthalert.SettingActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.health_vitals:
-                intent = new Intent(HelpActivity.this, HealthActivity.class);
+                intent = new Intent(SettingActivity.this, HealthActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.medicine:
-                intent = new Intent(HelpActivity.this, MedicineDosageActivity.class);
+                intent = new Intent(SettingActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.feedback:
-                intent = new Intent(HelpActivity.this, FeedbackActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.contact:
-                intent = new Intent(HelpActivity.this, ContactActivity.class);
+                intent = new Intent(SettingActivity.this, FeedbackActivity.class);
                 startActivity(intent);
                 finish();
 
                 break;
-            case R.id.help:
-                drawer.closeDrawers();
-                break;
-            case R.id.settings:
-                intent = new Intent(HelpActivity.this, SettingActivity.class);
+            case R.id.contact:
+                intent = new Intent(SettingActivity.this, ContactActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            case R.id.help:
+                intent = new Intent(SettingActivity.this, HelpActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.settings:
+                drawer.closeDrawers();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity
-                intent = new Intent(com.eproject.healthalert.HelpActivity.this, MainActivity.class);
+                intent = new Intent(com.eproject.healthalert.SettingActivity.this, MainActivity.class);
 
                 // Displaying a Toast message
-                Toast.makeText(com.eproject.healthalert.HelpActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(com.eproject.healthalert.SettingActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
 
                 startActivity(intent);
                 finishAffinity();
@@ -129,4 +134,5 @@ public class HelpActivity extends AppCompatActivity {
             finish();
         }
     }
+
 }

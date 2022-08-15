@@ -41,15 +41,20 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:lineSpacingExtra="8dp"
-                android:padding="17dp"
-                android:text="@string/help_healthalert"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+           <ScrollView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="4sp">
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/poppins"
+                   android:lineSpacingExtra="8dp"
+                   android:padding="10dp"
+                   android:text="@string/help_healthalert"
+                   android:textColor="@color/black"
+                   android:textSize="17sp" />
+           </ScrollView>
 
         </LinearLayout>
 

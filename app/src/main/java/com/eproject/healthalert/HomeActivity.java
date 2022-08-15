@@ -21,6 +21,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +39,7 @@ public class HomeActivity extends AppCompatActivity {
     String usernameVal;
     TextView username;
     DrawerLayout drawer;
+    ImageView userprofilepic;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -66,6 +69,7 @@ public class HomeActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
 
+        userprofilepic = findViewById(R.id.user_profile_pic);
         appointmentCard = findViewById(R.id.appointments_card_view);
         medicalDosage = findViewById(R.id.medicine_dosage_card_view);
         healthVitals = findViewById(R.id.health_vitals_card_view);
@@ -84,6 +88,12 @@ public class HomeActivity extends AppCompatActivity {
                 appointment_description
         );
         l.setAdapter(arr);
+
+        // Adding onClickListener to the User Profile Picture
+        userprofilepic.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
+            startActivity(intent);
+        });
 
         // Adding onClickListener to the CardViews
         // Appointment CardView
@@ -145,10 +155,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, HelpActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.settings:
-//                intent = new Intent(HomeActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.settings:
+                intent = new Intent(HomeActivity.this, SettingActivity.class);
+                startActivity(intent);
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(HomeActivity.this, MainActivity.class);

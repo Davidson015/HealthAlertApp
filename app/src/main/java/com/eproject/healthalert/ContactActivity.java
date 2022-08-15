@@ -93,11 +93,11 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(ContactActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.settings:
+                intent = new Intent(ContactActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(com.eproject.healthalert.ContactActivity.this, MainActivity.class);

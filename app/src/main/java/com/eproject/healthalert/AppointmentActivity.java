@@ -200,11 +200,11 @@ public class AppointmentActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(AppointmentActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.settings:
+                intent = new Intent(AppointmentActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(AppointmentActivity.this, MainActivity.class);
