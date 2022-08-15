@@ -250,7 +250,6 @@ public class SettingActivity extends AppCompatActivity {
                 intent = new Intent(SettingActivity.this, FeedbackActivity.class);
                 startActivity(intent);
                 finish();
-
                 break;
             case R.id.contact:
                 intent = new Intent(SettingActivity.this, ContactActivity.class);
@@ -294,7 +293,8 @@ public class SettingActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(Gravity.LEFT)) {
             drawer.closeDrawer(Gravity.LEFT);
         } else {
-            super.onBackPressed();
+            Intent intent = new Intent(SettingActivity.this, HomeActivity.class);
+            startActivity(intent);
             finish();
         }
     }

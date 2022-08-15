@@ -31,10 +31,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     ListView l;
-    String[] appointment_description
-            = { "22 quarry Rd , Ibaara , Abeokuta",
-                "Cultural Center , Kuto , Abeokuta",
-                "Obansanjo Library , Abeokuta"};
+    String[] appointment_description = new String[5];
 
     String usernameVal;
     TextView username;
@@ -81,8 +78,18 @@ public class HomeActivity extends AppCompatActivity {
         // Setting the username to the TextView
         username.setText(String.format("Hello %s", usernameVal));
 
+//        // Initializing the ListView
 //        l = findViewById(R.id.upcoming_appts_list);
-
+//
+//        // Getting the appointment description from the SharedPreferences
+//        SharedPreferences pref = getSharedPreferences("appointment", MODE_PRIVATE);
+//
+//        // Adding apptDesc to the appointment_description array
+//        for (int i = 0; i < 5; i++) {
+//            String apptDesc = pref.getString("appointmentDescription" + i, "");
+//            appointment_description[i] = apptDesc;
+//        }
+//
 //        ArrayAdapter<String> arr = new ArrayAdapter<>(
 //                this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
 //                appointment_description
@@ -93,6 +100,7 @@ public class HomeActivity extends AppCompatActivity {
         userprofilepic.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
             startActivity(intent);
+            finish();
         });
 
         // Adding onClickListener to the CardViews
