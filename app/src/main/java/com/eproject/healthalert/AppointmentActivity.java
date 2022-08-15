@@ -53,8 +53,6 @@ public class AppointmentActivity extends AppCompatActivity {
     NavigationView navigationView;
     private long pressedTime;
 
-    String username;
-
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
 
@@ -99,9 +97,6 @@ public class AppointmentActivity extends AppCompatActivity {
         pref = getSharedPreferences("user", MODE_PRIVATE);
         String userEmail = pref.getString("email", "");
 
-        // Getting username from shared preferences
-        username = pref.getString("username", "");
-
         // Getting appointments from firebase db
         database.getReference("appointments").orderByChild("userEmail").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -111,9 +106,6 @@ public class AppointmentActivity extends AppCompatActivity {
                     for (DataSnapshot childSnapshot : snapshot.getChildren()) {
                         Appointment appointment = childSnapshot.getValue(Appointment.class);
                         appointmentList.add(appointment);
-
-                        // Calling the notify() method to notify the user about the appointment
-                        notify(appointment);
                     }
                     // Setting the adapter for the recycler view
                     AppointmentAdapter appointmentAdapter = new AppointmentAdapter(AppointmentActivity.this, appointmentList);
@@ -128,34 +120,6 @@ public class AppointmentActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 // Getting Post failed, log a message
                 Log.w(TAG, "loadPost:onCancelled", error.toException());
-            }
-
-            // Creating notify() method
-            private void notify(Appointment appointment) {
-                int notificationId = 1;
-                NotificationCompat.Builder builder = new NotificationCompat.Builder(AppointmentActivity.this);
-                builder.setSmallIcon(R.mipmap.ic_logo3)
-                        .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_logo3_round))
-                        .setContentTitle("Medical Appointment")
-                        //set the style of your notification and pass parameters for any specific style
-                        .setStyle(new NotificationCompat.BigTextStyle().bigText("Hello " + username + " you have an appointment - " + appointment.getAppointmentDescription() + " at " + appointment.getAppointmentTime() + " on " + appointment.getAppointmentDate()))
-                        .setAutoCancel(true);
-
-                Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                builder.setSound(path);
-
-                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    String channelId = "YOUR_CHANNEL_ID";
-                    NotificationChannel channel = new NotificationChannel(channelId,
-                            "Channel human readable title",
-                            NotificationManager.IMPORTANCE_DEFAULT);
-                    notificationManager.createNotificationChannel(channel);
-                    builder.setChannelId(channelId);
-                }
-
-                notificationManager.notify(notificationId, builder.build());
             }
         });
 

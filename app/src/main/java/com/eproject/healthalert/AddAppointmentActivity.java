@@ -2,9 +2,16 @@ package com.eproject.healthalert;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -31,7 +38,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
     TimePicker time;
     DatePicker date;
     Button addBtn;
-    String userEmail, appointmentId, timeVal, dateVal;
+    String userEmail, username, appointmentId, timeVal, dateVal;
 
     SharedPreferences pref;
 
@@ -46,6 +53,9 @@ public class AddAppointmentActivity extends AppCompatActivity {
         // Getting the userEmail from the SharedPreferences
         pref = getSharedPreferences("user", MODE_PRIVATE);
         userEmail = pref.getString("email", "");
+
+        // Getting username from shared preferences
+        username = pref.getString("username", "");
 
         // Initializing form fields
         desc = findViewById(R.id.appointment_desc_edit_val);
@@ -106,11 +116,46 @@ public class AddAppointmentActivity extends AppCompatActivity {
 
                             // Adding the appointment to the database
                             database.getReference("appointments").child(appointmentId).setValue(appointment);
+
+                            // Calling the notify() method to notify the user about the appointment
+                            notify(appointment);
+
+                            // Creating Toast to show success
                             Toast.makeText(AddAppointmentActivity.this, "Appointment added", Toast.LENGTH_SHORT).show();
+
+                            // Redirecting to the AppointmentActivity
                             Intent intent = new Intent(AddAppointmentActivity.this, AppointmentActivity.class);
                             startActivity(intent);
                             finish();
                         }
+                    }
+
+                    // Creating notify() method
+                    private void notify(Appointment appointment) {
+                        int notificationId = 1;
+                        NotificationCompat.Builder builder = new NotificationCompat.Builder(AddAppointmentActivity.this);
+                        builder.setSmallIcon(R.mipmap.ic_logo3)
+                                .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_logo3_round))
+                                .setContentTitle("Medical Appointment")
+                                //set the style of your notification and pass parameters for any specific style
+                                .setStyle(new NotificationCompat.BigTextStyle().bigText("Hello " + username + " you have an appointment - " + appointment.getAppointmentDescription() + " at " + appointment.getAppointmentTime() + " on " + appointment.getAppointmentDate()))
+                                .setAutoCancel(true);
+
+                        Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+                        builder.setSound(path);
+
+                        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            String channelId = "YOUR_CHANNEL_ID";
+                            NotificationChannel channel = new NotificationChannel(channelId,
+                                    "Channel human readable title",
+                                    NotificationManager.IMPORTANCE_DEFAULT);
+                            notificationManager.createNotificationChannel(channel);
+                            builder.setChannelId(channelId);
+                        }
+
+                        notificationManager.notify(notificationId, builder.build());
                     }
                 });
             }
