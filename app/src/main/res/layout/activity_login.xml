@@ -8,6 +8,19 @@
     android:paddingTop="20dp"
     tools:context=".LoginActivity">
 
+    <ProgressBar
+        android:id="@+id/pBar"
+        android:background="#d1000000"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ProgressBar>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

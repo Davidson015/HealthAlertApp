@@ -1,17 +1,19 @@
 package com.eproject.healthalert;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.eproject.healthalert.model.User;
 import com.google.android.material.textfield.TextInputEditText;
@@ -22,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     TextView signUp;
-
+    private ProgressBar pgsBar;
     // Creating form fields
     TextInputEditText email, password;
     Button login;
@@ -42,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_btn);
+        pgsBar = findViewById(R.id.pBar);
 
         // Setting onClickListener for SignUp TextView
         signUp = findViewById(R.id.sign_up_txt);
@@ -53,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Logging the user in
         login.setOnClickListener(v -> {
+
             String emailVal = email.getText().toString();
             String passwordVal = password.getText().toString();
 
@@ -70,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Invalid Email Address!", Toast.LENGTH_SHORT).show();
                 email.setError("Invalid Email Address!");
             } else {
+
                 // Checking if user exists in the database
                 database.getReference("users").orderByChild("email").equalTo(emailVal).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -79,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
                             for (DataSnapshot childSnapShot : snapshot.getChildren()) {
                                 User user = childSnapShot.getValue(User.class);
                                 if (user != null && user.getPassword().equals(passwordVal)) {
+                                    //  make progress bar transparent when data is fully fetched
+                                    pgsBar.setVisibility(View.GONE);
                                     // Showing success message through Toast
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
@@ -92,6 +99,8 @@ public class LoginActivity extends AppCompatActivity {
                                     // Applying editor changes to SharedPreferences
                                     editor.apply();
 
+                                    //  make progress bar visible
+                                    pgsBar.setVisibility(View.VISIBLE);
                                     startActivity(intent);
                                     finish();
                                     System.out.println(user.getFirstName());

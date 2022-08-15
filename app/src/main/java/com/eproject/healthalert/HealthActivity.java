@@ -78,9 +78,9 @@ public class HealthActivity extends AppCompatActivity {
                         bp.setText(healthVitals.getBloodPressure() + " mmHg");
                         temperature.setText(healthVitals.getBodyTemperature() + " °C");
                         bloodSugar.setText(healthVitals.getBloodGlucose() + " mg/dL");
-                        respiratoryRate.setText(healthVitals.getRespiratoryRate() + "per min");
-                        height.setText(healthVitals.getHeight() + "inches");
-                        weight.setText(healthVitals.getWeight() + "kg");
+                        respiratoryRate.setText(healthVitals.getRespiratoryRate() + " per min");
+                        height.setText(healthVitals.getHeight() + " inches");
+                        weight.setText(healthVitals.getWeight() + " kg");
                     }
                 } else {
                     Toast.makeText(HealthActivity.this, "No health vitals added yet", Toast.LENGTH_SHORT).show();
