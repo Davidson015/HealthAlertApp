@@ -1,20 +1,33 @@
 package com.eproject.healthalert;
 
+import static android.content.ContentValues.TAG;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.eproject.healthalert.adapter.AppointmentAdapter;
+import com.eproject.healthalert.model.Appointment;
+import com.eproject.healthalert.model.PersonalHealthVitals;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class HealthActivity extends AppCompatActivity {
     Intent intent;
@@ -23,6 +36,16 @@ public class HealthActivity extends AppCompatActivity {
     Toolbar toolbar;
     Button addvitalsbtn;
     NavigationView navigationView;
+
+    // Creating value views
+    TextView heartRate, bp, temperature, bloodSugar, weight, height, respiratoryRate;
+
+    String userEmail;
+
+    // Creating an instance of firebase db
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
+
+    // Creating shared preferences
     SharedPreferences pref;
 
     @Override
@@ -30,6 +53,43 @@ public class HealthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_health);
 
+        // Initializing views
+        heartRate = findViewById(R.id.heart_rate_val);
+        bp = findViewById(R.id.bp_val);
+        temperature = findViewById(R.id.body_temp_val);
+        bloodSugar = findViewById(R.id.blood_sugar_val);
+
+        // Getting the userEmail from the SharedPreferences
+        pref = getSharedPreferences("user", MODE_PRIVATE);
+        userEmail = pref.getString("email", "");
+
+        // Getting User health vitals from firebase db
+        database.getReference("healthVitals").orderByChild("userId").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.getValue() != null) {
+                    // Getting the healthVitals values
+                    for (DataSnapshot childSnapshot : snapshot.getChildren()) {
+                        PersonalHealthVitals healthVitals = childSnapshot.getValue(PersonalHealthVitals.class);
+
+                        // Setting the healthVitals values
+                        heartRate.setText(healthVitals.getPulseRate() + " bpm");
+                        bp.setText(healthVitals.getBloodPressure() + " mmHg");
+                        temperature.setText(healthVitals.getBodyTemperature() + " °C");
+                        bloodSugar.setText(healthVitals.getBloodGlucose() + " mg/dL");
+                    }
+                } else {
+                    Toast.makeText(HealthActivity.this, "No health vitals added yet", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Getting Post failed, log a message
+                Log.w(TAG, "loadPost:onCancelled", error.toException());
+            }
+        });
 
         addvitalsbtn = findViewById(R.id.add_vitals_btn);
 
@@ -37,8 +97,6 @@ public class HealthActivity extends AppCompatActivity {
             intent = new Intent(HealthActivity.this, UpdateHealthVitalsActivity.class);
             startActivity(intent);
         });
-
-
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
