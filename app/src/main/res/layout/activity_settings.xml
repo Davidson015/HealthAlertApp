@@ -184,7 +184,7 @@
                     android:layout_marginBottom="25sp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:paddingVertical="15sp"
+                    android:paddingVertical="10sp"
                     android:background="?attr/colorError"
                     android:text="Delete Account"
                     android:textSize="16sp" />
