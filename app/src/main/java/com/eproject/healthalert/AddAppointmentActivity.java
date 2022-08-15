@@ -138,7 +138,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
                                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_logo3_round))
                                 .setContentTitle("Medical Appointment")
                                 //set the style of your notification and pass parameters for any specific style
-                                .setStyle(new NotificationCompat.BigTextStyle().bigText("Hello " + username + " you have an appointment - " + appointment.getAppointmentDescription() + " at " + appointment.getAppointmentTime() + " on " + appointment.getAppointmentDate()))
+                                .setStyle(new NotificationCompat.BigTextStyle().bigText("Hello " + username + ", you've just added an appointment - " + appointment.getAppointmentDescription() + " for " + appointment.getAppointmentDate() + " at " + appointment.getAppointmentTime()))
                                 .setAutoCancel(true);
 
                         Uri path = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
