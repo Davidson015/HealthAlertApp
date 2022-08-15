@@ -175,6 +175,20 @@
                     android:paddingVertical="15sp"
                     android:text="@string/save"
                     android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/del_profile_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10sp"
+                    android:layout_marginBottom="25sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="15sp"
+                    android:background="?attr/colorError"
+                    android:text="Delete Account"
+                    android:textSize="16sp" />
+
             </LinearLayout>
 
         </ScrollView>
@@ -183,13 +197,13 @@
 
     </LinearLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_drawer" />
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:headerLayout="@layout/nav_header"-->
+<!--        app:menu="@menu/nav_drawer" />-->
 
 </androidx.drawerlayout.widget.DrawerLayout>
