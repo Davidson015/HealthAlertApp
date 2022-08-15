@@ -145,10 +145,10 @@ public class HomeActivity extends AppCompatActivity {
                 intent = new Intent(HomeActivity.this, HelpActivity.class);
                 startActivity(intent);
                 break;
-//            case R.id.settings:
-//                intent = new Intent(HomeActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                break;
+            case R.id.settings:
+                intent = new Intent(HomeActivity.this, SettingActivity.class);
+                startActivity(intent);
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(HomeActivity.this, MainActivity.class);

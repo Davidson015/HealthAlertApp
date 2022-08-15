@@ -70,11 +70,11 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(ContactActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(ContactActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 intent = new Intent(ContactActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
@@ -93,11 +93,11 @@ public class ContactActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(ContactActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.settings:
+                intent = new Intent(ContactActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(com.eproject.healthalert.ContactActivity.this, MainActivity.class);

@@ -67,11 +67,11 @@ public class HelpActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-//            case R.id.health_vitals:
-//                intent = new Intent(FeedbackActivity.this, HealthVitals.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.health_vitals:
+                intent = new Intent(HelpActivity.this, HealthActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.medicine:
                 intent = new Intent(HelpActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
@@ -91,11 +91,11 @@ public class HelpActivity extends AppCompatActivity {
             case R.id.help:
                 drawer.closeDrawers();
                 break;
-//            case R.id.settings:
-//                intent = new Intent(FeedbackActivity.this, SettingsActivity.class);
-//                startActivity(intent);
-//                finish();
-//                break;
+            case R.id.settings:
+                intent = new Intent(HelpActivity.this, SettingActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.logout:
                 // Redirecting User to MainActivity
                 intent = new Intent(com.eproject.healthalert.HelpActivity.this, MainActivity.class);
