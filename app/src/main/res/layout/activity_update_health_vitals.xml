@@ -100,11 +100,11 @@
         android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15sp"
         android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15sp"
         android:layout_marginBottom="25sp"
         android:paddingVertical="15sp"
-        android:textSize="16sp"
-        android:text="@string/update" />
+        android:text="@string/update"
+        android:textSize="16sp" />
 
 </RelativeLayout>

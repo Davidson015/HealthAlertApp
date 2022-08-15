@@ -149,6 +149,9 @@ public class SignUpActivity extends AppCompatActivity {
                                 // Adding user to database
                                 database.getReference("users").child(userId).setValue(user);
 
+                                // Creating Toast to show that the user is registered successfully
+                                Toast.makeText(SignUpActivity.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
+
                                 // Ending this activity and starting LoginActivity
                                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                                 startActivity(intent);
