@@ -41,8 +41,8 @@ public class MedicineDosageAdapter extends RecyclerView.Adapter<MedicineDosageAd
         MedicineDosage model = dosageArrayList.get(position);
         holder.medicineName.setText(model.getMedicineName());
         holder.medicineDosage.setText(model.getMedicineDosage());
-//        holder.medicineDosageStartDate.setText(model.getMedicineDosageStartDate());
-//        holder.medicineDosageEndDate.setText(model.getMedicineDosageEndDate());
+        holder.medicineDosageStartDate.setText(model.getMedicineDosageStartDate());
+        holder.medicineDosageEndDate.setText(model.getMedicineDosageEndDate());
         holder.medicineDosageTime.setText(model.getMedicineDosageTime());
         holder.medicineDosageFrequency.setText(model.getMedicineDosageFrequency());
 
@@ -59,8 +59,8 @@ public class MedicineDosageAdapter extends RecyclerView.Adapter<MedicineDosageAd
         private final TextView medicineName;
         private final TextView medicineDosage;
         private final TextView medicineDosageTime;
-        private TextView medicineDosageStartDate;
-        private TextView medicineDosageEndDate;
+        private final TextView medicineDosageStartDate;
+        private final TextView medicineDosageEndDate;
         private final TextView medicineDosageFrequency;
 
 
@@ -68,8 +68,8 @@ public class MedicineDosageAdapter extends RecyclerView.Adapter<MedicineDosageAd
             super(itemView);
             medicineName = itemView.findViewById(R.id.medicine);
             medicineDosage = itemView.findViewById(R.id.dosage);
-//            medicineDosageStartDate = itemView.findViewById(R.id.interval);
-//            medicineDosageEndDate = itemView.findViewById(R.id.interval);
+            medicineDosageStartDate = itemView.findViewById(R.id.start_date);
+            medicineDosageEndDate = itemView.findViewById(R.id.end_date);
             medicineDosageTime = itemView.findViewById(R.id.interval);
             medicineDosageFrequency = itemView.findViewById(R.id.frequency);
 
