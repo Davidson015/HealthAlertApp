@@ -103,7 +103,7 @@ public class HealthActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(getResources().getColor(R.color.transparent));
-        getSupportActionBar().setTitle("Personal Health Vitals");
+        getSupportActionBar().setTitle("Health Vitals");
 
         // Initializing drawer layout and actionbarToggle
         drawer = findViewById(R.id.drawer_layout);

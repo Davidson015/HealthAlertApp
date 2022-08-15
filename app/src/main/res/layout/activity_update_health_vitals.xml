@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,84 +12,99 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:padding="10dp"
-        android:text="Add Health Vitals"
+        android:id="@+id/txt_head"
+        android:layout_alignParentTop="true"
+        android:text="Update Health Vitals"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/heart_rate"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+        android:layout_below="@id/txt_head"
+        android:paddingBottom="120sp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/heart_rate_edit_val"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="number"
-     />
+            android:orientation="vertical">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/heart_rate"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/blood_pressure"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/heart_rate_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="number"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/bp_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/blood_pressure"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/body_temperature"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bp_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="number" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/body_temp_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/body_temperature"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/blood_sugar"
-        android:padding="15dp"
-        app:endIconMode="clear_text">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/body_temp_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="number" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/blood_sugar_edit_val"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/greyish"
-            android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/blood_sugar"
+                android:padding="15dp"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/blood_sugar_edit_val"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/greyish"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/update_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="15sp"
+        android:layout_alignParentBottom="true"
         android:layout_marginBottom="25sp"
         android:paddingVertical="15sp"
         android:textSize="16sp"
-        android:text="@string/save" />
+        android:text="@string/update" />
 
-</LinearLayout>
+</RelativeLayout>
