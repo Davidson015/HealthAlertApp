@@ -25,12 +25,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.eproject.healthalert.adapter.AppointmentAdapter;
 import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.User;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -51,7 +53,7 @@ public class AppointmentActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
-    private long pressedTime;
+    ShimmerFrameLayout shimmer;
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
@@ -90,6 +92,15 @@ public class AppointmentActivity extends AppCompatActivity {
 //        Setting Recycler View for Appointment cards
         appointmentRecyclerView = findViewById(R.id.recyclerview);
 
+        // Getting Shimmer from the layout (Initializing it)
+        shimmer = findViewById(R.id.shimmer_view_container);
+
+        // Starting Shimmer Animation
+        shimmer.startShimmer();
+
+        // Setting the RecylcerView Visibility to Gone
+        appointmentRecyclerView.setVisibility(View.GONE);
+
         // initialing arraylist for appointment
         appointmentList = new ArrayList<>();
 
@@ -110,9 +121,27 @@ public class AppointmentActivity extends AppCompatActivity {
                     // Setting the adapter for the recycler view
                     AppointmentAdapter appointmentAdapter = new AppointmentAdapter(AppointmentActivity.this, appointmentList);
                     appointmentRecyclerView.setAdapter(appointmentAdapter);
+
+                    // Stopping the Shimmer Animation
+                    shimmer.stopShimmer();
+
+                    // Setting the view of the shimmer to gone
+                    shimmer.setVisibility(View.GONE);
+
+                    // Setting the view of the recyclerView to visible
+                    appointmentRecyclerView.setVisibility(View.VISIBLE);
+
                     appointmentRecyclerView.setLayoutManager(new LinearLayoutManager(AppointmentActivity.this));
                 } else {
-                    Toast.makeText(AppointmentActivity.this, "No appointments to show.", Toast.LENGTH_LONG).show();
+
+                    // Stopping the Shimmer Animation
+                    shimmer.stopShimmer();
+
+                    // Setting the view of the shimmer to gone
+                    shimmer.setVisibility(View.GONE);
+
+                    // Showing toast message that there's no appointments
+                    Toast.makeText(AppointmentActivity.this, "No Appointments to show.", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -203,7 +232,7 @@ public class AppointmentActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(AppointmentActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finishAffinity();
+                finish();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity

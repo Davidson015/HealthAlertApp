@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.eproject.healthalert.adapter.MedicineDosageAdapter;
 import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.MedicineDosage;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,6 +41,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
+    ShimmerFrameLayout shimmer;
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
@@ -73,6 +76,15 @@ public class MedicineDosageActivity extends AppCompatActivity {
 //        Setting Recycler View for dosage cards
         dosageRecyclerView = findViewById(R.id.recyclerview);
 
+        // Getting Shimmer from the layout (Initializing it)
+        shimmer = findViewById(R.id.shimmer_view_container);
+
+        // Starting Shimmer Animation
+        shimmer.startShimmer();
+
+        // Setting the RecylcerView Visibility to Gone
+        dosageRecyclerView.setVisibility(View.GONE);
+
         dosageList = new ArrayList<>();
 
         // Getting user email from shared preferences
@@ -92,8 +104,26 @@ public class MedicineDosageActivity extends AppCompatActivity {
                     // Setting the adapter for the recycler view
                     MedicineDosageAdapter appointmentAdapter = new MedicineDosageAdapter(MedicineDosageActivity.this, dosageList);
                     dosageRecyclerView.setAdapter(appointmentAdapter);
+
+                    // Stopping the Shimmer Animation
+                    shimmer.stopShimmer();
+
+                    // Setting the view of the shimmer to gone
+                    shimmer.setVisibility(View.GONE);
+
+                    // Setting the view of the recyclerView to visible
+                    dosageRecyclerView.setVisibility(View.VISIBLE);
+
                     dosageRecyclerView.setLayoutManager(new LinearLayoutManager(MedicineDosageActivity.this));
                 } else {
+
+                    // Stopping the Shimmer Animation
+                    shimmer.stopShimmer();
+
+                    // Setting the view of the shimmer to gone
+                    shimmer.setVisibility(View.GONE);
+
+                    // Showing toast message
                     Toast.makeText(MedicineDosageActivity.this, "No Dosages to show.", Toast.LENGTH_LONG).show();
                 }
             }
@@ -163,7 +193,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(MedicineDosageActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finishAffinity();
+                finish();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity

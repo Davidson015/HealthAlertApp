@@ -100,7 +100,6 @@ public class HomeActivity extends AppCompatActivity {
         userprofilepic.setOnClickListener(v -> {
             Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
             startActivity(intent);
-            finish();
         });
 
         // Adding onClickListener to the CardViews
@@ -166,7 +165,7 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(HomeActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finishAffinity();
+                finish();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity

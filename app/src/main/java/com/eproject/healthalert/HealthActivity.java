@@ -168,7 +168,7 @@ public class HealthActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(HealthActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finishAffinity();
+                finish();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity
