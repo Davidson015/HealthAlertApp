@@ -10,15 +10,6 @@
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
-    <ImageView
-        android:layout_width="55sp"
-        android:layout_height="55dp"
-        android:contentDescription="@string/mode"
-        android:layout_gravity="end"
-        android:padding="10dp"
-        android:src="@drawable/ic_light"/>
-
     <ImageView
         android:id="@+id/navHeaderImage"
         android:layout_width="match_parent"

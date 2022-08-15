@@ -81,13 +81,13 @@ public class HomeActivity extends AppCompatActivity {
         // Setting the username to the TextView
         username.setText(String.format("Hello %s", usernameVal));
 
-        l = findViewById(R.id.upcoming_appts_list);
+//        l = findViewById(R.id.upcoming_appts_list);
 
-        ArrayAdapter<String> arr = new ArrayAdapter<>(
-                this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
-                appointment_description
-        );
-        l.setAdapter(arr);
+//        ArrayAdapter<String> arr = new ArrayAdapter<>(
+//                this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
+//                appointment_description
+//        );
+//        l.setAdapter(arr);
 
         // Adding onClickListener to the User Profile Picture
         userprofilepic.setOnClickListener(v -> {

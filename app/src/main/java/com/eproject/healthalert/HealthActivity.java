@@ -155,6 +155,14 @@ public class HealthActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
+            case R.id.contact:
+                intent = new Intent(HealthActivity.this, ContactActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.help:
+                intent = new Intent(HealthActivity.this, HelpActivity.class);
+                startActivity(intent);
+                break;
             case R.id.settings:
                 intent = new Intent(HealthActivity.this, SettingActivity.class);
                 startActivity(intent);
