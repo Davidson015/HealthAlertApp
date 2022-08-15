@@ -33,7 +33,7 @@
     <string name="log_out">Log Out</string>
     <string name="help">Help</string>
     <string name="contact_us">Contact Us</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Profile Settings</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="profile_pic">Profile Picture</string>
@@ -70,4 +70,8 @@
     <string name="blood_sugar">Blood Sugar</string>
     <string name="mode">Light Mode</string>
     <string name="update">Update</string>
+    <string name="respiratory_rate">Respiratory Rate</string>
+    <string name="weight">Weight</string>
+    <string name="update_health_vitals">Update Health Vitals</string>
+    <string name="height">Height</string>
 </resources>

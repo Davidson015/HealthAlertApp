@@ -59,7 +59,18 @@
                     android:inputType="textCapWords" />
 
             </com.google.android.material.textfield.TextInputLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15sp"
+                android:fontFamily="@font/poppins"
+                android:padding="5dp"
+                android:text="Time :"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
             <TimePicker
                 android:id="@+id/time_edit_val"
                 android:layout_width="match_parent"
@@ -67,7 +78,18 @@
                 android:background="@color/greyish"
                 android:layout_margin="15sp"
                 android:timePickerMode="spinner"/>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15sp"
+                android:layout_marginStart="15sp"
+                android:layout_marginTop="15sp"
+                android:fontFamily="@font/poppins"
+                android:padding="5dp"
+                android:text="Date :"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
             <DatePicker
                 android:id="@+id/date_edit_val"
                 android:layout_width="match_parent"

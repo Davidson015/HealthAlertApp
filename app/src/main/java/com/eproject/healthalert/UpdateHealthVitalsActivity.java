@@ -1,14 +1,14 @@
 package com.eproject.healthalert;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.eproject.healthalert.model.PersonalHealthVitals;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class UpdateHealthVitalsActivity extends AppCompatActivity {
     // Creating form fields
-    TextInputEditText heartRate, bp, bodyTemp, bloodSugar;
+    TextInputEditText heartRate, bp, bodyTemp, bloodSugar, height, weight, respRate;
     Button updateBtn;
 
     String userEmail, healthVitalsId;
@@ -28,6 +28,7 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,12 +43,15 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
         bp = findViewById(R.id.bp_edit_val);
         bodyTemp = findViewById(R.id.body_temp_edit_val);
         bloodSugar = findViewById(R.id.blood_sugar_edit_val);
+        respRate = findViewById(R.id.respiratory_rate_edit_val);
+        height = findViewById(R.id.height_edit_val);
+        weight = findViewById(R.id.weight_edit_val);
         updateBtn = findViewById(R.id.update_btn);
 
         // Adding onClickListener to the update button
         updateBtn.setOnClickListener(v -> {
             // Checking if fields are empty
-            if(heartRate.getText().toString().isEmpty() || bp.getText().toString().isEmpty() || bodyTemp.getText().toString().isEmpty() || bloodSugar.getText().toString().isEmpty()) {
+            if (heartRate.getText().toString().isEmpty() || bp.getText().toString().isEmpty() || bodyTemp.getText().toString().isEmpty() || bloodSugar.getText().toString().isEmpty()|| height.getText().toString().isEmpty() || respRate.getText().toString().isEmpty() || weight.getText().toString().isEmpty())  {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 if (heartRate.getText().toString().isEmpty()) {
                     heartRate.setError("Please fill this field");
@@ -57,10 +61,17 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
                     bodyTemp.setError("Please fill this field");
                 } else if (bloodSugar.getText().toString().isEmpty()) {
                     bloodSugar.setError("Please fill this field");
+                } else if (height.getText().toString().isEmpty()) {
+                    height.setError("Please fill this field");
+                } else if (weight.getText().toString().isEmpty()) {
+                    weight.setError("Please fill this field");
+                } else if (respRate.getText().toString().isEmpty()) {
+                    respRate.setError("Please fill this field");
                 }
+
             } else {
                 // Creating an instance of PersonalHealthVitals class
-                PersonalHealthVitals healthVitals = new PersonalHealthVitals(userEmail, "", "", bp.getText().toString().trim(), bloodSugar.getText().toString().trim(), bodyTemp.getText().toString().trim(), "", heartRate.getText().toString().trim());
+                PersonalHealthVitals healthVitals = new PersonalHealthVitals(userEmail, height.getText().toString().trim(), weight.getText().toString().trim(), bp.getText().toString().trim(), bloodSugar.getText().toString().trim(), bodyTemp.getText().toString().trim(), "", heartRate.getText().toString().trim());
 
                 // Creating an health vitals reference(healthVitalsId)
                 healthVitalsId = (userEmail.replace("@", "_").replace(".", "_") + "_healthVitals000");
@@ -70,7 +81,7 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete(@NonNull Task<DataSnapshot> task) {
-                        if(!task.isSuccessful()) {
+                        if (!task.isSuccessful()) {
                             Log.e("firebase", "Error getting data", task.getException());
 
                             // Creating Toast to show error

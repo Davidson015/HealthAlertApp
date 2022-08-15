@@ -18,10 +18,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.eproject.healthalert.adapter.AppointmentAdapter;
-import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.PersonalHealthVitals;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -58,6 +55,9 @@ public class HealthActivity extends AppCompatActivity {
         bp = findViewById(R.id.bp_val);
         temperature = findViewById(R.id.body_temp_val);
         bloodSugar = findViewById(R.id.blood_sugar_val);
+        height = findViewById(R.id.height_val);
+        weight = findViewById(R.id.weight_val);
+        respiratoryRate = findViewById(R.id.resp_rate_val);
 
         // Getting the userEmail from the SharedPreferences
         pref = getSharedPreferences("user", MODE_PRIVATE);
@@ -78,6 +78,9 @@ public class HealthActivity extends AppCompatActivity {
                         bp.setText(healthVitals.getBloodPressure() + " mmHg");
                         temperature.setText(healthVitals.getBodyTemperature() + " °C");
                         bloodSugar.setText(healthVitals.getBloodGlucose() + " mg/dL");
+                        respiratoryRate.setText(healthVitals.getRespiratoryRate() + " per min");
+                        height.setText(healthVitals.getHeight() + " inches");
+                        weight.setText(healthVitals.getWeight() + " kg");
                     }
                 } else {
                     Toast.makeText(HealthActivity.this, "No health vitals added yet", Toast.LENGTH_SHORT).show();
@@ -149,16 +152,6 @@ public class HealthActivity extends AppCompatActivity {
                 break;
             case R.id.feedback:
                 intent = new Intent(HealthActivity.this, FeedbackActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.contact:
-                intent = new Intent(HealthActivity.this, ContactActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            case R.id.help:
-                intent = new Intent(HealthActivity.this, HelpActivity.class);
                 startActivity(intent);
                 finish();
                 break;
