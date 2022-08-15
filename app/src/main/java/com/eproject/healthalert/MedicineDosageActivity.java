@@ -163,7 +163,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(MedicineDosageActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finish();
+                finishAffinity();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity

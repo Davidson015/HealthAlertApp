@@ -196,64 +196,6 @@
                         android:src="@drawable/ic_medicine_dosage" />
                 </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/appointments_list_card_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="300sp"
-                    android:layout_below="@+id/medicine_dosage_card_view"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:foreground="?selectableItemBackground"
-                    app:cardBackgroundColor="@color/blue_grey"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
-                    app:cardPreventCornerOverlap="true"
-                    app:contentPadding="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:padding="5dp"
-                            android:text="@string/upcoming_appointments"
-                            android:textAlignment="center"
-                            android:textSize="21sp"
-                            android:textStyle="bold" />
-
-                        <ListView
-                            android:id="@+id/upcoming_appts_list"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="5dp"
-                            android:minHeight="200dp"
-                            android:padding="10dp"
-                            android:paddingHorizontal="5dp"
-                            tools:listitem="@layout/support_simple_spinner_dropdown_item" />
-
-                        <Button
-                            android:id="@+id/view_all"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:fontFamily="@font/poppins"
-                            android:text="@string/view_all"
-                            android:textAlignment="textEnd"
-                            android:textSize="20sp"
-                            app:icon="@drawable/ic_arrow_forward"
-                            app:iconGravity="end"
-                            app:rippleColor="@color/blue_grey" />
-
-                    </LinearLayout>
-
-                </com.google.android.material.card.MaterialCardView>
-
             </RelativeLayout>
         </ScrollView>
     </RelativeLayout>

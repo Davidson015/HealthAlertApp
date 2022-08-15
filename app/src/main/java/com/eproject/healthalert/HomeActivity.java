@@ -158,6 +158,7 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(HomeActivity.this, SettingActivity.class);
                 startActivity(intent);
+                finishAffinity();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity

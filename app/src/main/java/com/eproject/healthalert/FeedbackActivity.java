@@ -101,7 +101,7 @@ public class FeedbackActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(FeedbackActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finish();
+                finishAffinity();
                 break;
             case R.id.logout:
                 // Redirecting User to MainActivity
