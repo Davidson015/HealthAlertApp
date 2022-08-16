@@ -35,6 +35,7 @@
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_help.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_intro.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_loader.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/activity_medical_dosage.xml" value="0.1" />
@@ -47,6 +48,7 @@
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/home_content.xml" value="0.2" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_img.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/intro_slide.xml" value="0.1" />
+        <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/loader.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/medicine_dosage_list_card_view.xml" value="0.16530797101449277" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/nav_header.xml" value="0.1" />
         <entry key="..\:/Users/tobil/Desktop/Divad/Projects/Android/HealthAlert/app/src/main/res/layout/toolbar.xml" value="0.1" />
@@ -56,7 +58,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
@@ -65,7 +67,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.18" />
+        <option name="scale" value="0.2" />
       </ProjectState>
     </option>
   </component>

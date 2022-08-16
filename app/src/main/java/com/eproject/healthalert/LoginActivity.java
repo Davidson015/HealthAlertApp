@@ -24,10 +24,12 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     TextView signUp;
-    private ProgressBar pgsBar;
     // Creating form fields
     TextInputEditText email, password;
     Button login;
+
+    // Creating Loader Intent
+    Intent loaderIntent;
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
@@ -40,11 +42,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Initializing Loader Intent
+        loaderIntent = new Intent(this, Loader.class);
+
         // Initializing form fields
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         login = findViewById(R.id.login_btn);
-        pgsBar = findViewById(R.id.pBar);
 
         // Setting onClickListener for SignUp TextView
         signUp = findViewById(R.id.sign_up_txt);
@@ -74,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Invalid Email Address!", Toast.LENGTH_SHORT).show();
                 email.setError("Invalid Email Address!");
             } else {
+                // Showing Loader
+                startActivity(loaderIntent);
 
                 // Checking if user exists in the database
                 database.getReference("users").orderByChild("email").equalTo(emailVal).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -84,8 +90,6 @@ public class LoginActivity extends AppCompatActivity {
                             for (DataSnapshot childSnapShot : snapshot.getChildren()) {
                                 User user = childSnapShot.getValue(User.class);
                                 if (user != null && user.getPassword().equals(passwordVal)) {
-                                    //  make progress bar transparent when data is fully fetched
-                                    pgsBar.setVisibility(View.GONE);
                                     // Showing success message through Toast
                                     Toast.makeText(LoginActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                     // Starting HomeActivity
@@ -99,18 +103,28 @@ public class LoginActivity extends AppCompatActivity {
                                     // Applying editor changes to SharedPreferences
                                     editor.apply();
 
-                                    //  make progress bar visible
-                                    pgsBar.setVisibility(View.VISIBLE);
+                                    // Redirecting to HomeActivity
                                     startActivity(intent);
                                     finish();
-                                    System.out.println(user.getFirstName());
+
+                                    // Stopping Loader Activity
+                                    Loader.activity.finish();
                                 } else {
                                     Toast.makeText(LoginActivity.this, "Invalid Password!", Toast.LENGTH_SHORT).show();
+
+                                    // Setting error message for password field
+                                    password.setError("Invalid Password!");
+
+                                    // Stopping Loader Activity
+                                    Loader.activity.finish();
                                 }
                             }
                         } else {
                             // Displaying Toast message to user that the account doesn't exist
                             Toast.makeText(LoginActivity.this, "Account doesn't exist!", Toast.LENGTH_SHORT).show();
+
+                            // Stopping Loader Activity
+                            Loader.activity.finish();
                         }
                     }
 
