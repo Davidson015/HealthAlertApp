@@ -11,11 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.eproject.healthalert.model.PersonalHealthVitals;
+import com.eproject.healthalert.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class UpdateHealthVitalsActivity extends AppCompatActivity {
     // Creating form fields
@@ -23,6 +26,9 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
     Button updateBtn;
 
     String userEmail, healthVitalsId;
+
+    // Vitals value from db
+    PersonalHealthVitals dbVitals;
 
     SharedPreferences pref;
 
@@ -47,6 +53,33 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
         height = findViewById(R.id.height_edit_val);
         weight = findViewById(R.id.weight_edit_val);
         updateBtn = findViewById(R.id.update_btn);
+
+        // Getting vitals from the database
+        database.getReference("healthVitals").orderByChild("userId").equalTo(userEmail).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                // Checking if the data snapshot is null or not and performing specific actions
+                if (snapshot.getValue() != null) {
+                    for (DataSnapshot childSnapShot : snapshot.getChildren()) {
+                        dbVitals = childSnapShot.getValue(PersonalHealthVitals.class);
+
+                        // Setting fields to default values
+                        heartRate.setText(dbVitals.getPulseRate());
+                        bp.setText(dbVitals.getBloodPressure());
+                        bodyTemp.setText(dbVitals.getBodyTemperature());
+                        bloodSugar.setText(dbVitals.getBloodGlucose());
+                        respRate.setText(dbVitals.getRespiratoryRate());
+                        height.setText(dbVitals.getHeight());
+                        weight.setText(dbVitals.getWeight());
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                System.out.println("The read failed: " + error.getCode());
+            }
+        });
 
         // Adding onClickListener to the update button
         updateBtn.setOnClickListener(v -> {

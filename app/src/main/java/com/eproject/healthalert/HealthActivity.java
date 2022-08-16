@@ -81,6 +81,22 @@ public class HealthActivity extends AppCompatActivity {
                         respiratoryRate.setText(healthVitals.getRespiratoryRate() + " per min");
                         height.setText(healthVitals.getHeight() + " inches");
                         weight.setText(healthVitals.getWeight() + " kg");
+
+                        if (healthVitals.getPulseRate().equals("")) {
+                            heartRate.setText("N/A");
+                        } if (healthVitals.getBloodPressure().equals("")) {
+                            bp.setText("N/A");
+                        } if (healthVitals.getBodyTemperature().equals("")) {
+                            temperature.setText("N/A");
+                        } if (healthVitals.getBloodGlucose().equals("")) {
+                            bloodSugar.setText("N/A");
+                        } if (healthVitals.getRespiratoryRate().equals("")) {
+                            respiratoryRate.setText("N/A");
+                        } if (healthVitals.getHeight().equals("")) {
+                            height.setText("N/A");
+                        } if (healthVitals.getWeight().equals("")) {
+                            weight.setText("N/A");
+                        }
                     }
                 } else {
                     Toast.makeText(HealthActivity.this, "No health vitals added yet", Toast.LENGTH_SHORT).show();
