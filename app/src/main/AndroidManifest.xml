@@ -22,7 +22,7 @@
             android:name=".Loader"
             android:exported="false" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".SettingsActivity"
             android:exported="false" />
         <activity
             android:name=".HelpActivity"

@@ -32,7 +32,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SettingActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
     Intent intent;
     DrawerLayout drawer;
     ActionBarDrawerToggle actionBarDrawerToggle;
@@ -165,13 +165,13 @@ public class SettingActivity extends AppCompatActivity {
                             Log.e("firebase", "Error getting data", task.getException());
 
                             // Creating Toast to show error
-                            Toast.makeText(SettingActivity.this, "There's an error on our end, Please try again later.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SettingsActivity.this, "There's an error on our end, Please try again later.", Toast.LENGTH_SHORT).show();
                         } else {
                             // Updating the user in the database
                             database.getReference("users").child(userId).setValue(user);
 
                             // Creating Toast to show success
-                            Toast.makeText(SettingActivity.this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SettingsActivity.this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
 
                             // Updating the SharedPreferences
                             SharedPreferences.Editor editor = pref.edit();
@@ -182,7 +182,7 @@ public class SettingActivity extends AppCompatActivity {
                             editor.apply();
 
                             // Redirecting to the HomeActivity
-                            Intent intent = new Intent(SettingActivity.this, HomeActivity.class);
+                            Intent intent = new Intent(SettingsActivity.this, HomeActivity.class);
                             startActivity(intent);
                             finishAffinity();
                         }
@@ -194,17 +194,17 @@ public class SettingActivity extends AppCompatActivity {
         // Adding click listener to the delete button to delete the user from the database
         deleteBtn.setOnClickListener(v -> {
             // Creating a dialog to confirm the deletion
-            AlertDialog.Builder builder = new AlertDialog.Builder(SettingActivity.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
             builder.setTitle("Delete Profile");
             builder.setMessage("Are you sure you want to delete your profile?");
             builder.setPositiveButton("Yes", (dialog, which) -> {
                 // Creating a user reference(UserId)
                 String userId = dbUser.getEmail().replace("@", "_").replace(".", "_") + "-000";
                 database.getReference("users").child(userId).removeValue();
-                Toast.makeText(SettingActivity.this, "Profile deleted successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SettingsActivity.this, "Profile deleted successfully!", Toast.LENGTH_SHORT).show();
 
                 // Redirecting to the LoginActivity
-                Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }).setNegativeButton("No", (dialog, which) -> {
@@ -272,32 +272,32 @@ public class SettingActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.appointments:
-                intent = new Intent(com.eproject.healthalert.SettingActivity.this, com.eproject.healthalert.AppointmentActivity.class);
+                intent = new Intent(SettingsActivity.this, com.eproject.healthalert.AppointmentActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.health_vitals:
-                intent = new Intent(SettingActivity.this, HealthActivity.class);
+                intent = new Intent(SettingsActivity.this, HealthActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.medicine:
-                intent = new Intent(SettingActivity.this, MedicineDosageActivity.class);
+                intent = new Intent(SettingsActivity.this, MedicineDosageActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.feedback:
-                intent = new Intent(SettingActivity.this, FeedbackActivity.class);
+                intent = new Intent(SettingsActivity.this, FeedbackActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.contact:
-                intent = new Intent(SettingActivity.this, ContactActivity.class);
+                intent = new Intent(SettingsActivity.this, ContactActivity.class);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.help:
-                intent = new Intent(SettingActivity.this, HelpActivity.class);
+                intent = new Intent(SettingsActivity.this, HelpActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -334,10 +334,10 @@ public class SettingActivity extends AppCompatActivity {
         // Setting the positive button to exit the app
         builder.setPositiveButton("Yes", (dialog, which) -> {
             // Redirecting User to MainActivity
-            Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+            Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
 
             // Displaying a Toast message
-            Toast.makeText(SettingActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SettingsActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
 
             finishAffinity();
             startActivity(intent);

@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -124,7 +123,7 @@ public class HelpActivity extends AppCompatActivity {
                 drawer.closeDrawers();
                 break;
             case R.id.settings:
-                intent = new Intent(HelpActivity.this, SettingActivity.class);
+                intent = new Intent(HelpActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;

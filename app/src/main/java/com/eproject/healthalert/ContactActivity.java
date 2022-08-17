@@ -125,7 +125,7 @@ public class ContactActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.settings:
-                intent = new Intent(ContactActivity.this, SettingActivity.class);
+                intent = new Intent(ContactActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;

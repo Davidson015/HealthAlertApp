@@ -9,22 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-import androidx.core.app.NotificationCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.BitmapFactory;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -36,7 +29,6 @@ import android.widget.Toast;
 
 import com.eproject.healthalert.adapter.AppointmentAdapter;
 import com.eproject.healthalert.model.Appointment;
-import com.eproject.healthalert.model.User;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -260,7 +252,7 @@ public class AppointmentActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.settings:
-                intent = new Intent(AppointmentActivity.this, SettingActivity.class);
+                intent = new Intent(AppointmentActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;

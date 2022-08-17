@@ -213,7 +213,7 @@ public class HealthActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.settings:
-                intent = new Intent(HealthActivity.this, SettingActivity.class);
+                intent = new Intent(HealthActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;

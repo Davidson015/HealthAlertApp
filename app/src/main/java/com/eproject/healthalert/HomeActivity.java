@@ -14,8 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
@@ -24,8 +22,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -149,7 +145,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Adding onClickListener to the User Profile Picture
         userprofilepic.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this,SettingActivity.class);
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
             startActivity(intent);
         });
 
@@ -215,7 +211,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.settings:
-                intent = new Intent(HomeActivity.this, SettingActivity.class);
+                intent = new Intent(HomeActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 break;
             case R.id.logout:

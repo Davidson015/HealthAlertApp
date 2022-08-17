@@ -20,7 +20,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.eproject.healthalert.model.MedicineDosage;
 import com.google.android.material.navigation.NavigationView;
 
 public class FeedbackActivity extends AppCompatActivity {
@@ -130,7 +129,7 @@ public class FeedbackActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.settings:
-                intent = new Intent(FeedbackActivity.this, SettingActivity.class);
+                intent = new Intent(FeedbackActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;

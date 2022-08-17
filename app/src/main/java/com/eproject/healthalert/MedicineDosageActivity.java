@@ -26,9 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.eproject.healthalert.adapter.AppointmentAdapter;
 import com.eproject.healthalert.adapter.MedicineDosageAdapter;
-import com.eproject.healthalert.model.Appointment;
 import com.eproject.healthalert.model.MedicineDosage;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
@@ -221,7 +219,7 @@ public class MedicineDosageActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.settings:
-                intent = new Intent(MedicineDosageActivity.this, SettingActivity.class);
+                intent = new Intent(MedicineDosageActivity.this, SettingsActivity.class);
                 startActivity(intent);
                 finish();
                 break;
