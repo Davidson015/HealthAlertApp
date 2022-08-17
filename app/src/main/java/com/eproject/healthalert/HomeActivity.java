@@ -16,6 +16,8 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,12 +45,15 @@ public class HomeActivity extends AppCompatActivity {
     NavigationView navigationView;
     private long pressedTime;
     SharedPreferences pref;
-    CardView appointmentCard, medicalDosage, healthVitals;
+    CardView appointmentCard, medicalDosage, healthVitals, fidgetBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        // get the VIBRATOR_SERVICE system service
+        final Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         // Navigation Drawer
         // Initializing Toolbar and setting it as the actionbar
@@ -71,6 +76,27 @@ public class HomeActivity extends AppCompatActivity {
         appointmentCard = findViewById(R.id.appointments_card_view);
         medicalDosage = findViewById(R.id.medicine_dosage_card_view);
         healthVitals = findViewById(R.id.health_vitals_card_view);
+        fidgetBtn = findViewById(R.id.fidget_btn);
+
+        // Adding OnClickListener to the Fidget Button
+        fidgetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Making the Fidget Button set off device vibration
+                final VibrationEffect vibrationEffect;
+
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+
+                    // create vibrator effect with the constant EFFECT_CLICK
+                    vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK);
+
+                    // it is safe to cancel other vibrations currently taking place
+                    vibrator.cancel();
+
+                    vibrator.vibrate(vibrationEffect);
+                }
+            }
+        });
 
         // Getting the username from the SharedPreferences
         pref = getSharedPreferences("user", MODE_PRIVATE);
