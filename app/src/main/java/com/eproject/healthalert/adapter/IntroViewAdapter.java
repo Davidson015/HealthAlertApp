@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,6 +16,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.eproject.healthalert.R;
 
 public class IntroViewAdapter extends androidx.viewpager.widget.PagerAdapter {
+
+    private Animation floater;
 
     private Context context;
     private LayoutInflater layoutInflater;
@@ -51,6 +55,11 @@ public class IntroViewAdapter extends androidx.viewpager.widget.PagerAdapter {
         ImageView imageView = (ImageView) view.findViewById(R.id.img_view);
         TextView titleView = (TextView) view.findViewById(R.id.title);
         TextView descriptionView = (TextView) view.findViewById(R.id.desc);
+
+        // Initializing floater animation
+        floater = AnimationUtils.loadAnimation(context, R.anim.floater);
+        // Setting the animation to the ImageView
+        imageView.setAnimation(floater);
 
         // Setting the views
         imageView.setImageResource(images[position]);
