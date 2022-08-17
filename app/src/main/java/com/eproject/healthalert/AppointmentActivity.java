@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.NotificationCompat;
@@ -16,8 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -28,6 +31,7 @@ import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.eproject.healthalert.adapter.AppointmentAdapter;
@@ -55,6 +59,8 @@ public class AppointmentActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     ShimmerFrameLayout shimmer;
+
+    ImageView themeToggle;
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
@@ -89,6 +95,29 @@ public class AppointmentActivity extends AppCompatActivity {
         // Initializing NavigationView
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
+
+        View headerView = navigationView.getHeaderView(0);
+
+        themeToggle = headerView.findViewById(R.id.theme_toggle);
+
+        // Setting the src of the theme toggle imageview in respect to the devices theme
+        if (isNightMode(this)) {
+            themeToggle.setImageResource(R.drawable.ic_light);
+        } else {
+            themeToggle.setImageResource(R.drawable.ic_dark);
+        }
+
+        // Adding onClickListener to the Theme Toggle
+        themeToggle.setOnClickListener(v -> {
+            // checking if the device is on dark mode and setting the themeToggle function respectively
+            if (!isNightMode(this)) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                themeToggle.setImageResource(R.drawable.ic_dark);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                themeToggle.setImageResource(R.drawable.ic_light);
+            }
+        });
 
 //        Setting Recycler View for Appointment cards
         appointmentRecyclerView = findViewById(R.id.recyclerview);
@@ -282,5 +311,10 @@ public class AppointmentActivity extends AppCompatActivity {
         builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    public boolean isNightMode(Context context) {
+        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 }

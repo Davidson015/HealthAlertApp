@@ -3,6 +3,7 @@ package com.eproject.healthalert;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -39,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
     String usernameVal;
     TextView username;
     DrawerLayout drawer;
-    ImageView userprofilepic;
+    ImageView userprofilepic, themeToggle;
     ActionBarDrawerToggle actionBarDrawerToggle;
     Toolbar toolbar;
     NavigationView navigationView;
@@ -71,6 +72,29 @@ public class HomeActivity extends AppCompatActivity {
         // Initializing NavigationView
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
+
+        View headerView = navigationView.getHeaderView(0);
+
+        themeToggle = headerView.findViewById(R.id.theme_toggle);
+
+        // Setting the src of the theme toggle imageview in respect to the devices theme
+        if (isNightMode(this)) {
+            themeToggle.setImageResource(R.drawable.ic_light);
+        } else {
+            themeToggle.setImageResource(R.drawable.ic_dark);
+        }
+
+        // Adding onClickListener to the Theme Toggle
+        themeToggle.setOnClickListener(v -> {
+            // checking if the device is on dark mode and setting the themeToggle function respectively
+            if (!isNightMode(this)) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                themeToggle.setImageResource(R.drawable.ic_dark);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                themeToggle.setImageResource(R.drawable.ic_light);
+            }
+        });
 
         userprofilepic = findViewById(R.id.user_profile_pic);
         appointmentCard = findViewById(R.id.appointments_card_view);
@@ -160,6 +184,7 @@ public class HomeActivity extends AppCompatActivity {
     // Creating the selectDrawerItem method to handle navigation item clicks
     @SuppressLint("NonConstantResourceId")
     public void selectDrawerItem(MenuItem menuItem) {
+
         Intent intent;
         switch (menuItem.getItemId()) {
             case R.id.home:
@@ -192,7 +217,6 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.settings:
                 intent = new Intent(HomeActivity.this, SettingActivity.class);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.logout:
                 // confirmation dialog
@@ -256,8 +280,8 @@ public class HomeActivity extends AppCompatActivity {
         win.setAttributes(winParams);
     }
 
-//    public boolean isNightMode(Context context) {
-//        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-//        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
-//    }
+    public boolean isNightMode(Context context) {
+        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
+    }
 }

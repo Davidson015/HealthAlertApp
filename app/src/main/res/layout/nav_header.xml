@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navHeader"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorPrimary"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:paddingHorizontal="20sp"
+    android:paddingVertical="15sp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/theme_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:src="@drawable/ic_dark"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/navHeaderImage"
+        android:clickable="true"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/navHeaderImage"
         android:layout_width="match_parent"
         android:layout_height="100sp"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginStart="@dimen/horizontal_margin"
+        android:layout_centerInParent="true"
         android:layout_marginTop="20sp"
-        android:layout_marginEnd="@dimen/horizontal_margin"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/ic_logo_light"
         android:contentDescription="@string/profile_pic" />
@@ -27,9 +37,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:layout_marginTop="5sp"
-        android:gravity="center"
+        android:layout_below="@+id/navHeaderImage"
+        android:layout_marginTop="10sp"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:text="@string/app_name"/>
 
-</LinearLayout>
+</RelativeLayout>

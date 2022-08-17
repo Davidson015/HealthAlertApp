@@ -3,20 +3,24 @@ package com.eproject.healthalert;
 import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -43,6 +47,8 @@ public class MedicineDosageActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     ShimmerFrameLayout shimmer;
+
+    ImageView themeToggle;
 
     // Creating an instance of firebase db
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://health-alert-52481-default-rtdb.firebaseio.com");
@@ -73,6 +79,29 @@ public class MedicineDosageActivity extends AppCompatActivity {
         // Initializing NavigationView
         navigationView = findViewById(R.id.nav_view);
         setupDrawerContent(navigationView);
+
+        View headerView = navigationView.getHeaderView(0);
+
+        themeToggle = headerView.findViewById(R.id.theme_toggle);
+
+        // Setting the src of the theme toggle imageview in respect to the devices theme
+        if (isNightMode(this)) {
+            themeToggle.setImageResource(R.drawable.ic_light);
+        } else {
+            themeToggle.setImageResource(R.drawable.ic_dark);
+        }
+
+        // Adding onClickListener to the Theme Toggle
+        themeToggle.setOnClickListener(v -> {
+            // checking if the device is on dark mode and setting the themeToggle function respectively
+            if (!isNightMode(this)) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                themeToggle.setImageResource(R.drawable.ic_dark);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                themeToggle.setImageResource(R.drawable.ic_light);
+            }
+        });
 
 //        Setting Recycler View for dosage cards
         dosageRecyclerView = findViewById(R.id.recyclerview);
@@ -243,5 +272,10 @@ public class MedicineDosageActivity extends AppCompatActivity {
         builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
         AlertDialog alert = builder.create();
         alert.show();
+    }
+
+    public boolean isNightMode(Context context) {
+        int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
     }
 }
