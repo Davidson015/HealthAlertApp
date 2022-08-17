@@ -1,6 +1,7 @@
 package com.eproject.healthalert;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -97,20 +98,8 @@ public class HelpActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.logout:
-                // Redirecting User to MainActivity
-                intent = new Intent(com.eproject.healthalert.HelpActivity.this, MainActivity.class);
-
-                // Displaying a Toast message
-                Toast.makeText(com.eproject.healthalert.HelpActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
-
-                startActivity(intent);
-                finishAffinity();
-
-                // Clearing the SharedPreferences
-                SharedPreferences.Editor editor = pref.edit();
-                editor.clear();
-                editor.apply();
-
+                // Confirmation Dialog
+                confirmLogout();
                 break;
             default:
                 break;
@@ -128,5 +117,32 @@ public class HelpActivity extends AppCompatActivity {
             super.onBackPressed();
             finish();
         }
+    }
+
+    // Creating the confirmLogout method to confirm if the user wants to exit the app
+    private void confirmLogout() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Logout");
+        builder.setMessage("You're about to logout. Are you sure?");
+        // Setting the positive button to exit the app
+        builder.setPositiveButton("Yes", (dialog, which) -> {
+            // Redirecting User to MainActivity
+            Intent intent = new Intent(HelpActivity.this, MainActivity.class);
+
+            // Displaying a Toast message
+            Toast.makeText(HelpActivity.this, "See you soon!", Toast.LENGTH_SHORT).show();
+
+            finishAffinity();
+            startActivity(intent);
+
+            // Clearing the SharedPreferences
+            SharedPreferences.Editor editor = pref.edit();
+            editor.clear();
+            editor.apply();
+        });
+        // Setting the negative button to cancel the exit
+        builder.setNegativeButton("No", (dialog, which) -> dialog.cancel());
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }
