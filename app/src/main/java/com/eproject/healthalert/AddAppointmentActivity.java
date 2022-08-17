@@ -91,7 +91,8 @@ public class AddAppointmentActivity extends AppCompatActivity {
                 Toast.makeText(AddAppointmentActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 if (desc.getText().toString().isEmpty()) {
                     desc.setError("Please fill this field");
-                } else if (loc.getText().toString().isEmpty()) {
+                }
+                if (loc.getText().toString().isEmpty()) {
                     loc.setError("Please fill this field");
                 }
             } else {

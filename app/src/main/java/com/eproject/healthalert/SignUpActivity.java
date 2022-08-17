@@ -95,13 +95,17 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(this, "Fields cannot be empty!", Toast.LENGTH_SHORT).show();
                 if (firstName.getText().toString().isEmpty()) {
                     firstName.setError("Field cannot be empty!");
-                } else if (lastName.getText().toString().isEmpty()) {
+                }
+                if (lastName.getText().toString().isEmpty()) {
                     lastName.setError("Field cannot be empty!");
-                } else if (email.getText().toString().isEmpty()) {
+                }
+                if (email.getText().toString().isEmpty()) {
                     email.setError("Field cannot be empty!");
-                } else if (age.getText().toString().isEmpty()) {
+                }
+                if (age.getText().toString().isEmpty()) {
                     age.setError("Field cannot be empty!");
-                } else if (phoneNo.getText().toString().isEmpty()) {
+                }
+                if (phoneNo.getText().toString().isEmpty()) {
                     phoneNo.setError("Field cannot be empty!");
                 }
             }

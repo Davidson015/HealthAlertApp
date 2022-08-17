@@ -80,11 +80,14 @@ public class AddDosageActivity extends AppCompatActivity {
                 Toast.makeText(AddDosageActivity.this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 if (medName.getText().toString().isEmpty()) {
                     medName.setError("Please fill this field");
-                } else if (dose.getText().toString().isEmpty()) {
+                }
+                if (dose.getText().toString().isEmpty()) {
                     dose.setError("Please fill this field");
-                } else if (freq.getText().toString().isEmpty()) {
+                }
+                if (freq.getText().toString().isEmpty()) {
                     freq.setError("Please fill this field");
-                } else if (time.getText().toString().isEmpty()) {
+                }
+                if (time.getText().toString().isEmpty()) {
                     time.setError("Please fill this field");
                 }
             } else {

@@ -88,17 +88,23 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 if (heartRate.getText().toString().isEmpty()) {
                     heartRate.setError("Please fill this field");
-                } else if (bp.getText().toString().isEmpty()) {
+                }
+                if (bp.getText().toString().isEmpty()) {
                     bp.setError("Please fill this field");
-                } else if (bodyTemp.getText().toString().isEmpty()) {
+                }
+                if (bodyTemp.getText().toString().isEmpty()) {
                     bodyTemp.setError("Please fill this field");
-                } else if (bloodSugar.getText().toString().isEmpty()) {
+                }
+                if (bloodSugar.getText().toString().isEmpty()) {
                     bloodSugar.setError("Please fill this field");
-                } else if (height.getText().toString().isEmpty()) {
+                }
+                if (height.getText().toString().isEmpty()) {
                     height.setError("Please fill this field");
-                } else if (weight.getText().toString().isEmpty()) {
+                }
+                if (weight.getText().toString().isEmpty()) {
                     weight.setError("Please fill this field");
-                } else if (respRate.getText().toString().isEmpty()) {
+                }
+                if (respRate.getText().toString().isEmpty()) {
                     respRate.setError("Please fill this field");
                 }
 
