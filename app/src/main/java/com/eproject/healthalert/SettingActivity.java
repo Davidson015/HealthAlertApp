@@ -281,8 +281,7 @@ public class SettingActivity extends AppCompatActivity {
         if (drawer.isDrawerOpen(Gravity.LEFT)) {
             drawer.closeDrawer(Gravity.LEFT);
         } else {
-            Intent intent = new Intent(SettingActivity.this, HomeActivity.class);
-            startActivity(intent);
+            super.onBackPressed();
             finish();
         }
     }
