@@ -110,7 +110,7 @@ public class UpdateHealthVitalsActivity extends AppCompatActivity {
 
             } else {
                 // Creating an instance of PersonalHealthVitals class
-                PersonalHealthVitals healthVitals = new PersonalHealthVitals(userEmail, height.getText().toString().trim(), weight.getText().toString().trim(), bp.getText().toString().trim(), bloodSugar.getText().toString().trim(), bodyTemp.getText().toString().trim(), "", heartRate.getText().toString().trim());
+                PersonalHealthVitals healthVitals = new PersonalHealthVitals(userEmail, height.getText().toString().trim(), weight.getText().toString().trim(), bp.getText().toString().trim(), bloodSugar.getText().toString().trim(), bodyTemp.getText().toString().trim(), respRate.getText().toString().trim(), heartRate.getText().toString().trim());
 
                 // Creating an health vitals reference(healthVitalsId)
                 healthVitalsId = (userEmail.replace("@", "_").replace(".", "_") + "_healthVitals000");

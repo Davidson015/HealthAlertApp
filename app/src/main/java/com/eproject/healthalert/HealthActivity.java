@@ -86,7 +86,7 @@ public class HealthActivity extends AppCompatActivity {
                         bp.setText(healthVitals.getBloodPressure() + " mmHg");
                         temperature.setText(healthVitals.getBodyTemperature() + " °C");
                         bloodSugar.setText(healthVitals.getBloodGlucose() + " mg/dL");
-                        respiratoryRate.setText(healthVitals.getRespiratoryRate() + " per min");
+                        respiratoryRate.setText(healthVitals.getRespiratoryRate() + " bpm (breaths)");
                         height.setText(healthVitals.getHeight() + " inches");
                         weight.setText(healthVitals.getWeight() + " kg");
 
